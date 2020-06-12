@@ -162,9 +162,13 @@ document.getElementById("chatbox").style.top = screenHeight-135 + "px";
 document.getElementById("ohnobox").style.top = screenHeight-135 + "px";
 
 this.updatePosition = function(){
-    if(this.Position.X > -1 && this.Position.X < screenWidth+1) {   
+    if (this.Position.X > 0 && this.Position.X <= screenWidth-40) {   
         this.Position.X += this.Velocity.X;
         console.log(this.Position.X);
+    }else if(this.Position.X < 5){
+        this.Position.X += 1;
+    }else if(this.Position.X > screenWidth-45){
+        this.Position.X -= 16;
     }
     
     this.Position.Y += this.Velocity.Y;
