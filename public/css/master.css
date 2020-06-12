@@ -35,6 +35,7 @@ h1 {
     font-weight: normal;
     font-size: 154px;
     line-height: 177px;
+    background-clip: text;
     background: -webkit-linear-gradient(#FBA30D, #FF5B14);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -108,7 +109,35 @@ h1 {
 }
 .instructp{
     color: gray;
-    font-family: sans-serif;
+    font-family: 'bahnschrift',sans-serif;
+    font-weight: 500;
+    font-size: 12pt;
+}
+.scoring{
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.scorp{
+    color: black;
+    font-family: 'bahnschrift',sans-serif;
+    font-weight: 500;
+    font-size: 12pt;
+}
+.scorlive{
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 0 20px;
+}
+.scorplive{
+    color: black;
+    font-family: 'bahnschrift',sans-serif;
     font-weight: 500;
     font-size: 12pt;
 }
@@ -147,3 +176,7 @@ h1 {
     justify-self: center;
     font-size: 18pt;
 }
+.buttonnewgame:focus,.buttonnewgame:active {
+    outline: none !important;
+    box-shadow: 0 0 4px 1px orange;
+ }

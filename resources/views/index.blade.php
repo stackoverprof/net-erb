@@ -24,6 +24,12 @@
     <div class="instruction" id="instruction">
         <p class="instructp">Use arrow key to move the object</p>
     </div>
+    <div class="scoring" id="scoring">
+        <p class="scorp" id="scorp">Score : </p>
+    </div>
+    <div class="scorlive" id="scorlive">
+        <p class="scorplive" id="scorp"> </p>
+    </div>
     <div class="navbot" id="navbot"></div>
 
 @endsection
