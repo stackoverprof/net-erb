@@ -52,7 +52,6 @@ canvas.height = screenHeight;
 document.getElementById("instruction").style.top = screenHeight-38 + "px";
 document.getElementById("scoring").style.top = screenHeight-38 + "px";
 document.getElementById("scorlive").style.top = screenHeight-38 + "px";
-document.getElementById("navbot").style.top = screenHeight + "px";
 document.getElementById("navbot").style.height = 60 + "px";
 document.getElementById("buttonnewgame").style.transform = `translateX(${screenWidth/2}px)`;
 document.getElementById("ohnobox").style.visibility="hidden";
@@ -409,8 +408,12 @@ function gameOver(){
     
     function resetIgniteFoodOnce(){
         igniteFoodOnce = true;
+        console.log(raincounter + " " + foodscore);
 
     }setTimeout(resetIgniteFoodOnce,2000);
+
+
+
 }
 function shapeGenerate(){
     new Shape(clearanceStart(Math.random()*screenWidth),30,30);

@@ -16,7 +16,7 @@ html, body {
     height: 100%; 
 }
 canvas {
-    position: fixed;
+    position: relative;
     top: 0;
     left: 0;
     display: block;
@@ -24,7 +24,7 @@ canvas {
     z-index: -1;
 }
 #container {
-    position: fixed;
+    position: relative;
     top: 0;
     left: 0;
     z-index: 2; 
@@ -55,13 +55,14 @@ h1 {
     top: 4px;
 }
 .supertitle{
-    position: fixed;
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 72%;
     width: 100%;
     flex-direction: column;
+    overflow: hidden;
 }
 .subtitle{
     position: relative;
@@ -101,7 +102,7 @@ h1 {
     align-items: center;
 }
 .instruction{
-    position: fixed;
+    position: absolute;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -114,7 +115,7 @@ h1 {
     font-size: 12pt;
 }
 .scoring{
-    position: fixed;
+    position: absolute;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -129,7 +130,7 @@ h1 {
     margin-right: 5px;
 }
 .scorlive{
-    position: fixed;
+    position: absolute;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -157,11 +158,11 @@ h1 {
 }
 .navbot{
     background-color: black;
-    position: fixed;
+    position: relative;
     width: 100%;
 }
 .chatbox{
-    position: fixed;
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -176,7 +177,7 @@ h1 {
     font-size: 14pt;
 }
 .ohnobox{
-    position: fixed;
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -193,4 +194,27 @@ h1 {
 .buttonnewgame:focus,.buttonnewgame:active {
     outline: none !important;
     box-shadow: 0 0 4px 1px orange;
- }
+}
+
+
+
+
+
+.rainboxgame{
+    position: relative;
+    overflow: hidden;
+}
+
+
+.in-body{
+    width: 100%;
+    height: auto;
+    overflow-x: hidden;
+}
+.jumbo{
+    width: 100%;
+    height: 300px;
+    
+    background-color: black;
+    overflow-x: hidden;
+}
