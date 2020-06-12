@@ -25,10 +25,12 @@
         <p class="instructp">Use arrow key to move the object</p>
     </div>
     <div class="scoring" id="scoring">
-        <p class="scorp" id="scorp">Score : </p>
+        <p class="scorp" id="scorp">Score : 0</p>
+        <p class="endfoodplive" id="endfoodp">Food : 0</p>
     </div>
     <div class="scorlive" id="scorlive">
-        <p class="scorplive" id="scorp"> </p>
+        <p class="scorplive" id="scorp"></p>
+        <p class="foodplive" id="foodp"></p>
     </div>
     <div class="navbot" id="navbot"></div>
 

@@ -126,12 +126,13 @@ h1 {
     font-family: 'bahnschrift',sans-serif;
     font-weight: 500;
     font-size: 12pt;
+    margin-right: 5px;
 }
 .scorlive{
     position: fixed;
     width: 100%;
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     align-items: center;
     padding: 0 20px;
 }
@@ -140,6 +141,19 @@ h1 {
     font-family: 'bahnschrift',sans-serif;
     font-weight: 500;
     font-size: 12pt;
+}
+.foodplive{
+    color: orangered;
+    font-family: 'bahnschrift',sans-serif;
+    font-weight: 500;
+    font-size: 12pt;
+}
+.endfoodplive{
+    color: orangered;
+    font-family: 'bahnschrift',sans-serif;
+    font-weight: 500;
+    font-size: 12pt;
+    margin-left: 5px;
 }
 .navbot{
     background-color: black;
