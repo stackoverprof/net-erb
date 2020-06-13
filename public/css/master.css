@@ -337,7 +337,7 @@ h1 {
     position: relative;
     width: 100%;
     transition: 1s;
-    z-index: -1;
+    z-index: -10;
     background-color: black;
 }
 .gray{
@@ -346,23 +346,40 @@ h1 {
     transition: 1s;
 }
 .bc55{
-    z-index: -2;
+    z-index: -6;
     background-color: #555555;
 }
 .bc99{
-    z-index: -3;
+    z-index: -4;
     background-color: #999999;
 }
 .bcC7{
-    z-index: -4;
+    z-index: -3;
     background-color: #C7C7C7;
 }
 .bcEB{
-    z-index: -5;
+    z-index: -2;
     background-color: #EBEBEB;
 }
-
-
+.bcFF{
+    z-index: 0;
+    background-color: #FFFFFF;
+}
+.h4abilities{
+    font-family: 'bahnschrift', sans-serif;
+    color: white;
+    margin:4px 0 0 0;
+    font-weight: 400;
+    font-size: 20pt;
+    z-index: -5;
+}
+.putmiddle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 60px;
+}
 
 .abilities{
     height:800px;

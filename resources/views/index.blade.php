@@ -78,10 +78,14 @@
         
         <div class="noheight">
             <div class="noheight"><div class="blackout" id="blackout"></div></div>
+            <div class="putmiddle">
+                <h4 class="h4abilities">A&emsp;B&emsp;I&emsp;L&emsp;I&emsp;T&emsp;I&emsp;E&emsp;S</h4>
+            </div>
             <div class="noheight"><div class="gray bc55" id="gray1"></div></div>
             <div class="noheight"><div class="gray bc99" id="gray2"></div></div>
             <div class="noheight"><div class="gray bcC7" id="gray3"></div></div>
             <div class="noheight"><div class="gray bcEB" id="gray4"></div></div>
+            <div class="noheight"><div class="gray bcFF" id="gray5"></div></div>
         </div>
 
         <div class="abilities sideclear">
