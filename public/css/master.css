@@ -6,7 +6,7 @@
     font-family: "bahnschrift";
     src: url("{{asset(fonts/BAHNSCHRIFT.TTF')}}");
 }
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap'); */
 
 * {
     margin: 0;
@@ -21,8 +21,16 @@ canvas {
     top: 0;
     left: 0;
     display: block;
-    background-color: #F9F9F9; 
+    background-color: rgba(0,0,0,0); 
     z-index: -1;
+}
+.vantadiv{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -5;
+    /* display: none; */
+    /* transform: rotate(180deg); */
 }
 #container {
     position: relative;
@@ -213,6 +221,9 @@ h1 {
     padding: 0 16pt;
     background-color: #3A3A3A;
 }
+.dropdown:hover{
+    background-color: orangered;
+}
 .h2navigation{
     font-family: 'bahnschrift', sans-serif;
     color: white;
@@ -257,6 +268,7 @@ h1 {
     justify-content: space-between;
     align-items: center;
     padding: 0 200px;
+    z-index: 8;
 
     background-color: black;
     overflow-x: hidden;
@@ -279,8 +291,79 @@ h1 {
     font-size: 17px;
     line-height: 22px;
     margin:14px 0 0 4px;
-    font-weight: 300;
+    font-weight: 200;
 }
 .weight400{
     font-weight: 600 !important;
+}
+.orangebox{
+    position: relative;
+    top: -66px;
+    left: 120px ;
+    width: 146px;
+    height: 47px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #FF5B14;
+}
+.nospace{
+    position: relative;
+    width: 0px;
+    height: 0px;
+}
+.nickname{
+    font-family: 'bahnschrift', sans-serif;
+    color: white;
+    margin:4px 0 0 0;
+    font-weight: 400;
+    font-size: 22pt;
+}
+
+
+
+/* .gradientmove{
+    position: relative;
+} */
+.noheight{
+    position: relative;
+    height: 0px;
+    width: 100%;
+}
+.blackout{
+    position: relative;
+    width: 100%;
+    transition: 1s;
+    z-index: -1;
+    background-color: black;
+}
+.gray{
+    position: relative;
+    width: 100%;
+    transition: 1s;
+}
+.bc55{
+    z-index: -2;
+    background-color: #555555;
+}
+.bc99{
+    z-index: -3;
+    background-color: #999999;
+}
+.bcC7{
+    z-index: -4;
+    background-color: #C7C7C7;
+}
+.bcEB{
+    z-index: -5;
+    background-color: #EBEBEB;
+}
+
+
+
+.abilities{
+    height:500px;
+    width:100%;
+    padding-top: 112px;
 }

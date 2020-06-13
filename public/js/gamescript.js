@@ -5,6 +5,7 @@ var screenHeight = $(window).height()-60;
 var screenWidth = $(window).width();
 var shapes = {};
 var food = {};
+var xdude = {};
 var shapeIndex = 0;
 var score = 0; 
 var fallSpeed = 4;
@@ -242,6 +243,7 @@ function Dude(posX, width, height){
     this.shadow = 'orange';
     this.blur = 25;
 
+    xdude = this;
 
     
     this.checkCollisions = function(){
@@ -352,7 +354,7 @@ function newGame(){
         document.getElementById("subtitle").innerHTML = "FULLSTACK DEVELOPER";
         document.getElementById("subtitle").style.color = "gray";
         document.getElementById("balancer").style.display = "unset";
-        dude = new Dude(screenWidth/2-296, 50, 50);
+        dude = new Dude(xdude.Position.X, 50, 50);
         shapes = {};
         $("#container").append("<h2>"+score+"</h2>");
         score = 0;
@@ -391,6 +393,8 @@ function gameOver(){
     document.getElementById("scoring").style.display = "flex";
 
     document.getElementById("scorlive").style.display = "none";
+
+    
 
     vfood = null;
     food.PosX = null;

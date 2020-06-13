@@ -169,3 +169,11 @@ function Updater() {
 }
 setInterval(Updater, 10);
 setInterval(shapeGenerate, shapeGenerateSpeed);
+
+
+
+<div class=""><div class="blackout" id="blackout"></div></div>
+            <div class=""><div class="gray bc55" id="gray gray1"></div></div>
+            <div class=""><div class="gray bc99" id="gray gray2"></div></div>
+            <div class=""><div class="gray bcC7" id="gray gray3"></div></div>
+            <div class=""><div class="gray bcEB" id="gray gray4"></div></div>
