@@ -51,7 +51,7 @@ canvas.width = screenWidth;
 canvas.height = screenHeight;
 
 document.getElementById("instruction").style.top = screenHeight-38 + "px";
-document.getElementById("scoring").style.top = screenHeight-38 + "px";
+document.getElementById("scoring").style.top = screenHeight-48 + "px";
 document.getElementById("scorlive").style.top = screenHeight-38 + "px";
 document.getElementById("navbot").style.height = 60 + "px";
 document.getElementById("buttonnewgame").style.transform = `translateX(${screenWidth/2}px)`;
@@ -66,41 +66,50 @@ function appear(){
     //   dude.Position.X = e.pageX;
     //   dude.Position.Y = e.pageY;
     // })
+   
     
-    $(document).keydown(function(e){
-        // console.log(e.which);
-        if (e.which == 37 || e.which == 65){
-            dude.Velocity.X = -5;
-            document.getElementById("instruction").style.display = "none";
-            document.getElementById("chatbox").style.visibility="hidden";
-            document.getElementById("chatbox").style.opacity="0";
-            document.getElementById("chatbox").style.transition="visibility 0s 3s, opacity 3s linear";
-            // } else if (e.which == 87){
-                // dude.Velocity.Y = -5;
-            releaseShield = true;
-            igniteClear = false;
-            releaseFood();
-        } else if (e.which == 39 || e.which == 68){
-            dude.Velocity.X = 5;
-            document.getElementById("instruction").style.display = "none";
-            document.getElementById("chatbox").style.visibility="hidden";
-            document.getElementById("chatbox").style.opacity="0";
-            document.getElementById("chatbox").style.transition="visibility 0s 3s, opacity 3s linear";
-            //else if (e.which == 83){
-                // dude.Velocity.Y = 5;
-            releaseShield = true;
-            igniteClear = false;
-            releaseFood();
-        }else if (e.which == 13 && isGameOver) {
-            newGame();
-        }
-    });
-
+        $(document).keydown(function(e){
+            // console.log(e.which);
+            if (e.which == 37 || e.which == 65){
+                if(window.pageYOffset <= $(window).height()){
+                    dude.Velocity.X = -5;
+        
+                    document.getElementById("instruction").style.display = "none";
+                    document.getElementById("chatbox").style.visibility="hidden";
+                    document.getElementById("chatbox").style.opacity="0";
+                    document.getElementById("chatbox").style.transition="visibility 0s 3s, opacity 3s linear";
+                    // } else if (e.which == 87){
+                        // dude.Velocity.Y = -5;
+                    releaseShield = true;
+                    igniteClear = false;
+                    releaseFood();
+                }
+            } else if (e.which == 39 || e.which == 68){
+                if(window.pageYOffset <= $(window).height()){
+                    dude.Velocity.X = 5;
+        
+                    document.getElementById("instruction").style.display = "none";
+                    document.getElementById("chatbox").style.visibility="hidden";
+                    document.getElementById("chatbox").style.opacity="0";
+                    document.getElementById("chatbox").style.transition="visibility 0s 3s, opacity 3s linear";
+                    //else if (e.which == 83){
+                        // dude.Velocity.Y = 5;
+                    releaseShield = true;
+                    igniteClear = false;
+                    releaseFood();
+                }
+            }else if (e.which == 13 && isGameOver) {
+                if(window.pageYOffset <= $(window).height()) newGame();
+            }
+        });
+    
         $(document).keyup(function(){
             dude.Velocity.X = 0;
             dude.Velocity.Y = 0;
         });
+    
 
+    
 
 
 

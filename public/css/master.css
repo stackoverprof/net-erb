@@ -131,19 +131,20 @@ h1 {
     justify-content: center;
     align-items: center;
     display: none;
+    z-index: -5;
 }
 .scorp{
     color: black;
     font-family: 'bahnschrift',sans-serif;
     font-weight: 500;
-    font-size: 12pt;
+    font-size: 16pt;
     margin-right: 5px;
 }
 .scorlive{
     position: absolute;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
     padding: 0 20px;
 }
@@ -151,19 +152,20 @@ h1 {
     color: black;
     font-family: 'bahnschrift',sans-serif;
     font-weight: 500;
-    font-size: 12pt;
+    font-size: 18pt;
+    margin-left: 10px;
 }
 .foodplive{
     color: orangered;
     font-family: 'bahnschrift',sans-serif;
     font-weight: 500;
-    font-size: 12pt;
+    font-size: 18pt;
 }
 .endfoodplive{
     color: orangered;
     font-family: 'bahnschrift',sans-serif;
     font-weight: 500;
-    font-size: 12pt;
+    font-size: 16pt;
     margin-left: 5px;
 }
 .chatbox{
@@ -333,6 +335,17 @@ h1 {
     height: 0px;
     width: 100%;
 }
+.divsepar{
+    flex-direction: column;
+}
+.separator{
+    background-color: rgba(0,0,0,0);
+    width: 100%;
+    height: 1px;
+    position: relative;
+    top: -62px;
+    z-index: -7;
+}
 .blackout{
     position: relative;
     width: 100%;
@@ -367,7 +380,7 @@ h1 {
 }
 .h4abilities{
     font-family: 'bahnschrift', sans-serif;
-    color: white;
+    color: rgba(0,0,0,0);
     margin:4px 0 0 0;
     font-weight: 400;
     font-size: 20pt;
@@ -378,7 +391,7 @@ h1 {
     justify-content: center;
     align-items: center;
     position: relative;
-    top: 60px;
+    top: -16px;
 }
 
 .abilities{
@@ -411,7 +424,16 @@ h1 {
     font-family: 'Bahnschrift', sans-serif;
     font-style: normal;
     font-weight: 500;
-    font-size: 27px;
+    font-size: 24px;
+
+
+    color: #999999;
+}
+.pjsfull{
+    font-family: 'Bahnschrift', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
 
 
     color: #999999;

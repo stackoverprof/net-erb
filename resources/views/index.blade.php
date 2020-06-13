@@ -33,8 +33,8 @@
             <p class="endfoodplive" id="endfoodp">Food : 0</p>
         </div>
         <div class="scorlive" id="scorlive">
-            <p class="scorplive" id="scorp"></p>
             <p class="foodplive" id="foodp"></p>
+            <p class="scorplive" id="scorp"></p>
         </div>
     </div>
 
@@ -78,8 +78,9 @@
         
         <div class="noheight">
             <div class="noheight"><div class="blackout" id="blackout"></div></div>
-            <div class="putmiddle">
-                <h4 class="h4abilities">A&emsp;B&emsp;I&emsp;L&emsp;I&emsp;T&emsp;I&emsp;E&emsp;S</h4>
+            <div class="putmiddle sideclear divsepar">
+                <hr class="separator">
+                <h4 class="h4abilities">A&emsp;&emsp;&emsp;B&emsp;&emsp;&emsp;I&emsp;&emsp;&emsp;L&emsp;&emsp;&emsp;I&emsp;&emsp;&emsp;T&emsp;&emsp;&emsp;I&emsp;&emsp;&emsp;E&emsp;&emsp;&emsp;S</h4>
             </div>
             <div class="noheight"><div class="gray bc55" id="gray1"></div></div>
             <div class="noheight"><div class="gray bc99" id="gray2"></div></div>
@@ -101,7 +102,7 @@
                     <p class="pnutshell mb-4">In A Nutshell. <span class="fontblack">I am A</span></p>
                     <div class="middlepart">
                         <img src="{{asset('img/jslogo.svg')}}" alt="" class="jslogo">
-                        <p class="pnutshell jsfull"><span class="fontblack">JavaScript <br>FullStack </span><br>Developer </p>
+                        <p class="pjsfull jsfull"><span class="fontblack">JavaScript <br>FullStack </span><br>Developer </p>
                     </div>
                     <div class="storyskill">
                         <p class="para">When I was younger I used to be a graphic designer wanna-be and also learned a little bit kind of animation. But then, since in high school I changed my mind to learn to build web applications.</p>
