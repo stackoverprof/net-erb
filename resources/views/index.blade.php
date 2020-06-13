@@ -60,10 +60,10 @@
     </div>
 
     <div class="in-body">
-        <div class="jumbo">
+        <div class="jumbo sideclear">
             <div>
                 <h4 class="h4good">GOOD MORNING</h4>
-                <p class="pintro">Hi, there. Let me introduce my self. I am<span class="weight400 pintro">R Bintang Bagus Putra Angkasa.</span> Shortly, I am someone coming from the design world, since i was just a kid.<br>But then I know programming, I love it much from the backend to the design. I learned PHP at first but now JavaScript is my main weapon in the warfare.</p>
+                <p class="pintro">Hi, there. Let me introduce my self. I am<span class="weight400 pintro">R Bintang Bagus Putra Angkasa.</span> Shortly, I am someone coming from the design world, since i was just a kid.<br>But then I know programming and love it much from the backend to the design. I learned PHP at first but now JavaScript is my main weapon in the warfare.</p>
             </div>
             <div>
                 <img src="{{asset('img/profpict.png')}}" class="profpict" alt="profile picture">
@@ -84,8 +84,28 @@
             <div class="noheight"><div class="gray bcEB" id="gray4"></div></div>
         </div>
 
-        <div class="abilities">
-            <p>hahahahahah</p>
+        <div class="abilities sideclear">
+            <div class="container row">
+                <div class="col-8">
+                    <div class="cardright">
+                        <div class="skillcard">
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <p class="pnutshell mb-4">In A Nutshell. <span class="fontblack">I am A</span></p>
+                    <div class="middlepart">
+                        <img src="{{asset('img/jslogo.svg')}}" alt="" class="jslogo">
+                        <p class="pnutshell jsfull"><span class="fontblack">JavaScript <br>FullStack </span><br>Developer </p>
+                    </div>
+                    <div class="storyskill">
+                        <p class="para">When I was younger I used to be a graphic designer wanna-be and also learned a little bit kind of animation. But then, since in high school I changed my mind to learn to build web applications.</p>
+                        <p class="para">And here I am today, a Full Stack Web Developer with a specialty in <strong>MERN Stack</strong> and <strong>LaraVue.</strong> Also, keep in mind, <br>UI design is what I do too as a kind of <br>hobby and I love it.</p>
+                    </div>
+                </div>
+
+            </div>
         </div>
 
 
