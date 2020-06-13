@@ -350,7 +350,7 @@ h1 {
     position: relative;
     width: 100%;
     transition: 1s;
-    z-index: -10;
+    z-index: -1;
     background-color: black;
 }
 .gray{
@@ -359,25 +359,22 @@ h1 {
     transition: 1s;
 }
 .bc55{
-    z-index: -6;
+    z-index: -2;
     background-color: #555555;
 }
 .bc99{
-    z-index: -4;
+    z-index: -3;
     background-color: #999999;
 }
 .bcC7{
-    z-index: -3;
+    z-index: -4;
     background-color: #C7C7C7;
 }
 .bcEB{
-    z-index: -2;
+    z-index: -5;
     background-color: #EBEBEB;
 }
-.bcFF{
-    z-index: 0;
-    background-color: #FFFFFF;
-}
+
 .h4abilities{
     font-family: 'bahnschrift', sans-serif;
     color: rgba(0,0,0,0);

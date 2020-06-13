@@ -78,15 +78,10 @@
         
         <div class="noheight">
             <div class="noheight"><div class="blackout" id="blackout"></div></div>
-            <div class="putmiddle sideclear divsepar">
-                <hr class="separator">
-                <h4 class="h4abilities">A&emsp;&emsp;&emsp;B&emsp;&emsp;&emsp;I&emsp;&emsp;&emsp;L&emsp;&emsp;&emsp;I&emsp;&emsp;&emsp;T&emsp;&emsp;&emsp;I&emsp;&emsp;&emsp;E&emsp;&emsp;&emsp;S</h4>
-            </div>
             <div class="noheight"><div class="gray bc55" id="gray1"></div></div>
             <div class="noheight"><div class="gray bc99" id="gray2"></div></div>
             <div class="noheight"><div class="gray bcC7" id="gray3"></div></div>
             <div class="noheight"><div class="gray bcEB" id="gray4"></div></div>
-            <div class="noheight"><div class="gray bcFF" id="gray5"></div></div>
         </div>
 
         <div class="abilities sideclear">
