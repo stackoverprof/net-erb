@@ -328,9 +328,11 @@
                 </div>
                 
             </div>
-            <div class="controlslide">
-                <img src="{{asset('img/nextbtn.svg')}}" onclick="slideturun()" alt="" class="slidebtn">
-                <img src="{{asset('img/nextbtn.svg')}}" onclick="slidenaik()" style="transform: rotateZ(180deg)" alt="" class="slidebtn">
+            <div class="controde">
+                <div class="floatcontrol">
+                    <img src="{{asset('img/nextbtn.svg')}}" onclick="slideturun()" alt="" class="slidebtn">
+                    <img src="{{asset('img/nextbtn.svg')}}" onclick="slidenaik()" style="transform: rotateZ(180deg)" alt="" class="slidebtn">
+                </div>
             </div>
         </div>
     </div>

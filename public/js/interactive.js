@@ -153,8 +153,9 @@ var fade = document.getElementsByClassName("faderout");
 var a = 0;
 var current = 0;
 var manyfep = 4;
+
 function slidenaik() {
-  if (a != manyfep) {
+  if (a != manyfep-1) {
     fade[a].style.backgroundColor = "rgba(0,0,0,1)";
     setTimeout(() => {
       for (let i = a+1; i < manyfep; i++) {

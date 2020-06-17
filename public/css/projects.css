@@ -86,6 +86,11 @@
     margin-bottom: 22px;
     transition: 1s;
 }
+.floatcontrol{
+    position: fixed;
+    bottom: 80px;
+    right: 40px;
+}
 .faderout{
     position: absolute;
     width: 855px;
