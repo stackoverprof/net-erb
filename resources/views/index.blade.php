@@ -231,91 +231,106 @@
                 </div>
                 <div class="sliderproject">
                     <div class="foreachproject">
-                        <div class="postproject">
-                            <div class="actionbar">
-                                <div class="subaction">
-                                    <img src="" alt="" class="govisit">
-                                    <img src="" alt="" class="goshare">
+                        <div class="faderout"></div>
+                        <div class="postncontent">
+                            <div class="postproject">
+                                <div class="actionbar">
+                                    <div class="subaction">
+                                        <img src="" alt="" class="govisit">
+                                        <img src="" alt="" class="goshare">
+                                    </div>
+                                    <img src="" alt="" class="golike">
                                 </div>
-                                <img src="" alt="" class="golike">
+                                <img src="" alt="" class="imgproject">
                             </div>
-                            <img src="" alt="" class="imgproject">
-                        </div>
-                        <div class="contentproject">
-                            <p class="describeproject"></p>
-                            <div class="tagsproject">
-                                <div class="foreachtag">
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="foreachproject">
-                        <div class="postproject">
-                            <div class="actionbar">
-                                <div class="subaction">
-                                    <img src="" alt="" class="govisit">
-                                    <img src="" alt="" class="goshare">
-                                </div>
-                                <img src="" alt="" class="golike">
-                            </div>
-                            <img src="" alt="" class="imgproject">
-                        </div>
-                        <div class="contentproject">
-                            <p class="describeproject"></p>
-                            <div class="tagsproject">
-                                <div class="foreachtag">
-                                    
+                            <div class="contentproject">
+                                <p class="describeproject"></p>
+                                <div class="tagsproject">
+                                    <div class="foreachtag">
+                                        
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="foreachproject">
-                        <div class="postproject">
-                            <div class="actionbar">
-                                <div class="subaction">
-                                    <img src="" alt="" class="govisit">
-                                    <img src="" alt="" class="goshare">
+                        <div class="faderout"></div>
+                        <div class="postncontent">
+                            <div class="postproject">
+                                <div class="actionbar">
+                                    <div class="subaction">
+                                        <img src="" alt="" class="govisit">
+                                        <img src="" alt="" class="goshare">
+                                    </div>
+                                    <img src="" alt="" class="golike">
                                 </div>
-                                <img src="" alt="" class="golike">
+                                <img src="" alt="" class="imgproject">
                             </div>
-                            <img src="" alt="" class="imgproject">
-                        </div>
-                        <div class="contentproject">
-                            <p class="describeproject"></p>
-                            <div class="tagsproject">
-                                <div class="foreachtag">
-                                    
+                            <div class="contentproject">
+                                <p class="describeproject"></p>
+                                <div class="tagsproject">
+                                    <div class="foreachtag">
+                                        
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="foreachproject">
-                        <div class="postproject">
-                            <div class="actionbar">
-                                <div class="subaction">
-                                    <img src="" alt="" class="govisit">
-                                    <img src="" alt="" class="goshare">
+                        <div class="faderout"></div>
+                        <div class="postncontent">
+                            <div class="postproject">
+                                <div class="actionbar">
+                                    <div class="subaction">
+                                        <img src="" alt="" class="govisit">
+                                        <img src="" alt="" class="goshare">
+                                    </div>
+                                    <img src="" alt="" class="golike">
                                 </div>
-                                <img src="" alt="" class="golike">
+                                <img src="" alt="" class="imgproject">
                             </div>
-                            <img src="" alt="" class="imgproject">
-                        </div>
-                        <div class="contentproject">
-                            <p class="describeproject"></p>
-                            <div class="tagsproject">
-                                <div class="foreachtag">
-                                    
+                            <div class="contentproject">
+                                <p class="describeproject"></p>
+                                <div class="tagsproject">
+                                    <div class="foreachtag">
+                                        
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="foreachproject">
+                        <div class="faderout"></div>
+                        <div class="postncontent">
+                            <div class="postproject">
+                                <div class="actionbar">
+                                    <div class="subaction">
+                                        <img src="" alt="" class="govisit">
+                                        <img src="" alt="" class="goshare">
+                                    </div>
+                                    <img src="" alt="" class="golike">
+                                </div>
+                                <img src="" alt="" class="imgproject">
+                            </div>
+                            <div class="contentproject">
+                                <p class="describeproject"></p>
+                                <div class="tagsproject">
+                                    <div class="foreachtag">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
                 </div>
                 
             </div>
             <div class="controlslide">
-                <img src="{{asset('img/nextbtn.svg')}}" onclick="slidenaik()" alt="" class="slidebtn">
-                <img src="{{asset('img/nextbtn.svg')}}" onclick="slideturun()" style="transform: rotateZ(180deg)" alt="" class="slidebtn">
+                <img src="{{asset('img/nextbtn.svg')}}" onclick="slideturun()" alt="" class="slidebtn">
+                <img src="{{asset('img/nextbtn.svg')}}" onclick="slidenaik()" style="transform: rotateZ(180deg)" alt="" class="slidebtn">
             </div>
         </div>
     </div>

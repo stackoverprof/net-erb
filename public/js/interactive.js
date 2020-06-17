@@ -149,14 +149,33 @@ setInterval(() => {
 //THE PROJECT 
 xdoc('projectarea').style.width = pureScreenWidth - 400 + "px";
 var fep = document.getElementsByClassName("foreachproject");
+var fade = document.getElementsByClassName("faderout");
 var a = 0;
+var current = 0;
 var manyfep = 4;
 function slidenaik() {
-  fep[a].style.backgroundColor = "rgba(0,0,0,0)";
-  setTimeout(() => {
-    for (let i = a+1; i < manyfep; i++) {
-      fep[i].style.transform = `translateY(${-322*(a+1)}px)`;
+  if (a != manyfep) {
+    fade[a].style.backgroundColor = "rgba(0,0,0,1)";
+    setTimeout(() => {
+      for (let i = a+1; i < manyfep; i++) {
+        fep[i].style.transform = `translateY(${-322*(a+1)}px)`;
+      }
+      a++;
+    }, 400);
+    current++;
+  }
+}
+function slideturun() {
+  if (a != 0) {
+    muncul = current-1;
+    for (let i = a; i < manyfep; i++) {
+      fep[i].style.transform = `translateY(${322-322*(current)}px)`;
     }
-    a++;
-  }, 400);
+    a--;
+    setTimeout(() => {
+      fade[muncul].style.backgroundColor = "rgba(0,0,0,0)";
+    }, 800);
+    current--;
+
+  }
 }
