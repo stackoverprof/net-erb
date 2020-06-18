@@ -53,6 +53,7 @@
             <p class="foodplive" id="foodp"></p>
             <p class="scorplive" id="scorp"></p>
         </div>
+        <div class="backgroundgame"></div>
     </div>
 
 
@@ -81,7 +82,7 @@
         <div class="jumbo sideclear">
             <div>
                 <h4 class="h4good" id="h4good"></h4>
-                <p class="pintro">Hi, there. Little intro to my self. It's me<span class="weight400 pintro">R Bintang Bagus Putra Angkasa.</span> You can call me erbin or bintang <br> for short. Currently living in Semarang, ID.<br>I do web development n' love it much from the backend <br>to the design. I learned PHP at first but now JavaScript <br>is my main weapon in the warfare.</p>
+                <p class="pintro">Hi, there. Little intro to my self. It's me<span class="weight400 pintro">R Bintang Bagus Putra Angkasa.</span> You can call me erbin or bintang <br> for short. Currently living in Semarang, ID.<br>I do web development n' love it much from the backend <br>to the design. Learned PHP at first but now JavaScript <br>is my main weapon in the warfare.</p>
             </div>
             <div>
                 <img src="{{asset('img/profpict.png')}}" class="profpict" alt="profile picture">
@@ -226,10 +227,11 @@
             </div>
             <div class="projectarea" id="projectarea">
                 <h4 class="projecttitle">SALAAM&ensp;|&ensp;<span class="makegray">Daily Prayer Schedule</span></h4>
-                <div class="noheight">
+                <!-- <div class="noheight">
                     <div class="layeropac"> </div>
-                </div>
+                </div> -->
                 <div class="sliderproject">
+                <?php for($i = 0; $i < count($projects); $i++):?>
                     <div class="foreachproject">
                         <div class="faderout"></div>
                         <div class="postncontent">
@@ -241,7 +243,7 @@
                                     </div>
                                     <img src="" alt="" class="golike">
                                 </div>
-                                <img src="" alt="" class="imgproject">
+                                <img src="{{asset($projects[$i]['imageurl'])}}" alt="" class="imgproject">
                             </div>
                             <div class="contentproject">
                                 <p class="describeproject"></p>
@@ -253,85 +255,16 @@
                             </div>
                         </div>
                     </div>
-                    <div class="foreachproject">
-                        <div class="faderout"></div>
-                        <div class="postncontent">
-                            <div class="postproject">
-                                <div class="actionbar">
-                                    <div class="subaction">
-                                        <img src="" alt="" class="govisit">
-                                        <img src="" alt="" class="goshare">
-                                    </div>
-                                    <img src="" alt="" class="golike">
-                                </div>
-                                <img src="" alt="" class="imgproject">
-                            </div>
-                            <div class="contentproject">
-                                <p class="describeproject"></p>
-                                <div class="tagsproject">
-                                    <div class="foreachtag">
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="foreachproject">
-                        <div class="faderout"></div>
-                        <div class="postncontent">
-                            <div class="postproject">
-                                <div class="actionbar">
-                                    <div class="subaction">
-                                        <img src="" alt="" class="govisit">
-                                        <img src="" alt="" class="goshare">
-                                    </div>
-                                    <img src="" alt="" class="golike">
-                                </div>
-                                <img src="" alt="" class="imgproject">
-                            </div>
-                            <div class="contentproject">
-                                <p class="describeproject"></p>
-                                <div class="tagsproject">
-                                    <div class="foreachtag">
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="foreachproject">
-                        <div class="faderout"></div>
-                        <div class="postncontent">
-                            <div class="postproject">
-                                <div class="actionbar">
-                                    <div class="subaction">
-                                        <img src="" alt="" class="govisit">
-                                        <img src="" alt="" class="goshare">
-                                    </div>
-                                    <img src="" alt="" class="golike">
-                                </div>
-                                <img src="" alt="" class="imgproject">
-                            </div>
-                            <div class="contentproject">
-                                <p class="describeproject"></p>
-                                <div class="tagsproject">
-                                    <div class="foreachtag">
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
+                <?php endfor;?>
                     
                     
                 </div>
                 
             </div>
-            <div class="controde">
-                <div class="floatcontrol">
-                    <img src="{{asset('img/nextbtn.svg')}}" onclick="slideturun()" alt="" class="slidebtn">
-                    <img src="{{asset('img/nextbtn.svg')}}" onclick="slidenaik()" style="transform: rotateZ(180deg)" alt="" class="slidebtn">
+            <div class="controlslide">
+                <div class="floatcontrol" id="floatcontrol">
+                    <img src="{{asset('img/nextbtn.svg')}}" onclick="slideturun()" alt="" class="slidebtn slidebtnupper">
+                    <img src="{{asset('img/nextbtn.svg')}}" onclick="slidenaik()" style="transform: rotateZ(180deg)" alt="" class="slidebtn slidebtnlower">
                 </div>
             </div>
         </div>
@@ -426,4 +359,7 @@
     waveHeight: 6.00
     })
     </script> -->
+    <script>  
+        var manyfep = <?= count($projects) ?>;
+    </script>
 @endpush

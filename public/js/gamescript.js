@@ -125,7 +125,7 @@ function Shape(posX, width, height) {
     this.shadow = 'rgba(0,0,0,0)';
     this.blur = 0;
 
-    // Add three color stops
+    // Add color stops
     this.gradient.addColorStop(0, '#000000');
     this.gradient.addColorStop(.2, '#000000');
     this.gradient.addColorStop(.2, '#555555');
@@ -134,8 +134,8 @@ function Shape(posX, width, height) {
     this.gradient.addColorStop(.6, '#999999');
     this.gradient.addColorStop(.6, '#C7C7C7');
     this.gradient.addColorStop(.8, '#C7C7C7');
-    this.gradient.addColorStop(.8, '#EBEBEB');
-    this.gradient.addColorStop(1, '#EBEBEB');
+    this.gradient.addColorStop(.8, '#F5F5F5');
+    this.gradient.addColorStop(1, '#F5F5F5');
 
     this.Position = {
         X: posX,
@@ -164,34 +164,37 @@ function Shape(posX, width, height) {
     }
 
     this.Draw = function(num) {
-        if (this.Position.Y < 370) {
-            ctx.shadowColor = this.shadow;
-            ctx.shadowBlur = this.blur;
-            ctx.beginPath();
-            ctx.rect(this.Position.X, this.Position.Y-30*num, this.Width, this.Height);
-            ctx.fillStyle = this.gradient;
-            ctx.fill();
-        } else if(this.Position.Y >= 370){
+        // if (this.Position.Y < 370) {
+            // ctx.shadowColor = this.shadow;
+            // ctx.shadowBlur = this.blur;
+            // ctx.beginPath();
+            // ctx.rect(this.Position.X, this.Position.Y-30*num, this.Width, this.Height);
+            // ctx.fillStyle = 'gray';
+            // ctx.fill();
+        // } else if(this.Position.Y >= 370){
+            this.grd = ctx.createLinearGradient(0, 400, 0, 250);
+            this.grd.addColorStop(0, "white");
+            this.grd.addColorStop(1, "orange");
             ctx.beginPath();
             ctx.rect(this.Position.X, this.Position.Y-30*num, this.Width, this.Height);
             switch(num) {
                 case 0:
-                this.colorin = '#000000';
-                this.blur = '5';
-                this.shadow = '#222222';
+                this.colorin = this.grd;
+                this.blur = '30';
+                this.shadow = '#FFFFFF';
                 break;
                 case 1:
-                this.colorin = '#555555';
+                this.colorin = '#888888';
                 this.blur = '0';
                 this.shadow = 'rgba(0,0,0,0)';
                 break;
                 case 2:
-                this.colorin = '#999999';
+                this.colorin = '#AAAAAA';
                 this.blur = '0';
                 this.shadow = 'rgba(0,0,0,0)';
                 break;
                 case 3:
-                this.colorin = '#C7C7C7';
+                this.colorin = '#DDDDDD';
                 this.blur = '0';
                 this.shadow = 'rgba(0,0,0,0)';
                 break;
@@ -207,7 +210,7 @@ function Shape(posX, width, height) {
             ctx.shadowBlur = this.blur;
             ctx.fillStyle = this.colorin;
             ctx.fill();
-        }
+        // }
     }
 
     this.update = function(){

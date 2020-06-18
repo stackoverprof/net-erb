@@ -150,16 +150,16 @@ setInterval(() => {
 xdoc('projectarea').style.width = pureScreenWidth - 400 + "px";
 var fep = document.getElementsByClassName("foreachproject");
 var fade = document.getElementsByClassName("faderout");
+fade[0].style.backgroundColor = "rgba(0,0,0,0)";
 var a = 0;
 var current = 0;
-var manyfep = 4;
-
 function slidenaik() {
   if (a != manyfep-1) {
     fade[a].style.backgroundColor = "rgba(0,0,0,1)";
     setTimeout(() => {
-      for (let i = a+1; i < manyfep; i++) {
+      for (var i = a+1; i < manyfep; i++) {
         fep[i].style.transform = `translateY(${-322*(a+1)}px)`;
+        fade[a+1].style.backgroundColor = "rgba(0,0,0,0)";
       }
       a++;
     }, 400);
@@ -169,10 +169,11 @@ function slidenaik() {
 function slideturun() {
   if (a != 0) {
     muncul = current-1;
-    for (let i = a; i < manyfep; i++) {
+    for (var i = a; i < manyfep; i++) {
       fep[i].style.transform = `translateY(${322-322*(current)}px)`;
     }
     a--;
+    fade[a+1].style.backgroundColor = "rgba(0,0,0,0.8)";
     setTimeout(() => {
       fade[muncul].style.backgroundColor = "rgba(0,0,0,0)";
     }, 800);
@@ -180,3 +181,19 @@ function slideturun() {
 
   }
 }
+
+
+//floatcontrol
+setInterval(() => {
+  var scrolled = window.pageYOffset;
+ console.log(scrolled);
+  if (scrolled < 1285) {
+    xdoc('floatcontrol').style.display = "none";
+  } else if (scrolled >= 1285) {
+    xdoc('floatcontrol').style.display = "unset"; 
+  } else if (scrolled >= 2046) {
+    xdoc('floatcontrol').style.display = "none";
+  }
+
+  
+}, 100);
