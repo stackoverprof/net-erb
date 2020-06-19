@@ -139,7 +139,9 @@ window.addEventListener('load', () => {
                                 animateDone = true;
                                 xdoc('errbintorg').style.transition = "1s";
                                 dude = new Dude(screenWidth/2-310, 50, 50);
-                                xdoc('chatbox').style.display = "flex";
+                                setTimeout(() => {
+                                    xdoc('chatbox').style.display = "flex";
+                                }, 800);
                                 xdoc('instruction').style.display = "flex";
                             }, 2750);
                             xdoc('subtitle').style.color = "gray";
