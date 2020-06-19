@@ -61,14 +61,7 @@ function glimpse() {
         }, 400);
     }
 function glimpseSpecial() {
-    this.gli();
-    setTimeout(() => {
-        this.gli();
-        setTimeout(() => {
-           this.gli();
-        }, 600);
-    }, 600);
-
+    
     this.gli = () => {
         xdoc('et').style.filter = "opacity(1)";
         xdoc('et').style.transition = "0.35s";
@@ -86,9 +79,16 @@ function glimpseSpecial() {
         xdoc('bri').style.transition = "0.35s";
         setTimeout(() => {
             xdoc('bri').style.filter = "opacity(0)";
-        }, 200);
-        
-    }
+        }, 200);  
+    };
+
+    this.gli();
+    setTimeout(() => {
+        this.gli();
+        setTimeout(() => {
+           this.gli();
+        }, 600);
+    }, 600);
 }
 
 //KEDIP KEDIP
@@ -234,7 +234,7 @@ $(document).keydown(function(e){
                 xdoc("chatbox").style.visibility="hidden";
                 xdoc("chatbox").style.opacity="0";
                 xdoc("chatbox").style.transition="visibility 0s 3s, opacity 3s linear";
-                if (igniteFoodOnce) {
+                if (!isGameOver) {
                     xdoc('errbintorg').style.filter ="opacity(0)";
                 }
             // xdoc('supertitle').style.zIndex  ="-9";
@@ -260,7 +260,7 @@ $(document).keydown(function(e){
                 xdoc("chatbox").style.visibility="hidden";
                 xdoc("chatbox").style.opacity="0";
                 xdoc("chatbox").style.transition="visibility 0s 3s, opacity 3s linear";
-                if (igniteFoodOnce) {
+                if (!isGameOver) {
                     xdoc('errbintorg').style.filter ="opacity(0)";
                 }
                 // xdoc('supertitle').style.zIndex  ="-9";
@@ -487,9 +487,9 @@ function Dude(posX, width, height){
             if(eat(this, food)){
                 if (!isGameOver) {
                     foodscore++;
-                    // if (foodscore == 2) {
-                        // glimpseSpecial();
-                    if(foodscore % 5 == 0){
+                    if (foodscore % 10 == 0) {
+                        glimpseSpecial();
+                    } else if (foodscore % 5 == 0){
                         glimpse();
                     };
                 }

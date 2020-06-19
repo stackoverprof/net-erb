@@ -236,10 +236,10 @@
 
             </div>
             <div class="projectarea" id="projectarea">
-                <h4 class="projecttitle">SALAAM&ensp;|&ensp;<span class="makegray">Daily Prayer Schedule</span></h4>
-                <!-- <div class="noheight">
-                    <div class="layeropac"> </div>
-                </div> -->
+                <div class="projectname">
+                    <h4 class="projecttitle" id="projecttitle"></h4>
+                    <h5 class="projecttitle makegray" id="projectsubtitle"></h5>
+                </div>
                 <div class="sliderproject">
                 <?php for($i = 0; $i < count($projects); $i++):?>
                     <div class="foreachproject">
@@ -256,7 +256,7 @@
                                 <img src="{{asset($projects[$i]['imageurl'])}}" alt="" class="imgproject">
                             </div>
                             <div class="contentproject">
-                                <p class="describeproject"></p>
+                                <p class="describeproject"><?= $projects[$i]['desc'] ?></p>
                                 <div class="tagsproject">
                                     <div class="foreachtag">
                                         
@@ -371,5 +371,20 @@
     </script> -->
     <script>  
         var manyfep = <?= count($projects) ?>;
+        var titles = [];
+        var subtitles = [];
+        // function async gettitles(){
+        <?php for ($i=0; $i < count($projects); $i++) : ?>
+        titles[<?=$i?>] = "<?= $projects[$i]['title']?>&ensp;|" ;
+        subtitles[<?=$i?>] = "<?= $projects[$i]['subtitle']?>" ;
+        <?php endfor;?>
+        //    setTimeout(() => {
+               
+        xdoc('projecttitle').innerHTML = titles[0];
+        xdoc('projectsubtitle').innerHTML = subtitles[0];
+            // }, 2000);
+        // }
+        // gettitles();
+        // alert(projects);
     </script>
 @endpush

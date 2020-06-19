@@ -158,6 +158,7 @@ var fade = document.getElementsByClassName("faderout");
 fade[0].style.backgroundColor = "rgba(0,0,0,0)";
 var a = 0;
 var current = 0;
+var t = 0;
 function slidenaik() {
   if (a != manyfep-1) {
     fade[a].style.backgroundColor = "rgba(0,0,0,1)";
@@ -166,6 +167,8 @@ function slidenaik() {
         fep[i].style.transform = `translateY(${-322*(a+1)}px)`;
         fade[a+1].style.backgroundColor = "rgba(0,0,0,0)";
       }
+      xdoc('projecttitle').innerHTML = titles[++t];
+      xdoc('projectsubtitle').innerHTML = subtitles[t];
       a++;
     }, 400);
     current++;
@@ -177,6 +180,8 @@ function slideturun() {
     for (var i = a; i < manyfep; i++) {
       fep[i].style.transform = `translateY(${322-322*(current)}px)`;
     }
+    xdoc('projecttitle').innerHTML = titles[--t];
+    xdoc('projectsubtitle').innerHTML = subtitles[t];
     a--;
     fade[a+1].style.backgroundColor = "rgba(0,0,0,0.8)";
     setTimeout(() => {

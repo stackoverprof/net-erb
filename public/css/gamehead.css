@@ -213,13 +213,13 @@
     position: relative;
     width: 676px;
     height: 198px;
-    z-index: -9;
+    z-index: -8;
 }
 .lights{ 
     position: absolute;
     top: 0;
     width: 100%;
-    z-index: -1;
+    z-index: -9;
     /* height: 100%; */
 }
 .lightsbg{
