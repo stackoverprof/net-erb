@@ -2,7 +2,7 @@
 
 @section('maincontent')
     <div class="loading" id="loading">
-        <div class="spinner">
+        <div class="spinner" id="spinner">
             <div class="rect1"></div>
             <div class="rect2"></div>
             <div class="rect3"></div>
@@ -19,24 +19,29 @@
     </div>
 
 
-    <div class="supertitle">
-        <div class="divtitle">
-            <img src="{{asset('img/errbint.svg')}}" alt="">
-        </div>
-        <div class="subs">
-            <div class="balancer" id="balancer"></div>
-            <h2 class="subtitle" id="subtitle">A FULLSTACK DEVELOPER</h2>
-            <button onclick="newGame()" id="buttonnewgame" class="buttonnewgame"> PLAY AGAIN</button>
-        </div>
-    </div>
     
-
     <div class="rainboxgame">
+        <div class="supertitle" id="supertitle">
+            <div class="divtitle">
+                <div class="noheight">
+                    <img src="{{asset('img/errbintdimm.svg')}}" class="errbintdimm" id="errbintdimm" alt="errbint">
+                </div>
+                <div class="noheight">
+                    <img src="{{asset('img/errbint.svg')}}" class="errbintorg" id="errbintorg" alt="errbint">
+                </div>
+            </div>
+            <div class="subs">
+                <div class="balancer" id="balancer"></div>
+                <h2 class="subtitle" id="subtitle">A FULLSTACK DEVELOPER</h2>
+                <button onclick="newGame()" id="buttonnewgame" class="buttonnewgame"> PLAY AGAIN</button>
+            </div>
+        </div>
+        
         <!-- <div class="vantadiv" id="vantadiv"></div> -->
         <canvas id="canvas" class="canvasrainbox"></canvas>
         <div class="chatbox" id="chatbox">
             <img src="{{asset('img/chatbox.svg')}}"  class="chatboximg" alt="Avoid The Rain Bro!">
-            <p class="textchat"> <strong>AVOID THE RAIN BRO!</strong> </p>
+            <p class="textchat"> <strong>AVOID THE RAINBOX!</strong> </p>
         </div>
         <div class="ohnobox" id="ohnobox">
             <img src="{{asset('img/ohnobox.svg')}}"  class="ohnoboximg" alt="Avoid The Rain Bro!">
@@ -53,7 +58,12 @@
             <p class="foodplive" id="foodp"></p>
             <p class="scorplive" id="scorp"></p>
         </div>
-        <div class="backgroundgame"></div>
+        <div class="backgroundgame">
+            <img src="{{asset('img/light/et.svg')}}" alt="" class="lights" id="et">
+            <img src="{{asset('img/light/nr.svg')}}" alt="" class="lights" id="nr">
+            <img src="{{asset('img/light/bri.svg')}}" alt="" class="lights" id="bri">
+            <img src="{{asset('img/bg3d.png')}}" alt="" class="lightsbg" id="lightsbg">
+        </div>
     </div>
 
 

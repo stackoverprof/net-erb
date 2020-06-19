@@ -1,5 +1,10 @@
 window.addEventListener('load', function () {
-  xdoc("loading").style.display = "none";
+  xdoc("loading").style.transition = "2s";
+  xdoc("loading").style.backgroundColor = "rgba(0,0,0,0)";
+  xdoc("spinner").style.display = "none";
+  setTimeout(() => {
+    xdoc("loading").style.display = "none";
+  }, 2000);
 })
 
 setInterval(() => {

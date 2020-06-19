@@ -6,6 +6,7 @@ var screenWidth = $(window).width();
 var shapes = {};
 var food = {};
 var xdude = {};
+var dude = {};
 var shapeIndex = 0;
 var score = 0; 
 var fallSpeed = 4;
@@ -14,9 +15,11 @@ var accel = 5;
 var raincounter = 0;
 var releaseShield = false;
 var isGameOver = false;
+var isSafeOver = false;
 var igniteFoodOnce = true;
 var foodscore = 0;
 var igniteClear = true;
+var animateDone = false;
 
 //MAIN DOM
 xdoc("instruction").style.top = screenHeight-38 + "px";
@@ -25,7 +28,71 @@ xdoc("scorlive").style.top = 10 + "px";
 xdoc("buttonnewgame").style.transform = `translateX(${screenWidth/2}px)`;
 xdoc("ohnobox").style.visibility="hidden";
 xdoc("ohnobox").style.opacity="0";
+// xdoc("lights").style.height = pureScreenHeight;
+// xdoc("lightsbg").style.height = pureScreenHeight;
 
+//KEDIP KEDIP
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        setTimeout(() => {
+            xdoc('et').style.display="none";
+            setTimeout(() => {
+                xdoc('et').style.display="unset";
+                setTimeout(() => {
+                    xdoc('et').style.display="none";
+                    // setTimeout(() => {
+                    //     xdoc('et').style.display="unset";
+                    //     setTimeout(() => {
+                    //         xdoc('et').style.display="none";
+                            
+                    //     }, 100);
+                    // }, 200);
+                }, 100);
+            }, 100);
+        }, 1000);
+        setTimeout(() => {
+            xdoc('bri').style.display="none";
+            setTimeout(() => {
+                xdoc('bri').style.display="unset";
+                setTimeout(() => {
+                    xdoc('bri').style.display="none";
+                    
+                }, 500);
+            }, 100);
+        }, 800);
+        setTimeout(() => {
+            xdoc('nr').style.display="none";
+            setTimeout(() => {
+                xdoc('nr').style.display="unset";
+                setTimeout(() => {
+                    
+                    xdoc('nr').style.display="none";
+                    setTimeout(() => {
+                        setTimeout(() => {
+                            setTimeout(() => {
+                                animateDone = true;
+                                xdoc('errbintorg').style.transition = "1s";
+                                dude = new Dude(screenWidth/2-310, 50, 50);
+                                xdoc('chatbox').style.display = "flex";
+                            }, 2750);
+                            xdoc('subtitle').style.color = "gray";
+                        }, 1750);
+                        xdoc('errbintorg').style.transition = "2s";
+                        xdoc('errbintorg').style.filter = "opacity(1)";
+                    }, 1500);
+                }, 500);
+            }, 100);
+            // setTimeout(() => {
+            //     xdoc('bri').style.display="unset";
+            //     setTimeout(() => {
+            //         xdoc('bri').style.display="none";
+                    
+            //     }, 500);
+            // }, 100);
+        }, 1800);
+    }, 1500);
+})
+    
 // FOOD PLACING CLEARANCE, NO TO HIT BOX
 function clearance(origin){
     if( 
@@ -83,6 +150,10 @@ $(document).keydown(function(e){
             xdoc("chatbox").style.visibility="hidden";
             xdoc("chatbox").style.opacity="0";
             xdoc("chatbox").style.transition="visibility 0s 3s, opacity 3s linear";
+            if (igniteFoodOnce) {
+                xdoc('errbintorg').style.filter ="opacity(0)";
+            }
+            // xdoc('supertitle').style.zIndex  ="-9";
             
             releaseShield = true;
             igniteClear = false;
@@ -91,17 +162,21 @@ $(document).keydown(function(e){
     } else if (e.which == 39 || e.which == 68){
         if(window.pageYOffset <= $(window).height()){
             dude.Velocity.X = 5;
-
+            
             xdoc("instruction").style.display = "none";
             xdoc("chatbox").style.visibility="hidden";
             xdoc("chatbox").style.opacity="0";
             xdoc("chatbox").style.transition="visibility 0s 3s, opacity 3s linear";
+            if (igniteFoodOnce) {
+                xdoc('errbintorg').style.filter ="opacity(0)";
+            }
+            // xdoc('supertitle').style.zIndex  ="-9";
             
             releaseShield = true;
             igniteClear = false;
             releaseFood();
         }
-    }else if (e.which == 13 && isGameOver) {
+    }else if (e.which == 13 && isSafeOver) {
         if(window.pageYOffset <= $(window).height()) newGame();
     }
 });
@@ -172,37 +247,39 @@ function Shape(posX, width, height) {
             // ctx.fillStyle = 'gray';
             // ctx.fill();
         // } else if(this.Position.Y >= 370){
-            this.grd = ctx.createLinearGradient(0, 400, 0, 250);
-            this.grd.addColorStop(0, "white");
-            this.grd.addColorStop(1, "orange");
             ctx.beginPath();
-            ctx.rect(this.Position.X, this.Position.Y-30*num, this.Width, this.Height);
             switch(num) {
                 case 0:
-                this.colorin = this.grd;
-                this.blur = '30';
-                this.shadow = '#FFFFFF';
+                    ctx.rect(this.Position.X, this.Position.Y, this.Width, this.Height);
+                    this.colorin = '#888888';
+                    this.blur = '3';
+                    this.shadowBlur = '5';
+                    this.shadow = 'gray';
                 break;
                 case 1:
-                this.colorin = '#888888';
-                this.blur = '0';
-                this.shadow = 'rgba(0,0,0,0)';
+                    ctx.rect(this.Position.X, this.Position.Y-120, this.Width, this.Height*4);
+                    this.grd = ctx.createLinearGradient(pureScreenHeight/2, this.Position.Y, pureScreenHeight/2, this.Position.Y-120 );
+                    this.grd.addColorStop(0, "rgba(200,200,200)");
+                    this.grd.addColorStop(1, "rgba(200,200,200,0)");
+                    this.colorin = this.grd;
+                    this.blur = '0';
+                    this.shadow = 'rgba(0,0,0,0)';
                 break;
-                case 2:
-                this.colorin = '#AAAAAA';
-                this.blur = '0';
-                this.shadow = 'rgba(0,0,0,0)';
-                break;
-                case 3:
-                this.colorin = '#DDDDDD';
-                this.blur = '0';
-                this.shadow = 'rgba(0,0,0,0)';
-                break;
-                case 4:
-                this.colorin = '#EBEBEB';
-                this.blur = '0';
-                this.shadow = 'rgba(0,0,0,0)';
-                break;
+                // case 2:
+                // this.colorin = '#AAAAAA';
+                // this.blur = '0';
+                // this.shadow = 'rgba(0,0,0,0)';
+                // break;
+                // case 3:
+                // this.colorin = '#DDDDDD';
+                // this.blur = '0';
+                // this.shadow = 'rgba(0,0,0,0)';
+                // break;
+                // case 4:
+                // this.colorin = '#EBEBEB';
+                // this.blur = '0';
+                // this.shadow = 'rgba(0,0,0,0)';
+                // break;
                 default:
                 this.colorin = '#000000';
             }
@@ -218,9 +295,9 @@ function Shape(posX, width, height) {
         this.updatePosition();
         this.Draw(0);
         this.Draw(1);
-        this.Draw(2);
-        this.Draw(3);
-        this.Draw(4);
+        // this.Draw(2);
+        // this.Draw(3);
+        // this.Draw(4);
     }
 }
 
@@ -254,11 +331,19 @@ function Food(posX){
 function Dude(posX, width, height){
     this.Width = width;
     this.Height = height;
-    this.Color = "#FF5B14"
     this.Position = {X: posX, Y: screenHeight-this.Height}
     this.Velocity = {X: 0, Y: 0,}
-    this.shadow = 'orange';
+    this.Color = "#FF5B14"
     this.blur = 25;
+    this.shadow = 'orange';
+    // this.first = first;
+    
+    // if (first) {
+    //     this.blur = 0;
+    //     this.shadow = 'rgba(0,0,0,0)';
+    //     this.Color = "rgba(0,0,0,0)";
+    //     set
+    // }
 
     xdoc("chatbox").style.top = screenHeight-135 + "px";
     xdoc("ohnobox").style.top = screenHeight-135 + "px";
@@ -353,10 +438,16 @@ function Dude(posX, width, height){
 //MAIN FUNCTION RUN GAME
 
 //create new BOX
-var dude = new Dude(screenWidth/2-296, 50, 50);
+// window.addEventListener('load', () => {
+    // setTimeout(() => {
+        
+        
+    // }, 5300);
+// });
 
 //THE FUNC TO MAKE NEW GAME
 function newGame(){
+    xdoc('errbintorg').style.filter ="opacity(0)";
     $(".scorplive").html("0");
     raincounter = 0;
     setTimeout(awaiter,2000)
@@ -375,6 +466,7 @@ function newGame(){
         xdoc("scorlive").style.display = "unset";
         foodscore = 0;
         isGameOver = false;
+        isSafeOver = false;
         xdoc("scorlive").style.display = "flex";
         $(".foodplive").html(foodscore);
     }   
@@ -384,6 +476,7 @@ function newGame(){
 
 //THE FUNC TO OVER THE GAME
 function gameOver(){
+    xdoc('errbintorg').style.filter ="opacity(1)";
     xdoc("subtitle").innerHTML = "GAME OVER";
     xdoc("subtitle").style.color = "black";
     xdoc("buttonnewgame").style.transform = "translateX(0)";
@@ -401,11 +494,10 @@ function gameOver(){
     pausescore = true;
     vfood = null;
     food.PosX = null;
-    isGameOver = true;
     igniteFoodOnce = false;
-
-    $(".endfoodplive").html("Food : " + foodscore)
+    isGameOver = true;
     
+    $(".endfoodplive").html("Food : " + foodscore)
     function fadeOutNo(){
         xdoc("ohnobox").style.visibility="hidden";
         xdoc("ohnobox").style.opacity="0";
@@ -413,6 +505,7 @@ function gameOver(){
     }setTimeout(fadeOutNo,500);
     
     function resetIgniteFoodOnce(){
+        isSafeOver = true;
         igniteFoodOnce = true;
         console.log(raincounter + " " + foodscore);
 
@@ -421,7 +514,9 @@ function gameOver(){
 
 //MAKE NEW RAINDROP
 function shapeGenerate(){
-    new Shape(clearanceStart(Math.random()*screenWidth),30,30);
+    if (!isGameOver && animateDone) {
+        new Shape(clearanceStart(Math.random()*screenWidth),30,30);
+    }
 }
 
 //KIND OF SHIELD BEFORE PLAY
@@ -437,14 +532,14 @@ function clearanceStart(coor){
 
 //SCREEN UPDATER
 function Updater() {
-    ctx.clearRect(0, 0, screenWidth, screenHeight);
-    for(i in shapes){
-    shapes[i].update();
-    }
-    dude.update();
-    if (typeof vfood !== 'undefined') {
-        vfood.update();
-    }
+        ctx.clearRect(0, 0, screenWidth, screenHeight);
+        for(i in shapes){
+            shapes[i].update();
+        }
+        dude.update();
+        if (typeof vfood !== 'undefined') {
+            vfood.update();
+        }
     // requestAnimationFrame(Updater);
 }setInterval(Updater, 10);
 
