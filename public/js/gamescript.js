@@ -20,6 +20,11 @@ var igniteFoodOnce = true;
 var foodscore = 0;
 var igniteClear = true;
 var animateDone = false;
+var colorbox = "rgb(210,210,210)";
+var colortrail0 = "rgba(220,220,220,1)";
+var colortrail1 = "rgba(220,220,220,0)";
+// alert(xdoc('lightsbg').style.height);
+// alert(xdoc('bri').style.height);
 
 //MAIN DOM
 xdoc("instruction").style.top = screenHeight-38 + "px";
@@ -31,15 +36,72 @@ xdoc("ohnobox").style.opacity="0";
 // xdoc("lights").style.height = pureScreenHeight;
 // xdoc("lightsbg").style.height = pureScreenHeight;
 
+//glimpse EFFECTS
+function glimpse() {
+    setTimeout(() => {
+        xdoc('et').style.filter = "opacity(1)";
+        xdoc('et').style.transition = "0.35s";
+        setTimeout(() => {
+                xdoc('et').style.filter = "opacity(0)";
+            }, 200);
+        }, 0);
+        setTimeout(() => {
+            xdoc('nr').style.filter = "opacity(1)";
+            xdoc('nr').style.transition = "0.35s";
+            setTimeout(() => {
+                xdoc('nr').style.filter = "opacity(0)";
+            }, 200);
+        }, 200);
+        setTimeout(() => {
+            xdoc('bri').style.filter = "opacity(1)";
+            xdoc('bri').style.transition = "0.35s";
+            setTimeout(() => {
+                xdoc('bri').style.filter = "opacity(0)";
+            }, 200);
+        }, 400);
+    }
+function glimpseSpecial() {
+    this.gli();
+    setTimeout(() => {
+        this.gli();
+        setTimeout(() => {
+           this.gli();
+        }, 600);
+    }, 600);
+
+    this.gli = () => {
+        xdoc('et').style.filter = "opacity(1)";
+        xdoc('et').style.transition = "0.35s";
+        setTimeout(() => {
+            xdoc('et').style.filter = "opacity(0)";
+        }, 200);
+        
+        xdoc('nr').style.filter = "opacity(1)";
+        xdoc('nr').style.transition = "0.35s";
+        setTimeout(() => {
+            xdoc('nr').style.filter = "opacity(0)";
+        }, 200);
+        
+        xdoc('bri').style.filter = "opacity(1)";
+        xdoc('bri').style.transition = "0.35s";
+        setTimeout(() => {
+            xdoc('bri').style.filter = "opacity(0)";
+        }, 200);
+        
+    }
+}
+
 //KEDIP KEDIP
 window.addEventListener('load', () => {
     setTimeout(() => {
-        setTimeout(() => {
-            xdoc('et').style.display="none";
-            setTimeout(() => {
-                xdoc('et').style.display="unset";
+        // setTimeout(() => {
+            // xdoc('et').style.display="none";
+            // setTimeout(() => {
+                // xdoc('et').style.display="unset";
                 setTimeout(() => {
-                    xdoc('et').style.display="none";
+                    // xdoc('et').style.display="none";
+                    xdoc('et').style.filter = "opacity(0)";
+                    xdoc('et').style.transition = "1s";
                     // setTimeout(() => {
                     //     xdoc('et').style.display="unset";
                     //     setTimeout(() => {
@@ -48,25 +110,29 @@ window.addEventListener('load', () => {
                     //     }, 100);
                     // }, 200);
                 }, 100);
-            }, 100);
-        }, 1000);
-        setTimeout(() => {
-            xdoc('bri').style.display="none";
-            setTimeout(() => {
-                xdoc('bri').style.display="unset";
+        //     }, 100);
+        // }, 1000);
+        // setTimeout(() => {
+            // xdoc('bri').style.display="none";
+            // setTimeout(() => {
+                // xdoc('bri').style.display="unset";
                 setTimeout(() => {
-                    xdoc('bri').style.display="none";
+                    // xdoc('bri').style.display="none";
+                    xdoc('bri').style.filter = "opacity(0)";
+                    xdoc('bri').style.transition = "1s";
                     
                 }, 500);
-            }, 100);
-        }, 800);
-        setTimeout(() => {
-            xdoc('nr').style.display="none";
-            setTimeout(() => {
-                xdoc('nr').style.display="unset";
+            // }, 100);
+        // }, 800);
+        // setTimeout(() => {
+            // xdoc('nr').style.display="none";
+            // setTimeout(() => {
+                // xdoc('nr').style.display="unset";
                 setTimeout(() => {
                     
-                    xdoc('nr').style.display="none";
+                    // xdoc('nr').style.display="none";
+                    xdoc('nr').style.filter = "opacity(0)";
+                    xdoc('nr').style.transition = "1s";
                     setTimeout(() => {
                         setTimeout(() => {
                             setTimeout(() => {
@@ -74,14 +140,17 @@ window.addEventListener('load', () => {
                                 xdoc('errbintorg').style.transition = "1s";
                                 dude = new Dude(screenWidth/2-310, 50, 50);
                                 xdoc('chatbox').style.display = "flex";
+                                xdoc('instruction').style.display = "flex";
                             }, 2750);
                             xdoc('subtitle').style.color = "gray";
-                        }, 1750);
-                        xdoc('errbintorg').style.transition = "2s";
-                        xdoc('errbintorg').style.filter = "opacity(1)";
-                    }, 1500);
-                }, 500);
-            }, 100);
+                        }, 750);
+                    }, 500);
+                }, 1000);
+                setTimeout(() => {
+                    xdoc('errbintorg').style.transition = "2.5s";
+                    xdoc('errbintorg').style.filter = "opacity(1)";
+                }, 300);
+            // }, 100);
             // setTimeout(() => {
             //     xdoc('bri').style.display="unset";
             //     setTimeout(() => {
@@ -89,15 +158,15 @@ window.addEventListener('load', () => {
                     
             //     }, 500);
             // }, 100);
-        }, 1800);
+        // }, 1800);
     }, 1500);
 })
     
 // FOOD PLACING CLEARANCE, NO TO HIT BOX
 function clearance(origin){
     if( 
-        origin < (screenWidth/2-296)-15 || 
-        origin > (screenWidth/2-296)+65
+        origin < (screenWidth/2-310)-15 || 
+        origin > (screenWidth/2-310)+65
     ){
         return origin;
     }else{
@@ -134,6 +203,18 @@ function appear(){
 }setTimeout(appear,800);
 
 
+//TRANSPARENT A WHILE
+function transawhile() {
+    // colorbox = "#888888";
+    // colortrail0 = "rgba(200,200,200,0)";
+    // colortrail1 = "rgba(200,200,200,0)";
+    // setTimeout(() => {
+        colorbox = "#888888";
+        colortrail0 = "rgba(200,200,200,1)";
+        colortrail1 = "rgba(200,200,200,0)";
+    // }, 300);
+}
+
 //CONTROL AREA
 
     // $(document).mousemove(function(e){
@@ -144,37 +225,56 @@ $(document).keydown(function(e){
     // console.log(e.which);
     if (e.which == 37 || e.which == 65){
         if(window.pageYOffset <= $(window).height()){
-            dude.Velocity.X = -5;
+            if (animateDone) {
+                dude.Velocity.X = -5;
 
-            xdoc("instruction").style.display = "none";
-            xdoc("chatbox").style.visibility="hidden";
-            xdoc("chatbox").style.opacity="0";
-            xdoc("chatbox").style.transition="visibility 0s 3s, opacity 3s linear";
-            if (igniteFoodOnce) {
-                xdoc('errbintorg').style.filter ="opacity(0)";
-            }
+                xdoc("instruction").style.display = "none";
+                xdoc("chatbox").style.visibility="hidden";
+                xdoc("chatbox").style.opacity="0";
+                xdoc("chatbox").style.transition="visibility 0s 3s, opacity 3s linear";
+                if (igniteFoodOnce) {
+                    xdoc('errbintorg').style.filter ="opacity(0)";
+                }
             // xdoc('supertitle').style.zIndex  ="-9";
-            
-            releaseShield = true;
-            igniteClear = false;
-            releaseFood();
+                
+            transawhile();
+                // if (!releaseShield) {
+                //     setTimeout(() => {
+                //         glimpse();
+                //     }, 3000);
+                // }
+
+                releaseShield = true;
+                igniteClear = false;
+                releaseFood();
+            }
         }
     } else if (e.which == 39 || e.which == 68){
         if(window.pageYOffset <= $(window).height()){
-            dude.Velocity.X = 5;
-            
-            xdoc("instruction").style.display = "none";
-            xdoc("chatbox").style.visibility="hidden";
-            xdoc("chatbox").style.opacity="0";
-            xdoc("chatbox").style.transition="visibility 0s 3s, opacity 3s linear";
-            if (igniteFoodOnce) {
-                xdoc('errbintorg').style.filter ="opacity(0)";
+            if (animateDone) {
+                dude.Velocity.X = 5;
+                
+                xdoc("instruction").style.display = "none";
+                xdoc("chatbox").style.visibility="hidden";
+                xdoc("chatbox").style.opacity="0";
+                xdoc("chatbox").style.transition="visibility 0s 3s, opacity 3s linear";
+                if (igniteFoodOnce) {
+                    xdoc('errbintorg').style.filter ="opacity(0)";
+                }
+                // xdoc('supertitle').style.zIndex  ="-9";
+                
+                transawhile();
+                // if (!releaseShield) {
+                //     setTimeout(() => {
+                //         glimpse();
+                //     }, 3000);
+                // }
+
+
+                releaseShield = true;
+                igniteClear = false;
+                releaseFood();
             }
-            // xdoc('supertitle').style.zIndex  ="-9";
-            
-            releaseShield = true;
-            igniteClear = false;
-            releaseFood();
         }
     }else if (e.which == 13 && isSafeOver) {
         if(window.pageYOffset <= $(window).height()) newGame();
@@ -251,7 +351,7 @@ function Shape(posX, width, height) {
             switch(num) {
                 case 0:
                     ctx.rect(this.Position.X, this.Position.Y, this.Width, this.Height);
-                    this.colorin = '#888888';
+                    this.colorin = colorbox;
                     this.blur = '3';
                     this.shadowBlur = '5';
                     this.shadow = 'gray';
@@ -259,8 +359,8 @@ function Shape(posX, width, height) {
                 case 1:
                     ctx.rect(this.Position.X, this.Position.Y-120, this.Width, this.Height*4);
                     this.grd = ctx.createLinearGradient(pureScreenHeight/2, this.Position.Y, pureScreenHeight/2, this.Position.Y-120 );
-                    this.grd.addColorStop(0, "rgba(200,200,200)");
-                    this.grd.addColorStop(1, "rgba(200,200,200,0)");
+                    this.grd.addColorStop(0, colortrail0);
+                    this.grd.addColorStop(1, colortrail1);
                     this.colorin = this.grd;
                     this.blur = '0';
                     this.shadow = 'rgba(0,0,0,0)';
@@ -385,6 +485,11 @@ function Dude(posX, width, height){
             if(eat(this, food)){
                 if (!isGameOver) {
                     foodscore++;
+                    // if (foodscore == 2) {
+                        // glimpseSpecial();
+                    if(foodscore % 5 == 0){
+                        glimpse();
+                    };
                 }
                 $(".foodplive").html(foodscore);
                 $(".endfoodplive").html("Food : " + foodscore);
@@ -395,6 +500,12 @@ function Dude(posX, width, height){
             }
         }
     }   
+    
+    setInterval(() => {
+        if (releaseShield) {
+            $(".foodplive").html(foodscore);
+        }
+    }, 100);
 
     this.updatePosition = function(){
         if (this.Position.X > 2 && this.Position.X <= screenWidth-55) {   
@@ -450,8 +561,8 @@ function newGame(){
     xdoc('errbintorg').style.filter ="opacity(0)";
     $(".scorplive").html("0");
     raincounter = 0;
-    setTimeout(awaiter,2000)
     xdoc("scoring").style.display = "none";
+    setTimeout(awaiter,2000)
     function awaiter(){
         xdoc("subtitle").innerHTML = "A FULLSTACK DEVELOPER";
         xdoc("subtitle").style.color = "gray";
@@ -466,14 +577,18 @@ function newGame(){
         xdoc("scorlive").style.display = "unset";
         foodscore = 0;
         isGameOver = false;
-        isSafeOver = false;
         xdoc("scorlive").style.display = "flex";
         $(".foodplive").html(foodscore);
     }   
-    xdoc("buttonnewgame").style.transform = `translateX(${screenWidth/2}px)`;
-    pausescore = false;
-}
+        isSafeOver = false;
 
+        //KEDIP NEW GAME EFFECT(GLIMPSE)
+        glimpse();
+        
+        xdoc("buttonnewgame").style.transform = `translateX(${screenWidth/2}px)`;
+        pausescore = false;
+    }
+    
 //THE FUNC TO OVER THE GAME
 function gameOver(){
     xdoc('errbintorg').style.filter ="opacity(1)";
@@ -504,8 +619,11 @@ function gameOver(){
         xdoc("ohnobox").style.transition="visibility 0s 2s, opacity 2s linear";
     }setTimeout(fadeOutNo,500);
     
-    function resetIgniteFoodOnce(){
+    setTimeout(() => {
         isSafeOver = true;
+    }, 1000);
+
+    function resetIgniteFoodOnce(){
         igniteFoodOnce = true;
         console.log(raincounter + " " + foodscore);
 
@@ -522,7 +640,7 @@ function shapeGenerate(){
 //KIND OF SHIELD BEFORE PLAY
 function clearanceStart(coor){
     
-    if (coor > (screenWidth/2-296)-30 && coor < (screenWidth/2-296)+50 && igniteClear) {        
+    if (coor > (screenWidth/2-310)-30 && coor < (screenWidth/2-310)+50 && igniteClear) {        
         returned = screenWidth-30;
     }else{
         returned = coor;

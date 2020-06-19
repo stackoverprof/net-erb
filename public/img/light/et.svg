@@ -2,11 +2,11 @@
 <g filter="url(#filter0_d)">
 <path d="M140.63 312.995V338.609H114V266H212.219V312.995H140.63ZM140.63 364.223V338.609H212.219V364.223H140.63Z" fill="url(#paint0_linear)"/>
 </g>
-<rect y="246" width="148" height="138" fill="url(#pattern0)"/>
+<path d="M148 263H0V384H148V263Z" fill="url(#pattern0)"/>
 <g filter="url(#filter1_d)">
 <path d="M459.37 67.6137V140.223H432.74V67.6137H400V42H492.109V67.6137H459.37Z" fill="url(#paint1_linear)"/>
 </g>
-<rect x="1349" width="1" height="707" fill="#C4C4C4" fill-opacity="0.03"/>
+<path d="M1350 0H1349V707H1350V0Z" fill="#C4C4C4" fill-opacity="0.03"/>
 <defs>
 <filter id="filter0_d" x="82" y="234" width="162.219" height="162.223" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
@@ -18,7 +18,7 @@
 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
 </filter>
 <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
-<use xlink:href="#image0" transform="translate(-0.162162 -1.78261) scale(0.00238851 0.00256159)"/>
+<use xlink:href="#image0" transform="translate(-0.162162 -2.17356) scale(0.00238851 0.00292148)"/>
 </pattern>
 <filter id="filter1_d" x="368" y="10" width="156.109" height="162.223" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>

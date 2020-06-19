@@ -1,6 +1,6 @@
 /* spinner */
 .loading{
-    background-color: white;
+    background-color: rgb(245,245,245);
     position: fixed;
     z-index: 50;
     top: 0;
