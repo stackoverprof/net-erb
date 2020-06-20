@@ -5,15 +5,18 @@
 html, body {
     width: 100%;
     height: 100%; 
-    /* overflow-x: hidden; */
+    overflow: hidden;
 }
 a:hover{
     text-decoration: none;
     color: #FF5B14;
 }
 
+.scrollcontent{
+    background-color: black;
+}
 .sideclear{
-    padding: 0 200px;
+    padding: 0 200px 50px 200px;
 }
 
 .noheight{

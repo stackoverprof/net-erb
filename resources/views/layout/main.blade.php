@@ -38,7 +38,7 @@
 </head>
 
 <body>
-<div class="navbotmain" id="navbotmain">
+<!-- <div class="navbotmain" id="navbotmain">
 <div class="navbot" id="navbot">
         <div class="dropdown">
             <div>
@@ -57,7 +57,7 @@
             <a class="linktoscroll" href="">Experiences</a>
         </div>
     </div>
-</div>
+</div> -->
 
 
     @yield('maincontent')

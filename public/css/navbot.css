@@ -1,6 +1,6 @@
 
 
-.navbotmain{
+/* .navbotmain{
     width: 100%;
     height: 60px;
     display: none;
@@ -8,7 +8,7 @@
     background-color: black;
     top: 0;
     z-index: 20;
-}
+} */
 .navbotarea{
     width: 100%;
     height: 60px;
@@ -16,9 +16,9 @@
 }
 .navbot{
     background-color: black;
-    position: sticky;
+    position: relative;
     height: 60px;
-    top: 0;
+    /* bottom: 0; */
     width: 100%;
     display: flex;
     justify-content: space-between;

@@ -51,7 +51,7 @@ function glimpse() {
             setTimeout(() => {
                 xdoc('nr').style.filter = "opacity(0)";
             }, 200);
-        }, 200);
+        }, 150);
         setTimeout(() => {
             xdoc('bri').style.filter = "opacity(1)";
             xdoc('bri').style.transition = "0.35s";
@@ -136,13 +136,18 @@ window.addEventListener('load', () => {
                     setTimeout(() => {
                         setTimeout(() => {
                             setTimeout(() => {
-                                animateDone = true;
+                                setTimeout(() => {
+                                    glimpse();
+                                    setTimeout(() => {
+                                        animateDone = true;
+                                        dude = new Dude(screenWidth/2-310, 50, 50);
+                                        xdoc('instruction').style.display = "flex";
+                                    }, 650);
+                                }, 500);
                                 xdoc('errbintorg').style.transition = "1s";
-                                dude = new Dude(screenWidth/2-310, 50, 50);
                                 setTimeout(() => {
                                     xdoc('chatbox').style.display = "flex";
                                 }, 800);
-                                xdoc('instruction').style.display = "flex";
                             }, 2750);
                             xdoc('subtitle').style.color = "gray";
                         }, 750);

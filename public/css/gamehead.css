@@ -193,8 +193,10 @@
     box-shadow: 0 0 4px 1px orange;
 }
 .rainboxgame{
-    position: relative;
+    position: fixed;
+    top:0;
     overflow: hidden;
+    z-index: -100 !important;
 }
 .divtitle{
     width: 676px;
