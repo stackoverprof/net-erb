@@ -67,8 +67,6 @@
     </div>
 
     <div class="scrollcontent" id="scrollcontent">
-
-        
         <div class="navbot" id="navbot">
             <div class="dropdown">
                 <div id="hamburgerid">
@@ -91,22 +89,23 @@
         
         <div class="in-body">
             <div class="interactivebg">
-            <img src="" alt="" class="particle">
-            <img src="" alt="" class="particle">
-            <img src="" alt="" class="particle">
+            <img src="{{asset('img/particle/3.svg')}}" alt="" class="particle">
+            <img src="{{asset('img/particle/2.svg')}}" alt="" class="particle">
+            <img src="{{asset('img/particle/1.svg')}}" alt="" class="particle">
+            <!-- <div>
+                <img src="{{asset('img/profpict.svg')}}" class="profpict" alt="profile picture">
+                div class="nospace">
+                    <div class="orangebox">
+                        <h2 class="nickname">ERRBINT</h2>
+                    </div>
+            </div> -->
             </div>
             <div class="jumbo sideclear">
                 <div>
-                    <h4 class="h4good" id="h4good"></h4>
-                    <p class="pintro">Hi, there. Little intro to my self. It's me<span class="weight400 pintro">R Bintang Bagus Putra Angkasa.</span> You can call me erbin or bintang <br> for short. Currently living in Semarang, ID.<br>I do web development n' love it much from the backend <br>to the design. Learned PHP at first but now JavaScript <br>is my main weapon in the warfare.</p>
-                </div>
-                <div>
-                    <img src="{{asset('img/profpict.png')}}" class="profpict" alt="profile picture">
-                    <div class="nospace">
-                        <div class="orangebox">
-                            <h2 class="nickname">ERRBINT</h2>
-                        </div>
-                    </div>
+                    <h4 class="h4good">GOOD</h4>
+                    <h4 class="h4good" id="h4good">DAY</h4>
+                    <div class="closo"></div>
+                    <!-- <p class="pintro">Hi, there. Little intro to my self. It's me<span class="weight400 pintro">R Bintang Bagus Putra Angkasa.</span> You can call me erbin or bintang <br> for short. Currently living in Semarang, ID.<br>I do web development n' love it much from the backend <br>to the design. Learned PHP at first but now JavaScript <br>is my main weapon in the warfare.</p> -->
                 </div>
             </div>
         </div>

@@ -12,11 +12,11 @@ setInterval(() => {
   var currentTime = new Date();
   var hours = currentTime.getHours();
   
-  var greeting = "GOOD";
-  if (0 <= hours && hours < 12)  greeting += " MORNING";
-  else if (12 <= hours && hours < 17) greeting += " AFTERNOON";  
-  else if (17 <= hours && hours < 22) greeting += " EVENING";  
-  else if (22 <= hours && hours < 24)  greeting += " NIGHT";
+  var greeting = "MORNING";
+  // if (0 <= hours && hours < 12)  greeting = "MORNING";
+  // else if (12 <= hours && hours < 17) greeting = "AFTERNOON";  
+  // else if (17 <= hours && hours < 22) greeting = "EVENING";  
+  // else if (22 <= hours && hours < 24)  greeting = "NIGHT";
   
   xdoc("h4good").innerHTML = greeting; 
 }, 1000);

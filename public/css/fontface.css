@@ -1,12 +1,12 @@
 @font-face {
     font-family: "squarefont";
-    src: url("{{asset(fonts/Square.ttf')}}");
+    src: url("{{asset('fonts/Square.ttf')}}");
 }
 @font-face {
     font-family: "Bahnschrift";
-    src: url("{{asset(fonts/BAHNSCHRIFT.TTF')}}");
+    src: url("{{asset('fonts/BAHNSCHRIFT.TTF')}}");
 }
 @font-face {
     font-family: "Poppkorn";
-    src: url("{{asset(fonts/PoppkornRegular-MzKY.ttf')}}");
+    src: url("{{asset('fonts/PoppkornRegular-MzKY.ttf')}}");
 }
