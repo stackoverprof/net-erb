@@ -238,3 +238,61 @@
     /* z-index: -10; */
     /* background-image: url('../img/bg3d.png'); */
 }
+.rankcontainer{
+    position: fixed;
+    height: 100%;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.ranklist{
+    /* position: fixed; */
+    position: relative;
+    padding: 20px 30px;
+    /* bottom: 0;
+    right: 0; */
+    width: 200px;
+    margin: 0 0px 80px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 8px 0 0 8px;
+    box-shadow: 0 0 8px 4px rgba(0,0,0,0.5);
+    /* background-color: rgba(0,0,0,0); */
+    backdrop-filter: blur(5px);
+
+
+
+    font-family: 'Bahnschrift';
+}
+.eachrank{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.eachrank p{
+    margin-bottom:5px;
+}
+.disend{
+    display: flex;
+    justify-content: end;
+    align-items: center;    
+}
+.rankfood{
+    margin-left: 10px;
+}
+.saveyour{
+    margin-top: 10px;
+    height: 140px;
+    width: 110%;
+    border-radius: 8px;
+    box-shadow: inset 0px 0px 17px 0px rgba(0,0,0,0.75);
+    /* box-shadow: 0 0 8px 4px rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0); */ 
+    background-color: white;
+}

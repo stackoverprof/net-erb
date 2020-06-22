@@ -33,6 +33,8 @@ xdoc("scorlive").style.top = 10 + "px";
 xdoc("buttonnewgame").style.transform = `translateX(${screenWidth/2}px)`;
 xdoc("ohnobox").style.visibility="hidden";
 xdoc("ohnobox").style.opacity="0";
+// xdoc('sendrain').value = "";
+// xdoc('sendfood').value = "";
 // xdoc("lights").style.height = pureScreenHeight;
 // xdoc("lightsbg").style.height = pureScreenHeight;
 
@@ -610,6 +612,8 @@ function gameOver(){
     xdoc("ohnobox").style.transition="unset";
     xdoc("scoring").style.display = "flex";
     xdoc("scorlive").style.display = "none";
+    
+    xdoc('btnsend').value = raincounter + "|" + foodscore;
     
     fallSpeed = 0;
     accel = 0;
