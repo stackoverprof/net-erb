@@ -632,7 +632,7 @@ function gameOver(){
 
     function resetIgniteFoodOnce(){
         igniteFoodOnce = true;
-        console.log(raincounter + " " + foodscore);
+        // console.log(raincounter + " " + foodscore);
 
     }setTimeout(resetIgniteFoodOnce,2000);
 }
@@ -661,10 +661,13 @@ function Updater() {
         for(i in shapes){
             shapes[i].update();
         }
-        dude.update();
-        if (typeof vfood !== 'undefined') {
-            vfood.update();
+        if (animateDone) {
+            dude.update();
+            if (!isGameOver && releaseShield) {
+                vfood.update();
+            }
         }
+        
     // requestAnimationFrame(Updater);
 }setInterval(Updater, 10);
 

@@ -230,7 +230,7 @@ align-items: center;
 }
 .pletmetell{
         
-    font-family: Bahnschrift;
+    font-family: "Bahnschrift";
     font-style: normal;
     font-weight: 700;
     font-size: 30px;
@@ -267,7 +267,7 @@ align-items: center;
     filter: opacity();
 }
 .ptellmewhat{
-    font-family: Bahnschrift;
+    font-family: "Bahnschrift";
     font-style: normal;
     font-weight: bold;
     font-size: 22px;

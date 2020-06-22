@@ -1,6 +1,7 @@
 
 .blackout{
     position: relative;
+    top: -2px;
     width: 100%;
     transition: 1s;
     z-index: -1;

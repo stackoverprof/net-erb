@@ -181,7 +181,7 @@ onmousemove = function(e){
   }
   goX = e.clientX - originalX;
   goY = e.clientY - originalY;
-  console.log(goX+ " "+goY);
+  // console.log(goX+ " "+goY);
   
   xdoc('par1').style.transform = `translate(${goX/50}px,${goY/50}px)`;
   xdoc('par2').style.transform = `translate(${goX/120}px,${goY/120}px)`;

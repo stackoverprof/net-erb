@@ -196,7 +196,6 @@
     position: fixed;
     top:0;
     overflow: hidden;
-    z-index: -100 !important;
 }
 .divtitle{
     width: 676px;

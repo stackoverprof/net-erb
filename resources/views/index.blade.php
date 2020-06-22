@@ -192,9 +192,10 @@
         subtitles[<?=$i?>] = "<?= $projects[$i]['subtitle']?>" ;
         <?php endfor;?>
         //    setTimeout(() => {
+            //    alert(titles[0]);
                
-        xdoc('projecttitle').innerHTML = titles[0];
-        xdoc('projectsubtitle').innerHTML = subtitles[0];
+        // xdoc('projecttitle').innerHTML = titles[0];
+        // xdoc('projectsubtitle').innerHTML = subtitles[0];
             // }, 2000);
         // }
         // gettitles();
