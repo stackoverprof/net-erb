@@ -12,11 +12,11 @@ setInterval(() => {
   var currentTime = new Date();
   var hours = currentTime.getHours();
   
-  var greeting = "MORNING";
-  // if (0 <= hours && hours < 12)  greeting = "MORNING";
-  // else if (12 <= hours && hours < 17) greeting = "AFTERNOON";  
-  // else if (17 <= hours && hours < 22) greeting = "EVENING";  
-  // else if (22 <= hours && hours < 24)  greeting = "NIGHT";
+  var greeting;
+  if (0 <= hours && hours < 12)  greeting = "MORNING";
+  else if (12 <= hours && hours < 17) greeting = "AFTERNOON";  
+  else if (17 <= hours && hours < 22) greeting = "EVENING";  
+  else if (22 <= hours && hours < 24)  greeting = "NIGHT";
   
   xdoc("h4good").innerHTML = greeting; 
 }, 1000);
@@ -25,6 +25,7 @@ setInterval(() => {
 var pureScreenWidth = $(window).width();
 var pureScreenHeight = $(window).height();
 var height = $(window).height()-400;
+xdoc('scrollcontent').style.height = pureScreenHeight + "px";
 xdoc("blackout").style.height = height + "px";
 xdoc("gray1").style.height = height + "px";
 xdoc("gray2").style.height = height + "px";
@@ -36,6 +37,51 @@ xdoc('scrollcontent').style.transform = `translateY(${pureScreenHeight-60}px)`;
 // window.addEventListener('wheel', zoom);
 
 // var navchangeDone = true;
+//trigger croll up or down
+function goUp(){
+  xdoc('scrollcontent').style.transform = `translateY(0px)`;
+          
+  setTimeout(() => {
+    setTimeout(() => {
+      xdoc("runline").style.transform = "unset";
+    }, 1000);
+    
+    xdoc('blackout').style.transform = `translateY(${0*28-height}px)`;
+    setTimeout(() => {
+      xdoc('gray1').style.transform = `translateY(${1*28-height}px)`;
+      setTimeout(() => {
+        xdoc('gray2').style.transform = `translateY(${2*28-height}px)`;
+        setTimeout(() => {
+          xdoc('gray3').style.transform = `translateY(${3*28-height}px)`;
+          setTimeout(() => {
+            xdoc('gray4').style.transform = `translateY(${4*28-height}px)`;
+          }, 100);
+        }, 100);
+      }, 100);
+    }, 100);
+  }, 600);
+}
+
+function goDown(){
+  // navchangeDone = false;
+  xdoc('scrollcontent').style.transform = `translateY(${pureScreenHeight-60}px)`;
+          
+  xdoc("runline").style.transform = "translateX(678px)";
+  setTimeout(() => {
+    // setTimeout(() => {
+    // }, 1000);
+    
+    
+    xdoc('blackout').style.transform = `unset`;
+    // setTimeout(() => {
+      xdoc('gray1').style.transform = `unset`;
+      xdoc('gray2').style.transform = `unset`;
+      xdoc('gray3').style.transform = `unset`;
+      xdoc('gray4').style.transform = `unset`;
+    // }, 200);
+  }, 600);  
+}
+
 function detectMouseWheelDirection( e )
 {
   // alert("detect");
@@ -62,43 +108,22 @@ function detectMouseWheelDirection( e )
         xdoc('scrollcontent').style.transition = `0.6s`;
 
         if ( direction == 'down') {
-          // navchangeDone = false;
-          xdoc('scrollcontent').style.transform = `translateY(0px)`;
-          
-          setTimeout(() => {
-            
-            
-            xdoc('blackout').style.transform = `translateY(${0*28-height}px)`;
-            xdoc('gray1').style.transform = `translateY(${1*28-height}px)`;
-            xdoc('gray2').style.transform = `translateY(${2*28-height}px)`;
-            xdoc('gray3').style.transform = `translateY(${3*28-height}px)`;
-            xdoc('gray4').style.transform = `translateY(${4*28-height}px)`;
-          }, 600);
+          goUp();
 
         } else if ( direction == 'up') {
-          // navchangeDone = false;
-          xdoc('scrollcontent').style.transform = `translateY(${pureScreenHeight-60}px)`;
-          
-          setTimeout(() => {
-            
-            
-            xdoc('blackout').style.transform = `unset`;
-            xdoc('gray1').style.transform = `unset`;
-            xdoc('gray2').style.transform = `unset`;
-            xdoc('gray3').style.transform = `unset`;
-            xdoc('gray4').style.transform = `unset`;
-          }, 600);  
+          goDown();
 
         } else {
+            //nothing
+        }
+        this.before = direction;
       }
-      this.before = direction;
-    }
 }
 document.onmousewheel = function( e ) {
     handleMouseWheelDirection( detectMouseWheelDirection( e ) );
 };
 if ( window.addEventListener ) {
-    document.addEventListener( 'DOMMouseScroll', function( e ) {
+  document.addEventListener( 'DOMMouseScroll', function( e ) {
         handleMouseWheelDirection( detectMouseWheelDirection( e ) );
     });
 }
@@ -119,7 +144,7 @@ setInterval(() => {
               navchangeDone = true;
             }, 1000);
           }, 1000);
-        }, 800);      
+        }, 0);      
       }
     }
   } else if ( xdoc('scrollcontent').style.transform == `translateY(${pureScreenHeight-60}px)`) {
@@ -142,13 +167,31 @@ setInterval(() => {
     }
   }else{
     //do nothing
-  }
+  }  
 }, 100);
 
 
-
+//PARALAX EFFECTS
+var originalX, originalY, goX, goY, justOnce=true;
 onmousemove = function(e){
-  console.log("mouse location:", e.clientX, e.clientY)
+  if (justOnce) {
+    originalX = e.clientX;
+    originalY = e.clientY;
+    justOnce = false;
+  }
+  goX = e.clientX - originalX;
+  goY = e.clientY - originalY;
+  console.log(goX+ " "+goY);
+  
+  xdoc('par1').style.transform = `translate(${goX/50}px,${goY/50}px)`;
+  xdoc('par2').style.transform = `translate(${goX/120}px,${goY/120}px)`;
+  xdoc('par3').style.transform = `translate(${goX/170}px,${goY/170}px)`;
+  xdoc('apar1').style.transform = `rotate(290deg) translate(${goX/50}px,${goY/50}px)`;
+  xdoc('apar2').style.transform = `rotate(290deg) translate(${goX/120}px,${goY/120}px)`;
+  xdoc('apar3').style.transform = `rotate(290deg) translate(${goX/170}px,${goY/170}px)`;
+  xdoc('linemove').style.transform = `translateX(${Math.abs(goX)/100}px)`;
+  xdoc('avamove').style.transform = `translateX(${goX/300}px)`;
+  xdoc('circledtext').style.transform = `translateX(${goX/150}px) rotateZ(${-goX/150}deg)`;
 }
 
 
@@ -156,8 +199,16 @@ onmousemove = function(e){
 
 
 
+//runline
+xdoc("runline").style.transform = "translateX(678px)"
+xdoc("runline").style.transition = "1s"
 
 
+//anchoring profile
+xdoc('gotoprofile').addEventListener("click",function(){
+  window.event.preventDefault();
+  goUp();
+});
 
 
 

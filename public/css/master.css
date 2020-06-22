@@ -13,10 +13,11 @@ a:hover{
 }
 
 .scrollcontent{
-    background-color: black;
+    background: linear-gradient(180deg, #000000 20%, rgba(255, 255, 255, 1) 20%);
+    overflow: hidden;
 }
 .sideclear{
-    padding: 0 200px 50px 200px;
+    padding: 0 0px 0px 200px;
 }
 
 .noheight{

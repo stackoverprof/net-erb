@@ -1,0 +1,78 @@
+.bottomer{
+    z-index: -2;
+    /* background-color: rgb(255, 255, 255); */
+    width: 100%;
+    height: 207px;
+    position: fixed;
+    bottom:0;
+    padding-top: 112px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.introline{
+    height: 88px;
+    width: 2px;
+    background-color: black;
+    position: absolute;
+    top: -120px;
+}
+.sideintrop{
+    font-family: 'Bahnschrift';
+    /* font-style: bold; */
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 23px;
+
+    color: black;
+
+    transform: rotate(-90deg);
+}
+.sideintro{
+    position: fixed;
+    bottom: 0;
+    margin-left: 82px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 36px;
+}
+.paraintro{
+    padding-left: 150px;
+    padding-bottom: 32px;
+    z-index: 10 !important;
+}
+.pparaintro{
+    font-family: Bahnschrift;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 23px;
+
+    color: #171717;
+
+    width: 484px;
+    z-index: 10;
+}
+.gotoability{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:0 134px 40px 0;
+}
+.goabilityp{
+    font-family: 'Poppkorn';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 95px;
+    line-height: 74px;
+
+    letter-spacing: -0.05em;
+
+    color: #090808;
+
+}
+.gotoarrow{
+    margin: 0 0 10px 4px;
+}

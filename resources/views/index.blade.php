@@ -79,7 +79,7 @@
                 </div>
             </div>
             <div class="">
-                <a class="linktoscroll" href="">Profile</a>
+                <a class="linktoscroll" id="gotoprofile" href="">Profile</a>
                 <a class="linktoscroll" href="">Abilities</a>
                 <a class="linktoscroll" href="">Projects</a>
                 <a class="linktoscroll" href="">Experiences</a>
@@ -89,35 +89,68 @@
         
         <div class="in-body">
             <div class="interactivebg">
-            <img src="{{asset('img/particle/3.svg')}}" alt="" class="particle">
-            <img src="{{asset('img/particle/2.svg')}}" alt="" class="particle">
-            <img src="{{asset('img/particle/1.svg')}}" alt="" class="particle">
-            <!-- <div>
-                <img src="{{asset('img/profpict.svg')}}" class="profpict" alt="profile picture">
-                div class="nospace">
-                    <div class="orangebox">
-                        <h2 class="nickname">ERRBINT</h2>
-                    </div>
-            </div> -->
+                <!-- <div class="orgstrip"></div> -->
+            <img src="{{asset('img/particle/3.svg')}}" alt="" class="particle" id="par3">
+            <img src="{{asset('img/particle/2.svg')}}" alt="" class="particle" id="par2">
+            <img src="{{asset('img/particle/1.svg')}}" alt="" class="particle" id="par1">
             </div>
             <div class="jumbo sideclear">
-                <div>
+                <div class="divgood">
                     <h4 class="h4good">GOOD</h4>
                     <h4 class="h4good" id="h4good">DAY</h4>
                     <div class="closo"></div>
-                    <!-- <p class="pintro">Hi, there. Little intro to my self. It's me<span class="weight400 pintro">R Bintang Bagus Putra Angkasa.</span> You can call me erbin or bintang <br> for short. Currently living in Semarang, ID.<br>I do web development n' love it much from the backend <br>to the design. Learned PHP at first but now JavaScript <br>is my main weapon in the warfare.</p> -->
+                </div>
+                <div>
+                    <div class="avaline" id="avaline">
+                    <div id="linemove">
+                        <img src="{{asset('img/bgline.svg')}}" alt="" class="profpictline avaline" id="runline">
+                    </div>
+                    <img src="{{asset('img/ava.svg')}}" alt="" class="profpictline" id="avamove">
+                    </div>
+                    <!-- <div class="nospace"> -->
+                        <div class="orangebox">
+                            <h2 class="nickname">ERRBINT</h2>
+                        </div>
+                    <!-- </div> -->
                 </div>
             </div>
+            <img src="{{asset('img/circledtext.svg')}}" alt="" class="circledtext" id="circledtext">
         </div>
         
         
         
+        <div class="gradient">
+            <div class="movegrad"><div class="blackout" id="blackout"></div></div>
+            <div class="movegrad"><div class="gray bc55" id="gray1"></div></div>
+            <div class="movegrad"><div class="gray bc99" id="gray2"></div></div>
+            <div class="movegrad"><div class="gray bcC7" id="gray3"></div></div>
+            <div class="movegrad"><div class="gray bcEB" id="gray4"></div></div>
+        </div>
+
+        <div class="bottomer">
+            <div class="paraintro">
+                <p class="pparaintro">
+                    Hi, Lil’ intro to me, i am R.Bintang Bagus Putra Angkasa. Just a young ordinary Semarang-Yogyakarta Citizen that do web development and design.
+                </p>
+            </div>
+            <div class="gotoability">
+                <p class="goabilityp">ability</p>
+                <img src="{{asset('img/gotoarrow.svg')}}" alt="" class="gotoarrow">
+            </div>
+        </div>
+
         <div class="noheight">
-            <div class="noheight"><div class="blackout" id="blackout"></div></div>
-            <div class="noheight"><div class="gray bc55" id="gray1"></div></div>
-            <div class="noheight"><div class="gray bc99" id="gray2"></div></div>
-            <div class="noheight"><div class="gray bcC7" id="gray3"></div></div>
-            <div class="noheight"><div class="gray bcEB" id="gray4"></div></div>
+            <div class="sideintro">
+                <div class="introline"></div>
+                <p class="sideintrop">Intro</p>
+            </div>
+        </div>
+
+        <div class="noheight">
+            <img src="{{asset('img/particle/3.svg')}}" alt="" class="particle2" style="filter: opacity(0.2); transform: rotate(290deg)" id="apar3">
+            <img src="{{asset('img/particle/2.svg')}}" alt="" class="particle2" style="filter: opacity(0.2); transform: rotate(290deg)" id="apar2">
+            <img src="{{asset('img/particle/1.svg')}}" alt="" class="particle2" style="filter: opacity(0.2); transform: rotate(290deg)" id="apar1">
+            
         </div>
         
     </div>
