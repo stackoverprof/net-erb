@@ -63,7 +63,7 @@
             <img src="{{asset('img/light/bri.svg')}}" alt="" class="lights" id="bri">
             <img src="{{asset('img/bg3d.png')}}" alt="" class="lightsbg" id="lightsbg">
         </div>
-        <div class="rankcontainer">
+        <div class="rankcontainer" id="rankcontainer">
             <div class="ranklist">
             <?php foreach($rankscores as $rsc): ?>
                 <div class="eachrank">
@@ -75,12 +75,20 @@
                 </div>                
             <?php endforeach; ?>
                 <div class="saveyour">
+                <!-- <p class="savep">Enter a Nickname</p> -->
+                <div class="eachrank">
+                    <p class="name">You've got</p>
+                    <div class="disend">
+                        <p class="rankscore" id="gotrain"></p>
+                        <p class="rankfood" id="gotfood"></p>
+                    </div>
+                </div>        
                 <form class="" action="/" method="post">
                     @csrf
-                    <input type="text" name="nickname" id="nickname">
-                    <!-- <input type="hidden" readonly id="sendrain" name="rainfall">
-                    <input type="hidden" readonly id="sendfood" name="food"> -->
-                    <button type="submit" id="btnsend" onclick="savescore(this, event)">SAVE SCORE</button>
+                    <input class="playername" type="text" name="nickname" id="nickname" placeholder="Enter a Nickname">
+                    <input type="hidden" readonly id="sendrain" name="rainfall">
+                    <input type="hidden" readonly id="sendfood" name="food">
+                    <button type="submit" id="btnsend" class="btnsend" onclick="savescore(this, event)">SAVE SCORE</button>
                 </form>
                 </div>
             </div>
@@ -183,6 +191,11 @@
 @endsection
 
 @push('scripts')
+<script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+</script>
 <script src="{{asset('js/gamescript.js')}}"></script>
 <script src="{{asset('js/save.js')}}"></script>
 <!-- <script src="{{asset('js/pacmanscript.js')}}"></script> -->

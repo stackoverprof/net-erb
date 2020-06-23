@@ -247,7 +247,15 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    transition: 1s;
+    z-index: 20;
+    transform: traslateX(240px);
+    margin-right:10px;
 }
+/* .rankcontainer div p input {
+    background-color: rgba(0,0,0,0);
+    color: rgba(0,0,0,0);
+} */
 .ranklist{
     /* position: fixed; */
     position: relative;
@@ -260,10 +268,10 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border-radius: 8px 0 0 8px;
-    box-shadow: 0 0 8px 4px rgba(0,0,0,0.5);
+    /*border-radius: 8px 0 0 8px;*/
+    /*box-shadow: 0 0 8px 4px rgba(0,0,0,0.5);*/
     /* background-color: rgba(0,0,0,0); */
-    backdrop-filter: blur(5px);
+    /*backdrop-filter: blur(5px);*/
 
 
 
@@ -283,16 +291,40 @@
     justify-content: end;
     align-items: center;    
 }
+.rankscore{
+    color: gray;
+}
 .rankfood{
     margin-left: 10px;
+    color: #FF5B14;
 }
 .saveyour{
-    margin-top: 10px;
-    height: 140px;
+    margin-top: 28px;
+    /* height: 100px; */
     width: 110%;
     border-radius: 8px;
-    box-shadow: inset 0px 0px 17px 0px rgba(0,0,0,0.75);
+    padding-left: 6px;
+    /* box-shadow: inset 0px 0px 17px 0px rgba(0,0,0,0.75); */
     /* box-shadow: 0 0 8px 4px rgba(0,0,0,0.5);
     background-color: rgba(0,0,0,0); */ 
-    background-color: white;
+    /* background-color: white; */
+}
+.playername{
+    background-color: rgba(0,0,0,0);
+    border: none;
+    border-bottom: solid 1px black;
+    width: 100%;
+}
+/* .nickname{
+    font-family: 'Bahnschrift';
+    font-size: 12pt;
+} */
+.btnsend{
+    margin-bottom: 8px;
+    background-color: #FF5B14;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 8px;
+    color: white;
+    margin-top: 32px;
 }

@@ -31,6 +31,7 @@ xdoc("instruction").style.top = screenHeight-38 + "px";
 xdoc("scoring").style.top = screenHeight-48 + "px";
 xdoc("scorlive").style.top = 10 + "px";
 xdoc("buttonnewgame").style.transform = `translateX(${screenWidth/2}px)`;
+xdoc("rankcontainer").style.transform = `translateX(240px)`;
 xdoc("ohnobox").style.visibility="hidden";
 xdoc("ohnobox").style.opacity="0";
 // xdoc('sendrain').value = "";
@@ -339,7 +340,8 @@ function Shape(posX, width, height) {
                 $(".scorplive").html(raincounter);
             }
             
-            $(".scorp").html("Score : " + raincounter);
+            xdoc('gotrain').innerHTML = raincounter;
+            $(".scorp").html("Rain : " + raincounter);
         }
     }
 
@@ -567,6 +569,7 @@ function Dude(posX, width, height){
 
 //THE FUNC TO MAKE NEW GAME
 function newGame(){
+    xdoc("rankcontainer").style.transform = `translateX(240px)`;
     xdoc('errbintorg').style.filter ="opacity(0)";
     $(".scorplive").html("0");
     raincounter = 0;
@@ -612,8 +615,12 @@ function gameOver(){
     xdoc("ohnobox").style.transition="unset";
     xdoc("scoring").style.display = "flex";
     xdoc("scorlive").style.display = "none";
-    
     xdoc('btnsend').value = raincounter + "|" + foodscore;
+    xdoc('gotfood').innerHTML = foodscore;
+
+    setTimeout(() => {
+        xdoc("rankcontainer").style.transform = `unset`;
+    }, 1000);
     
     fallSpeed = 0;
     accel = 0;
