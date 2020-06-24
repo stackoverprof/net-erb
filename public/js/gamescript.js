@@ -12,17 +12,18 @@ var score = 0;
 var fallSpeed = 4;
 var shapeGenerateSpeed = 100;
 var accel = 5;
-var raincounter = 0;
+var boxspeed = 0;
 var releaseShield = false;
 var isGameOver = false;
 var isSafeOver = false;
 var igniteFoodOnce = true;
-var foodscore = 0;
+var greetinganimation = 0;
 var igniteClear = true;
 var animateDone = false;
 var colorbox = "rgb(210,210,210)";
 var colortrail0 = "rgba(220,220,220,1)";
 var colortrail1 = "rgba(220,220,220,0)";
+var newrankz = [];
 // alert(xdoc('lightsbg').style.height);
 // alert(xdoc('bri').style.height);
 
@@ -31,7 +32,7 @@ xdoc("instruction").style.top = screenHeight-38 + "px";
 xdoc("scoring").style.top = screenHeight-48 + "px";
 xdoc("scorlive").style.top = 10 + "px";
 xdoc("buttonnewgame").style.transform = `translateX(${screenWidth/2}px)`;
-xdoc("rankcontainer").style.transform = `translateX(240px)`;
+xdoc("rankcontainer").style.filter = `opacity(0)`;
 xdoc("ohnobox").style.visibility="hidden";
 xdoc("ohnobox").style.opacity="0";
 // xdoc('sendrain').value = "";
@@ -336,12 +337,12 @@ function Shape(posX, width, height) {
         if(this.Position.Y >= screenHeight+175){
             delete shapes[this.Index];
             if (releaseShield) {
-                raincounter++;
-                $(".scorplive").html(raincounter);
+                boxspeed++;
+                $(".scorplive").html(boxspeed);
             }
             
-            xdoc('gotrain').innerHTML = raincounter;
-            $(".scorp").html("Rain : " + raincounter);
+            xdoc('gotrain').innerHTML = boxspeed;
+            $(".scorp").html("Rain : " + boxspeed);
         }
     }
 
@@ -476,7 +477,7 @@ function Dude(posX, width, height){
     for (i in shapes){
         if(collision(this, shapes[i])){
             endscore = score
-            gameOver(raincounter);
+            gameOver(boxspeed);
             this.Color = "#000000";
             this.shadow = "#000000";
         }
@@ -495,15 +496,15 @@ function Dude(posX, width, height){
 
             if(eat(this, food)){
                 if (!isGameOver) {
-                    foodscore++;
-                    if (foodscore % 10 == 0) {
+                    greetinganimation++;
+                    if (greetinganimation % 10 == 0) {
                         glimpseSpecial();
-                    } else if (foodscore % 5 == 0){
+                    } else if (greetinganimation % 5 == 0){
                         glimpse();
                     };
                 }
-                $(".foodplive").html(foodscore);
-                $(".endfoodplive").html("Food : " + foodscore);
+                $(".foodplive").html(greetinganimation);
+                $(".endfoodplive").html("Food : " + greetinganimation);
                 vfood = null;
                 if (!isGameOver) {
                     vfood = new Food((Math.random()*(screenWidth-60))+30);
@@ -514,7 +515,7 @@ function Dude(posX, width, height){
     
     setInterval(() => {
         if (releaseShield) {
-            $(".foodplive").html(foodscore);
+            $(".foodplive").html(greetinganimation);
         }
     }, 100);
 
@@ -569,10 +570,10 @@ function Dude(posX, width, height){
 
 //THE FUNC TO MAKE NEW GAME
 function newGame(){
-    xdoc("rankcontainer").style.transform = `translateX(240px)`;
+    xdoc("rankcontainer").style.filter = `opacity(0)`;
     xdoc('errbintorg').style.filter ="opacity(0)";
     $(".scorplive").html("0");
-    raincounter = 0;
+    boxspeed = 0;
     xdoc("scoring").style.display = "none";
     setTimeout(awaiter,2000)
     function awaiter(){
@@ -587,11 +588,12 @@ function newGame(){
         accel = 5;
         xdoc("instruction").style.display = "flex";
         xdoc("scorlive").style.display = "unset";
-        foodscore = 0;
+        greetinganimation = 0;
         isGameOver = false;
         xdoc("scorlive").style.display = "flex";
-        $(".foodplive").html(foodscore);
+        $(".foodplive").html(greetinganimation);
     }   
+    xdoc("blurred").style.transform = "translateX(240px)";
         isSafeOver = false;
 
         //KEDIP NEW GAME EFFECT(GLIMPSE)
@@ -602,7 +604,11 @@ function newGame(){
     }
     
 //THE FUNC TO OVER THE GAME
+
 function gameOver(){
+    newrankz = [boxspeed,greetinganimation];
+    resort();
+    
     xdoc('errbintorg').style.filter ="opacity(1)";
     xdoc("subtitle").innerHTML = "GAME OVER";
     xdoc("subtitle").style.color = "black";
@@ -615,12 +621,17 @@ function gameOver(){
     xdoc("ohnobox").style.transition="unset";
     xdoc("scoring").style.display = "flex";
     xdoc("scorlive").style.display = "none";
-    xdoc('btnsend').value = raincounter + "|" + foodscore;
-    xdoc('gotfood').innerHTML = foodscore;
+    xdoc('btnsend').value = boxspeed + "|" + greetinganimation;
+    xdoc('gotfood').innerHTML = greetinganimation;
+    
+    // xdoc('sendrain').value = boxspeed;
+    // xdoc('sendfood').value = greetinganimation;
+
+    xdoc("blurred").style.transform = "translateX(0)";
 
     setTimeout(() => {
-        xdoc("rankcontainer").style.transform = `unset`;
-    }, 1000);
+        xdoc("rankcontainer").style.filter = `unset`;
+    }, 500);
     
     fallSpeed = 0;
     accel = 0;
@@ -630,7 +641,7 @@ function gameOver(){
     igniteFoodOnce = false;
     isGameOver = true;
     
-    $(".endfoodplive").html("Food : " + foodscore)
+    $(".endfoodplive").html("Food : " + greetinganimation)
     function fadeOutNo(){
         xdoc("ohnobox").style.visibility="hidden";
         xdoc("ohnobox").style.opacity="0";
@@ -643,7 +654,7 @@ function gameOver(){
 
     function resetIgniteFoodOnce(){
         igniteFoodOnce = true;
-        // console.log(raincounter + " " + foodscore);
+        // console.log(boxspeed + " " + greetinganimation);
 
     }setTimeout(resetIgniteFoodOnce,2000);
 }
@@ -684,3 +695,65 @@ function Updater() {
 
 //MAKE NEW SHAPE EVERY INTERVAL
 setInterval(shapeGenerate, shapeGenerateSpeed);
+
+
+//NEW RANK LIST
+
+var newposition = document.getElementsByClassName('newrank');
+switch (rankpos) {
+    case 1:
+        newposition[0].style.display = "unset";
+        break;
+    case 2:
+        newposition[1].style.display = "unset";
+        break;
+    case 3:
+        newposition[2].style.display = "unset";
+        break;
+    case 4:
+        newposition[3].style.display = "unset";
+        break;
+    case 5:
+        newposition[4].style.display = "unset";
+        break;
+    case 6:
+        newposition[5].style.display = "unset";
+        break;
+    case 7:
+        newposition[6].style.display = "unset";
+        break;
+    case 8:
+        newposition[7].style.display = "unset";
+        break;
+    case 9:
+        newposition[8].style.display = "unset";
+        break;
+    case 10:
+        newposition[9].style.display = "unset";
+        break;
+
+    default:
+        break;
+}
+
+
+function resort() {
+    rankpos = 1;
+    for(var i=0;i<10;i++){
+        console.log(newrankz[0] +" "+ rankz[i]['food']);
+        console.log(newrankz[0] <= rankz[i]['food']);
+        
+        
+        if (newrankz[0] <= rankz[i]['food']) {
+            if (newrankz[0] == rankz[i]['food']) {
+                if (newrankz[1]>=rankz[i]['rainfall']) {
+                    rankpos++;
+                }
+            }else{
+                rankpos++;
+            }
+        }
+    }
+    console.log(rankpos);
+    
+}

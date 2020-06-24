@@ -45,7 +45,13 @@ a:hover{
     top: -16px;
 }
 
-
+input:focus {
+    outline-style: none;
+    box-shadow: none;
+    /* border-color: transparent; */
+    /* background-color: black; */
+    /* color: white; */
+  }
 
 .canvaspacman{
     position: relative;

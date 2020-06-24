@@ -252,6 +252,17 @@
     transform: traslateX(240px);
     margin-right:10px;
 }
+.blurred{
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 208px;
+    transition: 1s;
+    transform: translateX(240px);
+    backdrop-filter: blur(5px);
+}
 /* .rankcontainer div p input {
     background-color: rgba(0,0,0,0);
     color: rgba(0,0,0,0);
@@ -260,6 +271,7 @@
     /* position: fixed; */
     position: relative;
     padding: 20px 30px;
+    padding-top: 40px;
     /* bottom: 0;
     right: 0; */
     width: 200px;
@@ -271,7 +283,6 @@
     /*border-radius: 8px 0 0 8px;*/
     /*box-shadow: 0 0 8px 4px rgba(0,0,0,0.5);*/
     /* background-color: rgba(0,0,0,0); */
-    /*backdrop-filter: blur(5px);*/
 
 
 
@@ -282,6 +293,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.newrank{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    display: none;
 }
 .eachrank p{
     margin-bottom:5px;
@@ -299,15 +317,32 @@
     color: #FF5B14;
 }
 .saveyour{
-    margin-top: 28px;
+    margin-top: 76px;
     /* height: 100px; */
-    width: 110%;
+    width: 100%;
     border-radius: 8px;
-    padding-left: 6px;
+    /* padding-left: 6px; */
     /* box-shadow: inset 0px 0px 17px 0px rgba(0,0,0,0.75); */
     /* box-shadow: 0 0 8px 4px rgba(0,0,0,0.5);
     background-color: rgba(0,0,0,0); */ 
     /* background-color: white; */
+}
+.columned{
+    flex-direction: column;
+    align-items: start;
+}
+.youvegot{
+    justify-content: space-between;
+}
+.name{
+    width: 73px;
+    overflow: hidden;
+}
+.awesome{
+    color: #FF5B14;
+}
+.formsave{
+    margin-top: 20px;
 }
 .playername{
     background-color: rgba(0,0,0,0);

@@ -722,3 +722,5 @@
 [0623/214752.363:ERROR:crash_report_database_win.cc(469)] failed to stat report
 [0623/220525.652:ERROR:crash_report_database_win.cc(469)] failed to stat report
 [0623/220525.653:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[0624/105710.731:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[0624/105710.780:ERROR:crash_report_database_win.cc(469)] failed to stat report

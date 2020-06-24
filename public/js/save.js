@@ -1,7 +1,7 @@
 
 setInterval(() => {
-    xdoc('sendfood').value = foodscore;
-    xdoc('sendrain').value = raincounter;
+    xdoc('sendfood').value = greetinganimation;
+    xdoc('sendrain').value = boxspeed;
 }, 10);
 // function savescore(sel,e) {
 //     e.preventDefault();

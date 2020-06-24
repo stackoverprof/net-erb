@@ -63,6 +63,7 @@
             <img src="<?php echo e(asset('img/light/bri.svg')); ?>" alt="" class="lights" id="bri">
             <img src="<?php echo e(asset('img/bg3d.png')); ?>" alt="" class="lightsbg" id="lightsbg">
         </div>
+        <div class="blurred" id="blurred"></div>
         <div class="rankcontainer" id="rankcontainer">
             <div class="ranklist">
             <?php foreach($rankscores as $rsc): ?>
@@ -72,18 +73,28 @@
                         <p class="rankscore"><?= $rsc['rainfall'] ?></p>
                         <p class="rankfood"><?= $rsc['food'] ?></p>
                     </div>
-                </div>                
+                </div>
+                <div class="newrank">
+                    <p class="name">YOU</p>
+                    <div class="disend">
+                        <p class="rankscore newrain"></p>
+                        <p class="rankfood newfood"></p>
+                    </div>
+                </div>                     
             <?php endforeach; ?>
                 <div class="saveyour">
                 <!-- <p class="savep">Enter a Nickname</p> -->
-                <div class="eachrank">
-                    <p class="name">You've got</p>
-                    <div class="disend">
-                        <p class="rankscore" id="gotrain"></p>
-                        <p class="rankfood" id="gotfood"></p>
+                <div class="eachrank columned">
+                    <div class="eachrank">
+                        <p class="name awesome">Awesome!</p>
+                        <div class="disend">
+                            <p class="rankscore" id="gotrain"></p>
+                            <p class="rankfood" id="gotfood"></p>
+                        </div>
                     </div>
+                    <p class="rankedas">#42</p>
                 </div>        
-                <form class="" action="/" method="post">
+                <form class="formsave" action="/" method="post">
                     <?php echo csrf_field(); ?>
                     <input class="playername" type="text" name="nickname" id="nickname" placeholder="Enter a Nickname">
                     <input type="hidden" readonly id="sendrain" name="rainfall">
@@ -220,6 +231,10 @@
     </script> -->
     <script>  
     var ranked = <?= $rankscores ?>;
+    var rankz = [];
+    for (let i = 0; i < 10; i++) {        
+        rankz[i] =  [ranked[i]['food'],ranked[i]['rainfall']];
+    }
         // setTimeout(() => {
             
         // alert(rankscores);
