@@ -109,9 +109,11 @@ function detectMouseWheelDirection( e )
 
         if ( direction == 'down') {
           goUp();
-
+          xdoc('divlink').style.filter = "opacity(0)";
+          
         } else if ( direction == 'up') {
           goDown();
+          xdoc('divlink').style.filter = "opacity(1)";
 
         } else {
             //nothing

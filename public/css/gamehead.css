@@ -337,6 +337,7 @@
 .name{
     width: 73px;
     overflow: hidden;
+    margin-bottom: 5px;
 }
 .awesome{
     color: #FF5B14;
@@ -362,4 +363,15 @@
     padding: 4px 8px;
     color: white;
     margin-top: 32px;
+}
+.nameyou{
+    color: #FF5B14;
+    width: 100%;
+}
+.rankyou{
+    width: 30px;
+    text-align: right;
+}
+.divlink{
+    transition: 1s;
 }

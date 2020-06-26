@@ -13,7 +13,6 @@ class HomeController extends Controller
     {      
       $rankscores = Rankscore::orderBy('food', 'DESC')
                         ->orderBy('rainfall', 'ASC')
-                        ->take(10)
                         ->get();
       return view('index', compact(['rankscores']));
     }

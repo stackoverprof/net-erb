@@ -66,22 +66,19 @@
         <div class="blurred" id="blurred"></div>
         <div class="rankcontainer" id="rankcontainer">
             <div class="ranklist">
-            <?php foreach($rankscores as $rsc): ?>
+            <?php for($i=0;$i<10;$i++): ?>
                 <div class="eachrank">
-                    <p class="name"><?= $rsc['nickname'] ?></p>
+                    <p class="name"><?= $rankscores[$i]['nickname'] ?></p>
                     <div class="disend">
-                        <p class="rankscore"><?= $rsc['rainfall'] ?></p>
-                        <p class="rankfood"><?= $rsc['food'] ?></p>
+                        <p class="rankscore"><?= $rankscores[$i]['rainfall'] ?></p>
+                        <p class="rankfood"><?= $rankscores[$i]['food'] ?></p>
                     </div>
                 </div>
                 <div class="newrank">
-                    <p class="name">YOU</p>
-                    <div class="disend">
-                        <p class="rankscore newrain"></p>
-                        <p class="rankfood newfood"></p>
-                    </div>
+                    <p class="name nameyou">YOU</p>
+                    <p class="name rankyou">#<?= $i+2 ?></p>
                 </div>                     
-            <?php endforeach; ?>
+            <?php endfor; ?>
                 <div class="saveyour">
                 <!-- <p class="savep">Enter a Nickname</p> -->
                 <div class="eachrank columned">
@@ -92,7 +89,7 @@
                             <p class="rankfood" id="gotfood"></p>
                         </div>
                     </div>
-                    <p class="rankedas">#42</p>
+                    <p class="rankedas" id="rankedas">#</p>
                 </div>        
                 <form class="formsave" action="/" method="post">
                     @csrf
@@ -119,7 +116,7 @@
                     <h2 class="h2navigation" id="h2navigation">NAVIGATION</h2>
                 </div>
             </div>
-            <div class="">
+            <div class="divlink" id="divlink">
                 <a class="linktoscroll" id="gotoprofile" href="">Profile</a>
                 <a class="linktoscroll" href="">Abilities</a>
                 <a class="linktoscroll" href="">Projects</a>
@@ -232,7 +229,7 @@
     <script>  
     var ranked = <?= $rankscores ?>;
     var rankz = [];
-    for (let i = 0; i < 10; i++) {        
+    for (let i = 0; i < ranked.length; i++) {        
         rankz[i] =  [ranked[i]['food'],ranked[i]['rainfall']];
     }
         // setTimeout(() => {

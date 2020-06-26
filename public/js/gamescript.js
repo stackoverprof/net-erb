@@ -35,6 +35,9 @@ xdoc("buttonnewgame").style.transform = `translateX(${screenWidth/2}px)`;
 xdoc("rankcontainer").style.filter = `opacity(0)`;
 xdoc("ohnobox").style.visibility="hidden";
 xdoc("ohnobox").style.opacity="0";
+document.getElementsByClassName('eachrank')[9].style.display = "flex";
+
+var newposition = document.getElementsByClassName('newrank');
 // xdoc('sendrain').value = "";
 // xdoc('sendfood').value = "";
 // xdoc("lights").style.height = pureScreenHeight;
@@ -570,6 +573,7 @@ function Dude(posX, width, height){
 
 //THE FUNC TO MAKE NEW GAME
 function newGame(){
+
     xdoc("rankcontainer").style.filter = `opacity(0)`;
     xdoc('errbintorg').style.filter ="opacity(0)";
     $(".scorplive").html("0");
@@ -592,6 +596,12 @@ function newGame(){
         isGameOver = false;
         xdoc("scorlive").style.display = "flex";
         $(".foodplive").html(greetinganimation);
+        document.getElementsByClassName('eachrank')[9].style.display = "flex";
+    
+        for (let i = 0; i < 10; i++) {
+            newposition[i].style.display = "none";           
+        }
+
     }   
     xdoc("blurred").style.transform = "translateX(240px)";
         isSafeOver = false;
@@ -699,54 +709,59 @@ setInterval(shapeGenerate, shapeGenerateSpeed);
 
 //NEW RANK LIST
 
-var newposition = document.getElementsByClassName('newrank');
-switch (rankpos) {
-    case 1:
-        newposition[0].style.display = "unset";
-        break;
-    case 2:
-        newposition[1].style.display = "unset";
-        break;
-    case 3:
-        newposition[2].style.display = "unset";
-        break;
-    case 4:
-        newposition[3].style.display = "unset";
-        break;
-    case 5:
-        newposition[4].style.display = "unset";
-        break;
-    case 6:
-        newposition[5].style.display = "unset";
-        break;
-    case 7:
-        newposition[6].style.display = "unset";
-        break;
-    case 8:
-        newposition[7].style.display = "unset";
-        break;
-    case 9:
-        newposition[8].style.display = "unset";
-        break;
-    case 10:
-        newposition[9].style.display = "unset";
-        break;
+function placerank(posparam) {
+    switch (posparam) {
+        case 1:
+            newposition[0].style.display = "flex";
+            break;
+        case 2:
+            newposition[1].style.display = "flex";
+            break;
+        case 3:
+            newposition[2].style.display = "flex";
+            break;
+        case 4:
+            newposition[3].style.display = "flex";
+            break;
+        case 5:
+            newposition[4].style.display = "flex";
+            break;
+        case 6:
+            newposition[5].style.display = "flex";
+            break;
+        case 7:
+            newposition[6].style.display = "flex";
+            break;
+        case 8:
+            newposition[7].style.display = "flex";
+            break;
+        case 9:
+            newposition[8].style.display = "flex";
+            break;
+        default:
+            break;
+    }
 
-    default:
-        break;
+    // document.getElementsByClassName('nameyou')[posparam-1].innerHTML = "YOU ARE THE #" + ++posparam;
+
+
+    if (posparam<11) {
+        document.getElementsByClassName('eachrank')[9].style.display = "none";
+    }
+    // newrankz = NULL;
 }
 
 
 function resort() {
-    rankpos = 1;
-    for(var i=0;i<10;i++){
-        console.log(newrankz[0] +" "+ rankz[i]['food']);
-        console.log(newrankz[0] <= rankz[i]['food']);
+    rankpos = 0;
+    for(var i=0;i< rankz.length;i++){
+        // console.log(newrankz[1] +" "+ rankz[i][0]);
+        // console.log(newrankz[1] <= rankz[i][0]);
         
         
-        if (newrankz[0] <= rankz[i]['food']) {
-            if (newrankz[0] == rankz[i]['food']) {
-                if (newrankz[1]>=rankz[i]['rainfall']) {
+        if (newrankz[1] <= rankz[i][0]) {
+            if (newrankz[1] == rankz[i][0]) {
+                if (newrankz[0]>=rankz[i][1]) {
                     rankpos++;
                 }
             }else{
@@ -754,6 +769,12 @@ function resort() {
             }
         }
     }
-    console.log(rankpos);
+    
+    // console.log(rankpos);
+    
+    placerank(rankpos);
+
+    rankpos++
+    xdoc('rankedas').innerHTML = "#" + rankpos;
     
 }
