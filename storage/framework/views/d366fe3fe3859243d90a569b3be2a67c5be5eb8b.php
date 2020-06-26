@@ -43,7 +43,7 @@
             <p class="textchat"> <strong>AVOID THE RAINBOX!</strong> </p>
         </div>
         <div class="ohnobox" id="ohnobox">
-            <img src="<?php echo e(asset('img/ohnobox.svg')); ?>"  class="ohnoboximg" alt="Avoid The Rain Bro!">
+            <img src="<?php echo e(asset('img/ohnobox.svg')); ?>"  class="ohnoboximg" alt="oh no game over!">
             <p class="textnochat"> <strong>OH NO!</strong> </p>
         </div>
         <div class="instruction" id="instruction">
@@ -58,10 +58,10 @@
             <p class="scorplive" id="scorp"></p>
         </div>
         <div class="backgroundgame">
-            <img src="<?php echo e(asset('img/light/et.svg')); ?>" alt="" class="lights" id="et">
-            <img src="<?php echo e(asset('img/light/nr.svg')); ?>" alt="" class="lights" id="nr">
-            <img src="<?php echo e(asset('img/light/bri.svg')); ?>" alt="" class="lights" id="bri">
-            <img src="<?php echo e(asset('img/bg3d.png')); ?>" alt="" class="lightsbg" id="lightsbg">
+            <img src="<?php echo e(asset('img/light/et.svg')); ?>" alt="errbint" class="lights" id="et">
+            <img src="<?php echo e(asset('img/light/nr.svg')); ?>" alt="errbint" class="lights" id="nr">
+            <img src="<?php echo e(asset('img/light/bri.svg')); ?>" alt="errbint" class="lights" id="bri">
+            <img src="<?php echo e(asset('img/bg3d.png')); ?>" alt="errbint" class="lightsbg" id="lightsbg">
         </div>
         <div class="blurred" id="blurred"></div>
         <div class="rankcontainer" id="rankcontainer">
@@ -128,9 +128,9 @@
         <div class="in-body">
             <div class="interactivebg">
                 <!-- <div class="orgstrip"></div> -->
-            <img src="<?php echo e(asset('img/particle/3.svg')); ?>" alt="" class="particle" id="par3">
-            <img src="<?php echo e(asset('img/particle/2.svg')); ?>" alt="" class="particle" id="par2">
-            <img src="<?php echo e(asset('img/particle/1.svg')); ?>" alt="" class="particle" id="par1">
+            <img src="<?php echo e(asset('img/particle/3.svg')); ?>" alt="errbint" class="particle" id="par3">
+            <img src="<?php echo e(asset('img/particle/2.svg')); ?>" alt="errbint" class="particle" id="par2">
+            <img src="<?php echo e(asset('img/particle/1.svg')); ?>" alt="errbint" class="particle" id="par1">
             </div>
             <div class="jumbo sideclear">
                 <div class="divgood">
@@ -141,18 +141,18 @@
                 <div>
                     <div class="avaline" id="avaline">
                     <div id="linemove">
-                        <img src="<?php echo e(asset('img/bgline.svg')); ?>" alt="" class="profpictline avaline" id="runline">
+                        <img src="<?php echo e(asset('img/bgline.svg')); ?>" alt="errbint" class="profpictline avaline" id="runline">
                     </div>
-                    <img src="<?php echo e(asset('img/ava.svg')); ?>" alt="" class="profpictline" id="avamove">
+                    <img src="<?php echo e(asset('img/ava.svg')); ?>" alt="errbint" class="profpictline" id="avamove">
                     </div>
                     <!-- <div class="nospace"> -->
                         <div class="orangebox">
-                            <h2 class="nickname">ERRBINT</h2>
+                            <h2 class="nickname">PROFILE</h2>
                         </div>
                     <!-- </div> -->
                 </div>
             </div>
-            <img src="<?php echo e(asset('img/circledtext.svg')); ?>" alt="" class="circledtext" id="circledtext">
+            <img src="<?php echo e(asset('img/circledtext.svg')); ?>" alt="errbint" class="circledtext" id="circledtext">
         </div>
         
         
@@ -173,7 +173,7 @@
             </div>
             <div class="gotoability">
                 <p class="goabilityp">ability</p>
-                <img src="<?php echo e(asset('img/gotoarrow.svg')); ?>" alt="" class="gotoarrow">
+                <img src="<?php echo e(asset('img/gotoarrow.svg')); ?>" alt="errbint" class="gotoarrow">
             </div>
         </div>
 
@@ -185,9 +185,9 @@
         </div>
 
         <div class="noheight">
-            <img src="<?php echo e(asset('img/particle/3.svg')); ?>" alt="" class="particle2" style="filter: opacity(0.2); transform: rotate(290deg)" id="apar3">
-            <img src="<?php echo e(asset('img/particle/2.svg')); ?>" alt="" class="particle2" style="filter: opacity(0.2); transform: rotate(290deg)" id="apar2">
-            <img src="<?php echo e(asset('img/particle/1.svg')); ?>" alt="" class="particle2" style="filter: opacity(0.2); transform: rotate(290deg)" id="apar1">
+            <img src="<?php echo e(asset('img/particle/3.svg')); ?>" alt="errbint" class="particle2" style="filter: opacity(0.2); transform: rotate(290deg)" id="apar3">
+            <img src="<?php echo e(asset('img/particle/2.svg')); ?>" alt="errbint" class="particle2" style="filter: opacity(0.2); transform: rotate(290deg)" id="apar2">
+            <img src="<?php echo e(asset('img/particle/1.svg')); ?>" alt="errbint" class="particle2" style="filter: opacity(0.2); transform: rotate(290deg)" id="apar1">
             
         </div>
         

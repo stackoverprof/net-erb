@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0; 
+    cursor:url('../img/cursor.svg'), auto;
 }
 html, body {
     width: 100%;
