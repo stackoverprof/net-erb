@@ -24,8 +24,6 @@ var colorbox = "rgb(210,210,210)";
 var colortrail0 = "rgba(220,220,220,1)";
 var colortrail1 = "rgba(220,220,220,0)";
 var newrankz = [];
-// alert(xdoc('lightsbg').style.height);
-// alert(xdoc('bri').style.height);
 
 //MAIN DOM
 xdoc("instruction").style.top = screenHeight-38 + "px";
@@ -38,10 +36,6 @@ xdoc("ohnobox").style.opacity="0";
 document.getElementsByClassName('eachrank')[9].style.display = "flex";
 
 var newposition = document.getElementsByClassName('newrank');
-// xdoc('sendrain').value = "";
-// xdoc('sendfood').value = "";
-// xdoc("lights").style.height = pureScreenHeight;
-// xdoc("lightsbg").style.height = pureScreenHeight;
 
 //glimpse EFFECTS
 function glimpse() {
@@ -101,43 +95,16 @@ function glimpseSpecial() {
 //KEDIP KEDIP
 window.addEventListener('load', () => {
     setTimeout(() => {
-        // setTimeout(() => {
-            // xdoc('et').style.display="none";
-            // setTimeout(() => {
-                // xdoc('et').style.display="unset";
                 setTimeout(() => {
-                    // xdoc('et').style.display="none";
                     xdoc('et').style.filter = "opacity(0)";
                     xdoc('et').style.transition = "1s";
-                    // setTimeout(() => {
-                    //     xdoc('et').style.display="unset";
-                    //     setTimeout(() => {
-                    //         xdoc('et').style.display="none";
-                            
-                    //     }, 100);
-                    // }, 200);
                 }, 100);
-        //     }, 100);
-        // }, 1000);
-        // setTimeout(() => {
-            // xdoc('bri').style.display="none";
-            // setTimeout(() => {
-                // xdoc('bri').style.display="unset";
                 setTimeout(() => {
-                    // xdoc('bri').style.display="none";
                     xdoc('bri').style.filter = "opacity(0)";
                     xdoc('bri').style.transition = "1s";
-                    
                 }, 500);
-            // }, 100);
-        // }, 800);
-        // setTimeout(() => {
-            // xdoc('nr').style.display="none";
-            // setTimeout(() => {
-                // xdoc('nr').style.display="unset";
+
                 setTimeout(() => {
-                    
-                    // xdoc('nr').style.display="none";
                     xdoc('nr').style.filter = "opacity(0)";
                     xdoc('nr').style.transition = "1s";
                     setTimeout(() => {
@@ -164,15 +131,6 @@ window.addEventListener('load', () => {
                     xdoc('errbintorg').style.transition = "2.5s";
                     xdoc('errbintorg').style.filter = "opacity(1)";
                 }, 300);
-            // }, 100);
-            // setTimeout(() => {
-            //     xdoc('bri').style.display="unset";
-            //     setTimeout(() => {
-            //         xdoc('bri').style.display="none";
-                    
-            //     }, 500);
-            // }, 100);
-        // }, 1800);
     }, 1500);
 })
     
@@ -219,24 +177,13 @@ function appear(){
 
 //TRANSPARENT A WHILE
 function transawhile() {
-    // colorbox = "#888888";
-    // colortrail0 = "rgba(200,200,200,0)";
-    // colortrail1 = "rgba(200,200,200,0)";
-    // setTimeout(() => {
         colorbox = "#888888";
         colortrail0 = "rgba(200,200,200,1)";
         colortrail1 = "rgba(200,200,200,0)";
-    // }, 300);
 }
 
 //CONTROL AREA
-
-    // $(document).mousemove(function(e){
-    //   dude.Position.X = e.pageX;
-    //   dude.Position.Y = e.pageY;
-    // })
 $(document).keydown(function(e){
-    // console.log(e.which);
     if (e.which == 37 || e.which == 65){
         if(window.pageYOffset <= $(window).height()){
             if (animateDone) {
@@ -249,14 +196,8 @@ $(document).keydown(function(e){
                 if (!isGameOver) {
                     xdoc('errbintorg').style.filter ="opacity(0)";
                 }
-            // xdoc('supertitle').style.zIndex  ="-9";
                 
-            transawhile();
-                // if (!releaseShield) {
-                //     setTimeout(() => {
-                //         glimpse();
-                //     }, 3000);
-                // }
+                transawhile();
 
                 releaseShield = true;
                 igniteClear = false;
@@ -275,15 +216,8 @@ $(document).keydown(function(e){
                 if (!isGameOver) {
                     xdoc('errbintorg').style.filter ="opacity(0)";
                 }
-                // xdoc('supertitle').style.zIndex  ="-9";
-                
-                transawhile();
-                // if (!releaseShield) {
-                //     setTimeout(() => {
-                //         glimpse();
-                //     }, 3000);
-                // }
 
+                transawhile();
 
                 releaseShield = true;
                 igniteClear = false;
@@ -354,14 +288,6 @@ function Shape(posX, width, height) {
     }
 
     this.Draw = function(num) {
-        // if (this.Position.Y < 370) {
-            // ctx.shadowColor = this.shadow;
-            // ctx.shadowBlur = this.blur;
-            // ctx.beginPath();
-            // ctx.rect(this.Position.X, this.Position.Y-30*num, this.Width, this.Height);
-            // ctx.fillStyle = 'gray';
-            // ctx.fill();
-        // } else if(this.Position.Y >= 370){
             ctx.beginPath();
             switch(num) {
                 case 0:
@@ -380,21 +306,6 @@ function Shape(posX, width, height) {
                     this.blur = '0';
                     this.shadow = 'rgba(0,0,0,0)';
                 break;
-                // case 2:
-                // this.colorin = '#AAAAAA';
-                // this.blur = '0';
-                // this.shadow = 'rgba(0,0,0,0)';
-                // break;
-                // case 3:
-                // this.colorin = '#DDDDDD';
-                // this.blur = '0';
-                // this.shadow = 'rgba(0,0,0,0)';
-                // break;
-                // case 4:
-                // this.colorin = '#EBEBEB';
-                // this.blur = '0';
-                // this.shadow = 'rgba(0,0,0,0)';
-                // break;
                 default:
                 this.colorin = '#000000';
             }
@@ -402,7 +313,6 @@ function Shape(posX, width, height) {
             ctx.shadowBlur = this.blur;
             ctx.fillStyle = this.colorin;
             ctx.fill();
-        // }
     }
 
     this.update = function(){
@@ -410,9 +320,6 @@ function Shape(posX, width, height) {
         this.updatePosition();
         this.Draw(0);
         this.Draw(1);
-        // this.Draw(2);
-        // this.Draw(3);
-        // this.Draw(4);
     }
 }
 
@@ -451,14 +358,6 @@ function Dude(posX, width, height){
     this.Color = "#FF5B14"
     this.blur = 25;
     this.shadow = 'orange';
-    // this.first = first;
-    
-    // if (first) {
-    //     this.blur = 0;
-    //     this.shadow = 'rgba(0,0,0,0)';
-    //     this.Color = "rgba(0,0,0,0)";
-    //     set
-    // }
 
     xdoc("chatbox").style.top = screenHeight-135 + "px";
     xdoc("ohnobox").style.top = screenHeight-135 + "px";
@@ -563,14 +462,6 @@ function Dude(posX, width, height){
 
 //MAIN FUNCTION RUN GAME
 
-//create new BOX
-// window.addEventListener('load', () => {
-    // setTimeout(() => {
-        
-        
-    // }, 5300);
-// });
-
 //THE FUNC TO MAKE NEW GAME
 function newGame(){
 
@@ -634,9 +525,6 @@ function gameOver(){
     xdoc('btnsend').value = boxspeed + "|" + greetinganimation;
     xdoc('gotfood').innerHTML = greetinganimation;
     
-    // xdoc('sendrain').value = boxspeed;
-    // xdoc('sendfood').value = greetinganimation;
-
     xdoc("blurred").style.transform = "translateX(0)";
 
     setTimeout(() => {
@@ -664,8 +552,6 @@ function gameOver(){
 
     function resetIgniteFoodOnce(){
         igniteFoodOnce = true;
-        // console.log(boxspeed + " " + greetinganimation);
-
     }setTimeout(resetIgniteFoodOnce,2000);
 }
 
@@ -742,22 +628,15 @@ function placerank(posparam) {
             break;
     }
 
-    // document.getElementsByClassName('nameyou')[posparam-1].innerHTML = "YOU ARE THE #" + ++posparam;
-
-
     if (posparam<11) {
         document.getElementsByClassName('eachrank')[9].style.display = "none";
     }
-    // newrankz = NULL;
 }
 
 
 function resort() {
     rankpos = 0;
     for(var i=0;i< rankz.length;i++){
-        // console.log(newrankz[1] +" "+ rankz[i][0]);
-        // console.log(newrankz[1] <= rankz[i][0]);
-        
         
         if (newrankz[1] <= rankz[i][0]) {
             if (newrankz[1] == rankz[i][0]) {
@@ -769,8 +648,6 @@ function resort() {
             }
         }
     }
-    
-    // console.log(rankpos);
     
     placerank(rankpos);
 
