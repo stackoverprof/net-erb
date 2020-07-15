@@ -1,3 +1,186 @@
+// Global Variables
+var canvas2 = document.getElementById('canvaspacman');
+var ctx2 = canvas2.getContext('2d');
+var screenHeight2 = 80;
+var screenWidth2 = $(window).width();
+var pacmanthis = {};
+
+// Global Variables
+var canvas = document.getElementById('canvaspacman');
+var ctx = canvas.getContext('2d');
+var screenHeight = 80;
+var screenWidth = $(window).width();
+var candy = {};
+var xpac = {};
+
+
+// Setting Canvas Dimensions
+$(window).resize(function(){
+    screenWidth = window.innerWidth;
+    screenHeight = window.innerHeight;
+    canvas.width = screenWidth;
+    canvas.height = screenHeight;
+});
+canvas.width = screenWidth;
+canvas.height = screenHeight;
+
+   
+    
+$(document).keydown(function(e){
+    // console.log(e.which);
+    if (e.which == 37 || e.which == 65){
+        if(window.pageYOffset > $(window).height() + 400){
+            dude.Velocity.X = -5;
+        }
+    } else if (e.which == 39 || e.which == 68){
+        if(window.pageYOffset <= $(window).height() + 400){
+            dude.Velocity.X = 5;
+        }
+    }else if (e.which == 13 && isGameOver) {
+        if(window.pageYOffset <= $(window).height()) newGame();
+    }
+});
+
+$(document).keyup(function(){
+    dude.Velocity.X = 0;
+    dude.Velocity.Y = 0;
+});
+
+
+    
+
+
+
+
+
+function Food(posX){
+    this.Width = 20;
+    this.Height = 20;
+    this.Color = "#FF5B14";
+    this.shadow = 'orange';
+    this.blur = 25;
+    this.PosX = posX;
+
+    candy = this;
+
+    this.Draw = function(){
+    ctx.shadowColor = this.shadow;
+    ctx.shadowBlur = this.blur;
+    ctx.beginPath();
+    ctx.rect(this.PosX, screenHeight-38, 20, 20);
+    ctx.fillStyle = this.Color;
+    ctx.fill();
+    }
+
+    this.update = function(){
+        this.Draw();
+    }
+    
+}
+
+function Dude(posX, width, height){
+    this.Width = width;
+    this.Height = height;
+    this.Color = "#FF5B14"
+    this.Position = {X: posX, Y: screenHeight-this.Height}
+    this.Velocity = {X: 0, Y: 0,}
+    this.shadow = 'orange';
+    this.blur = 25;
+
+    xdude = this;
+
+    
+    this.checkCollisions = function(){
+        
+        this.checkEaten = function(){
+            function eat(a,b){
+                if (
+                    a.Position.X <= b.PosX + b.Width &&
+                    a.Position.X + a.Width >= b.PosX &&
+                    releaseShield
+                    ){
+                        return true
+                    }
+                }
+            if(eat(this, candy)){
+                if (!isGameOver) {
+                    foodscore++;
+                }
+                $(".foodplive").html(foodscore);
+                $(".endfoodplive").html("Food : " + foodscore);
+                vfood = null;
+                if (!isGameOver) {
+                    vfood = new Food((Math.random()*(screenWidth-60))+30);
+                }
+            }
+        }
+    }   
+
+this.updatePosition = function(){
+    if (this.Position.X > 2 && this.Position.X <= screenWidth-55) {   
+        this.Position.X += this.Velocity.X;
+    }else if(this.Position.X < 5){
+        this.Position.X += 2;
+    }else if(this.Position.X > screenWidth-55){
+        this.Position.X -= 1;        
+    }
+    
+    this.Position.Y += this.Velocity.Y;
+    document.getElementById("chatbox").style.left = this.Position.X+76 + "px";
+    document.getElementById("ohnobox").style.left = this.Position.X+76 + "px";
+}
+
+this.Draw = function(){
+    ctx.shadowColor = this.shadow;
+    ctx.shadowBlur = this.blur;
+    ctx.beginPath();
+    ctx.rect(this.Position.X, this.Position.Y, this.Width, this.Height);
+    ctx.fillStyle = this.Color;
+    ctx.fill();
+}
+// this.Shield = function(){
+//     ctx.shadowColor = 'rgba(0,0,0,0)';
+//     ctx.shadowBlur = '0';
+//     ctx.beginPath();
+//     ctx.rect(this.Position.X-7.5, this.Position.Y-7.5, 65, 65);
+//     ctx.fillStyle = '#FAE481';
+//     ctx.fill();
+// }
+this.update = function(){
+    this.checkCollisions();
+    this.checkEaten();
+    this.updatePosition();
+    // this.Shield();
+    this.Draw();
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+var dude = new Dude(screenWidth/2-296, 50, 50);
+
+
+
+
+
+function Updater() {
+    ctx.clearRect(0, 0, screenWidth, screenHeight);
+    dude.update();
+    candy.update();
+    // requestAnimationFrame(Updater);
+}
+setInterval(Updater, 10);
+
+
+
 <div id="container">
     <p>Use WASD to move grey square</p>
     <h1>Score: <span class="score"></span></h1></div>

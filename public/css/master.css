@@ -3,7 +3,7 @@
     src: url("{{asset(fonts/Square.ttf')}}");
 }
 @font-face {
-    font-family: "bahnschrift";
+    font-family: "Bahnschrift";
     src: url("{{asset(fonts/BAHNSCHRIFT.TTF')}}");
 }
 /* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap'); */
@@ -16,7 +16,73 @@ html, body {
     width: 100%;
     height: 100%; 
 }
-canvas {
+a:hover{
+    text-decoration: none;
+    color: #FF5B14;
+}
+.loading{
+    background-color: white;
+    position: fixed;
+    z-index: 50;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10%;
+}
+.containerspin {
+    margin: 50px auto;
+    width: 30px;
+  }
+  .am-spinner {
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    display: block;
+    position: relative;
+    top: 0px;
+    background-color: transparent;
+    border: 5px solid transparent;
+    border-color: #eee #eee #444 #444;
+    -webkit-animation: rotateLoading 1s linear 0s infinite normal;
+    -webkit-transform-origin: 50% 50%;
+    -moz-animation: rotateLoading 1.5s linear 0s infinite normal;
+    -moz-transform-origin: 50% 50%;
+    animation: rotateLoading 1.5s linear 0s infinite normal;
+    transform-origin: 50% 50%;
+    transition: all 0.1s ease-in;
+  }
+  @keyframes rotateLoading {
+    0% {
+      transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+    }
+  }
+  @-webkit-keyframes rotateLoading {
+    0% {
+      -webkit-transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+  @-moz-keyframes rotateLoading {
+    0% {
+      -moz-transform: rotate(0deg);
+    }
+    100% {
+      -moz-transform: rotate(360deg);
+    }
+  }
+  
+.canvasrainbox {
     position: relative;
     top: 0;
     left: 0;
@@ -76,7 +142,7 @@ h1 {
 .subtitle{
     position: relative;
     top:-25px;
-    font-family: 'bahnschrift',sans-serif;
+    font-family: 'Bahnschrift',sans-serif;
     color: gray;
 }
 .balancer{
@@ -88,7 +154,7 @@ h1 {
     position: relative;
     top:-20px;
     color: rgba(0,0,0,0);
-    font-family: 'bahnschrift', sans-serif;
+    font-family: 'Bahnschrift', sans-serif;
     margin-left: 20px;
     display: unset;
 }
@@ -101,7 +167,7 @@ h1 {
     position: relative;
     top:-32px;
     color: rgba(0,0,0,0);
-    font-family: 'bahnschrift', sans-serif;
+    font-family: 'Bahnschrift', sans-serif;
     margin-left: 20px;
     transition: 2s;
     z-index: 10;
@@ -120,7 +186,7 @@ h1 {
 }
 .instructp{
     color: gray;
-    font-family: 'bahnschrift',sans-serif;
+    font-family: 'Bahnschrift',sans-serif;
     font-weight: 500;
     font-size: 12pt;
 }
@@ -131,14 +197,15 @@ h1 {
     justify-content: center;
     align-items: center;
     display: none;
-    z-index: -5;
+    z-index: 5;
 }
 .scorp{
     color: black;
-    font-family: 'bahnschrift',sans-serif;
+    font-family: 'Bahnschrift',sans-serif;
     font-weight: 500;
     font-size: 16pt;
     margin-right: 5px;
+    stroke: white 1px;
 }
 .scorlive{
     position: absolute;
@@ -150,20 +217,20 @@ h1 {
 }
 .scorplive{
     color: black;
-    font-family: 'bahnschrift',sans-serif;
+    font-family: 'Bahnschrift',sans-serif;
     font-weight: 500;
     font-size: 18pt;
     margin-left: 10px;
 }
 .foodplive{
     color: orangered;
-    font-family: 'bahnschrift',sans-serif;
+    font-family: 'Bahnschrift',sans-serif;
     font-weight: 500;
     font-size: 18pt;
 }
 .endfoodplive{
     color: orangered;
-    font-family: 'bahnschrift',sans-serif;
+    font-family: 'Bahnschrift',sans-serif;
     font-weight: 500;
     font-size: 16pt;
     margin-left: 5px;
@@ -179,7 +246,7 @@ h1 {
 }
 .textchat{
     position: relative;
-    font-family: 'bahnschrift',sans-serif;
+    font-family: 'Bahnschrift',sans-serif;
     justify-self: center;
     font-size: 14pt;
 }
@@ -194,7 +261,7 @@ h1 {
 }
 .textnochat{
     position: relative;
-    font-family: 'bahnschrift',sans-serif;
+    font-family: 'Bahnschrift',sans-serif;
     justify-self: center;
     font-size: 18pt;
 }
@@ -205,33 +272,52 @@ h1 {
 
 
 
-
+.navbotmain{
+    width: 100%;
+    height: 60px;
+    display: none;
+    position: fixed;
+    background-color: black;
+    top: 0;
+    z-index: 20;
+}
+.navbotarea{
+    width: 100%;
+    height: 60px;
+    background-color: red;
+}
 .navbot{
     background-color: black;
-    position: relative;
+    position: sticky;
+    height: 60px;
+    top: 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 88px;
+    /* z-index: 100; */
 }
 .dropdown{
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     height: 60px;
     padding: 0 16pt;
+    width: 230px;
+    overflow: hidden;
     background-color: #3A3A3A;
 }
 .dropdown:hover{
-    background-color: orangered;
+    background-color: #FF5B14;
 }
 .h2navigation{
-    font-family: 'bahnschrift', sans-serif;
+    font-family: 'Bahnschrift', sans-serif;
     color: white;
     margin:4px 0 0 0;
     font-weight: 400;
     font-size: 20pt;
+    transition: 1s;
 }
 .burger{
     width: 28px;
@@ -242,7 +328,7 @@ h1 {
     margin: 6px 12px 6px 0;
 }
 .linktoscroll{
-    font-family: Bahnschrift;
+    font-family: 'Bahnschrift';
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
@@ -265,6 +351,7 @@ h1 {
     width: 100%;
     height: auto;
     overflow-x: hidden;
+    z-index: 21;
 }
 .jumbo{
     width: 100%;
@@ -276,13 +363,14 @@ h1 {
 
     background-color: black;
     overflow-x: hidden;
+    /* padding-bottom: 80px; */
 }
 .profpict{
     width: 224px;
     height: 224px;
 }
 .h4good{
-    font-family: 'bahnschrift', sans-serif;
+    font-family: 'Bahnschrift', sans-serif !important;
     color: white;
     margin:4px 0 0 0;
     font-weight: 400;
@@ -318,7 +406,7 @@ h1 {
     height: 0px;
 }
 .nickname{
-    font-family: 'bahnschrift', sans-serif;
+    font-family: 'Bahnschrift', sans-serif;
     color: white;
     margin:4px 0 0 0;
     font-weight: 400;
@@ -376,7 +464,7 @@ h1 {
 }
 
 .h4abilities{
-    font-family: 'bahnschrift', sans-serif;
+    font-family: 'Bahnschrift', sans-serif;
     color: rgba(0,0,0,0);
     margin:4px 0 0 0;
     font-weight: 400;
@@ -395,14 +483,6 @@ h1 {
     height:800px;
     width:100%;
     padding-top: 200px;
-}
-.skillcard{
-    width: 100%;
-    height: 387px;
-
-    background: #FFFFFF;
-    box-shadow: 0px 0px 68px rgba(0, 0, 0, 0.25);
-    border-radius: 31px;
 }
 .jslogo{
     width: 120px;
@@ -442,7 +522,7 @@ h1 {
     margin-left: 14px;
 }
 .cardright{
-    margin-right: 20px;
+    margin-right: 64px;
 }
 .para{
     font-family: 'Roboto', sans-serif;
@@ -451,4 +531,242 @@ h1 {
     line-height: 20px;
 
     color: #2F2F2F;
+}
+
+
+.canvaspacman{
+    position: relative;
+    top: -80px;
+    height: 80px;
+    width: 100%;
+}
+
+
+
+
+.card {
+    position: relative;
+    perspective: 500px;
+    z-index: 20;
+
+    width: 100%;
+    height: 387px;
+    border: none;
+    
+    background: rgba(0,0,0,0);
+    /* box-shadow: 0px 0px 68px rgba(0, 0, 0, 0.25); */
+    /* border-radius: 31px; */
+  }
+  
+.contentcard {
+position: absolute;
+width: 100%;
+height: 100%;
+box-shadow:  0px 0px 68px rgba(0, 0, 0, 0.25); 
+
+transition: transform 1s;
+transform-style: preserve-3d;
+}
+
+.card:hover .contentcard {
+transform: rotateX( 180deg ) ;
+transition: transform 0.5s;
+}
+
+.front,
+.back {
+position: absolute;
+height: 100%;
+width: 100%;
+background: white;
+line-height: 300px;
+color: #03446A;
+text-align: center;
+font-size: 60px;
+border-radius: 5px;
+backface-visibility: hidden;
+}
+
+.front{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.back {
+    /* padding: 60px 200px 60px 60px; */
+padding: 50px;
+text-align: left;
+background: white;
+transform: rotateX( 180deg );
+display: flex;
+justify-content: start;
+align-items: center;
+}
+
+.iconic{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 36px;
+}
+.subgroup{
+    width: 100%;
+    /* height: 80px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+.techname{
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 15px;
+    text-align: center;
+    margin-top: 10px;
+    
+    color: #8F8F8F;
+}
+.withname{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+.centerflex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.other{
+    align-self: start;
+    margin-top: 20px;
+}
+.subother{
+    display: flex;
+    justify-content: start;
+    width: 100%;
+    padding: 0 16px;
+}
+.othereach{
+    border: 1px solid #7E7E7E;
+    box-sizing: border-box;
+    border-radius: 8px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    width: max-content;
+    padding: 2px 8px;
+    margin: 5px 5px;
+    
+    color: #7E7E7E;
+}
+.noborder{
+    border:none !important;
+    padding-left: 2px;
+    padding-top: 4px;
+    font-size: 12px;
+}
+.stack{
+    width: 200px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 100px;
+}
+.stackname{
+    font-family: 'Bahnschrift';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 69px;
+    transform: rotateZ(270deg);
+    
+    color: #777777;
+}
+.mernup{
+    position: relative;
+    left: 23px;
+    top: -8px;
+    color: #FF5B14;
+}
+.laravueup{
+    position: relative;
+    left: 24px;
+    top: 20px;
+}
+.letmetell{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    margin-right: 16px;
+    height: 100%;
+    width: 100%;
+    height: 232px;
+}
+.pletmetell{
+        
+    font-family: Bahnschrift;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 28px;
+    /* or 213% */
+
+
+    color: #000000;
+
+}
+.makeorange{
+    color: #FF5B14 !important;
+}
+.storyskill{
+    padding-right: 32px;
+}
+.tellmediv{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.imgplane{
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+    width: 58px;
+    height: 58px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin-right: 16px; 
+}
+.imgtellme{
+    transition: 1s;
+    filter: opacity();
+}
+.ptellmewhat{
+    font-family: Bahnschrift;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 26px;
+    margin: 0;
+
+    color: #8A8A8A;
+}
+.flexbetween2{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 }

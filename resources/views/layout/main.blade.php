@@ -21,6 +21,26 @@
 </head>
 
 <body>
+<div class="navbotmain" id="navbotmain">
+<div class="navbot" id="navbot">
+        <div class="dropdown">
+            <div>
+                <div class="burger"></div>
+                <div class="burger"></div>
+                <div class="burger"></div>
+            </div>
+            <div>
+                <h2 class="h2navigation" id="h2navigation">NAVIGATION</h2>
+            </div>
+        </div>
+        <div class="">
+            <a class="linktoscroll" href="">Profile</a>
+            <a class="linktoscroll" href="">Abilities</a>
+            <a class="linktoscroll" href="">Projects</a>
+            <a class="linktoscroll" href="">Experiences</a>
+        </div>
+    </div>
+</div>
 
 
     @yield('maincontent')

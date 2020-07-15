@@ -1,6 +1,12 @@
 @extends('layout/main')
 
 @section('maincontent')
+    <div class="loading" id="loading">
+        <div class="containerspin">
+            <i class="am-spinner"></i>
+        </div>
+    </div>
+    
     <div class="supertitle">
         <div>
             <h1><strong>ERRBINT</strong></h1>
@@ -16,7 +22,7 @@
 
     <div class="rainboxgame">
         <!-- <div class="vantadiv" id="vantadiv"></div> -->
-        <canvas id="canvas"></canvas>
+        <canvas id="canvas" class="canvasrainbox"></canvas>
         <div class="chatbox" id="chatbox">
             <img src="{{asset('img/chatbox.svg')}}"  class="chatboximg" alt="Avoid The Rain Bro!">
             <p class="textchat"> <strong>AVOID THE RAIN BRO!</strong> </p>
@@ -39,15 +45,15 @@
     </div>
 
 
-    <div class="navbot" id="navbot">
+    <div class="navbot" id="navbotbehind">
         <div class="dropdown">
-            <div>
+            <div id="hamburgerid">
                 <div class="burger"></div>
                 <div class="burger"></div>
                 <div class="burger"></div>
             </div>
             <div>
-                <h2 class="h2navigation">NAVIGATION</h2>
+                <h2 class="h2navigation" id="h2navigationbehind">NAVIGATION</h2>
             </div>
         </div>
         <div class="">
@@ -59,11 +65,13 @@
         
     </div>
 
+
+
     <div class="in-body">
         <div class="jumbo sideclear">
             <div>
-                <h4 class="h4good">GOOD MORNING</h4>
-                <p class="pintro">Hi, there. Let me introduce my self. I am<span class="weight400 pintro">R Bintang Bagus Putra Angkasa.</span> Shortly, I am someone coming from the design world, since i was just a kid.<br>But then I know programming and love it much from the backend to the design. I learned PHP at first but now JavaScript is my main weapon in the warfare.</p>
+                <h4 class="h4good" id="h4good"></h4>
+                <p class="pintro">Hi, there. Little intro to my self. It's me<span class="weight400 pintro">R Bintang Bagus Putra Angkasa.</span> You can call me erbin or bintang <br> for short. Currently living in Semarang, ID.<br>I do web development and love it from the backend to <br>the design. I learned PHP at first but now JavaScript <br>is my main weapon in the warfare.</p>
             </div>
             <div>
                 <img src="{{asset('img/profpict.png')}}" class="profpict" alt="profile picture">
@@ -75,38 +83,130 @@
             </div>
         </div>
     </div>
-        
-        <div class="noheight">
-            <div class="noheight"><div class="blackout" id="blackout"></div></div>
-            <div class="noheight"><div class="gray bc55" id="gray1"></div></div>
-            <div class="noheight"><div class="gray bc99" id="gray2"></div></div>
-            <div class="noheight"><div class="gray bcC7" id="gray3"></div></div>
-            <div class="noheight"><div class="gray bcEB" id="gray4"></div></div>
-        </div>
 
-        <div class="abilities sideclear">
-            <div class="container row">
-                <div class="col-8">
-                    <div class="cardright">
-                        <div class="skillcard">
-                            
-                        </div>
+        
+    <div class="noheight">
+        <div class="noheight"><div class="blackout" id="blackout"></div></div>
+        <div class="noheight"><div class="gray bc55" id="gray1"></div></div>
+        <div class="noheight"><div class="gray bc99" id="gray2"></div></div>
+        <div class="noheight"><div class="gray bcC7" id="gray3"></div></div>
+        <div class="noheight"><div class="gray bcEB" id="gray4"></div></div>
+    </div>
+
+    <div class="abilities sideclear">
+        <div class="container row">
+            <div class="col-8">
+                <div class="cardright" id="cardmove">
+                    <div class="card">
+                        <div class="contentcard">
+                            <div class="front">
+                                <div class="stack">
+                                    <p class="stackname mernup">MERN</p>
+                                    <p class="stackname laravueup">LARAVUE</p>
+                                </div>
+                                <div class="iconic">
+                                    <div class="subgroup">
+                                        <div class="withname">
+                                            <div class="centerflex">
+                                                <img src="{{asset('img/tech/icon1.svg')}}" alt="" class="iconeach">
+                                            </div>
+                                            <p class="techname">MongoDB</p>    
+                                        </div>
+                                        <div class="withname">
+                                            <div class="centerflex">
+                                                <img src="{{asset('img/tech/icon2.svg')}}" alt="" class="iconeach">                                      
+                                            </div>
+                                            <p class="techname">Express</p>    
+                                        </div>
+                                        <div class="withname">
+                                            <div class="centerflex">
+                                                <img src="{{asset('img/tech/icon3.svg')}}" alt="" class="iconeach">                                      
+                                            </div>
+                                            <p class="techname">React</p>    
+                                        </div>
+                                        <div class="withname">
+                                            <div class="centerflex">
+                                                <img src="{{asset('img/tech/icon4.svg')}}" alt="" class="iconeach">                                      
+                                            </div>
+                                            <p class="techname">Node</p>    
+                                        </div>
+                                    </div>
+                                    <div class="subgroup">
+                                        <div class="withname">
+                                            <div class="centerflex">
+                                                <img src="{{asset('img/tech/icon5.svg')}}" alt="" class="iconeach">
+                                            </div>
+                                            <p class="techname">Laravel</p>    
+                                        </div>
+                                        <div class="withname">
+                                            <div class="centerflex">
+                                                <img src="{{asset('img/tech/icon6.svg')}}" alt="" class="iconeach">                                      
+                                            </div>
+                                            <p class="techname">LaraMix</p>    
+                                        </div>
+                                        <div class="withname">
+                                            <div class="centerflex">
+                                                <img src="{{asset('img/tech/icon7.svg')}}" alt="" class="iconeach">                                      
+                                            </div>
+                                            <p class="techname">Vue</p>    
+                                        </div>
+                                        <div class="withname">
+                                            <div class="centerflex">
+                                                <img src="{{asset('img/tech/icon8.svg')}}" alt="" class="iconeach">                                      
+                                            </div>
+                                            <p class="techname">MySQL</p>    
+                                        </div>
+                                    </div>
+                                    <div class="other">
+                                        <div class="subother">
+                                            <p class="othereach">Figma</p>
+                                            <p class="othereach">TypeScript</p>
+                                            <p class="othereach">Deno</p>
+                                            <p class="othereach">Docker</p>
+                                        </div>
+                                        <div class="subother">
+                                            <p class="othereach">Firebase</p>
+                                            <p class="othereach">GitHub</p>
+                                            <p class="othereach noborder">Many more...</p>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="back">
+                                <div class="letmetell">
+                                    <p class="pletmetell"><span class="makeorange">Little</span> Story</p>
+                                </div>
+                                <div class="storyskill">
+                                    <p class="para">When I was younger I used to be a graphic designer wanna-be kid and also learned a little bit kind of interactive animation. But then, since in high school I changed my mind to learn to build web applications.</p>
+                                    <p class="para">And here I am today, a Full Stack Web Developer with a specialty in <strong>MERN Stack</strong> and <strong>LaraVue.</strong> Also, keep in mind, <br>UI design is what I do too as a kind of <br>hobby and I love it.</p>
+                                </div>
+                            </div>
+                        </div>  
                     </div>
                 </div>
-                <div class="col-4">
+            </div>
+            <div class="col-4 flexbetween2">
+                <div>
                     <p class="pnutshell mb-4">In A Nutshell. <span class="fontblack">I am A</span></p>
                     <div class="middlepart">
                         <img src="{{asset('img/jslogo.svg')}}" alt="" class="jslogo">
                         <p class="pjsfull jsfull"><span class="fontblack">JavaScript <br>FullStack </span><br>Developer </p>
                     </div>
-                    <div class="storyskill">
-                        <p class="para">When I was younger I used to be a graphic designer wanna-be and also learned a little bit kind of animation. But then, since in high school I changed my mind to learn to build web applications.</p>
-                        <p class="para">And here I am today, a Full Stack Web Developer with a specialty in <strong>MERN Stack</strong> and <strong>LaraVue.</strong> Also, keep in mind, <br>UI design is what I do too as a kind of <br>hobby and I love it.</p>
-                    </div>
                 </div>
-
+                <div class="tellmediv">
+                    <div class="imgplane">
+                        <img class="imgtellme" id="imgtellme" src="{{asset('img/planebtn.svg')}}" alt="button">
+                    </div>
+                    <p class="ptellmewhat">TELL ME WHAT <br> YOU NEED</p>
+                </div>
             </div>
+
         </div>
+    </div>
+    <!-- <div class="noheight">
+        <canvas id="canvaspacman" class="canvaspacman"></canvas>
+    </div> -->
 
 
 
@@ -125,8 +225,9 @@
 @endsection
 
 @push('scripts')
-    <script src="{{asset('js/gamescript.js')}}"></script>
-    <script src="{{asset('js/interactive.js')}}"></script>
+<script src="{{asset('js/gamescript.js')}}"></script>
+<script src="{{asset('js/pacmanscript.js')}}"></script>
+<script src="{{asset('js/interactive.js')}}"></script>
     <!-- <script src="{{asset('js/vanta/three.r95.min.js')}}"></script>
     <script src="{{asset('js/vanta/vanta.waves.min.js')}}"></script>
     <script>
