@@ -10,11 +10,17 @@
             <div class="rect5"></div>
         </div>
     </div>
-    
+
+
+    <div class="noheight deepbehind">
+        <h1><strong>ERRBINT</strong></h1>
+        <h2 class="shadowertitle"><strong>ERRBINT</strong></h3>
+        <h3 class="shadowertitle"><strong>ERRBINT</strong></h3>
+    </div>
+
+
     <div class="supertitle">
         <div class="divtitle">
-            <!-- <h1><strong>ERRBINT</strong></h1> -->
-            <!-- <h3 class="shadowertitle"><strong>ERRBINT</strong></h3> -->
             <img src="{{asset('img/errbint.svg')}}" alt="">
         </div>
         <div class="subs">
@@ -71,7 +77,6 @@
     </div>
 
 
-
     <div class="in-body">
         <div class="jumbo sideclear">
             <div>
@@ -97,6 +102,7 @@
         <div class="noheight"><div class="gray bcC7" id="gray3"></div></div>
         <div class="noheight"><div class="gray bcEB" id="gray4"></div></div>
     </div>
+
 
     <div class="abilities sideclear">
         <div class="container row">
@@ -174,7 +180,6 @@
                                             <p class="othereach">GitHub</p>
                                             <p class="othereach noborder">Many more...</p>
                                         </div>
-                                        
                                     </div>
                                 </div>
                             </div>
@@ -207,19 +212,73 @@
                     <p class="ptellmewhat">TELL ME WHAT <br> YOU NEED</p>
                 </div>
             </div>
-
         </div>
     </div>
-    <div class="noheight">
-        <canvas id="canvaspacman" class="canvaspacman"></canvas>
+
+
+    <div class="projectframe">
+        <div class="preproject">
+            <p class="ppreproject">PROJECTS / / DOWN BELOW ARE THE THINGS I AM WORKING ON</p>
+        </div>
+        <div class="theproject">
+            <div class="pacman">
+
+            </div>
+            <div class="projectarea">
+                <h4 class="projecttitle"></h4>
+                <div class="sliderproject">
+                    <div class="foreachproject">
+                        <div class="postproject">
+                            <div class="actionbar">
+                                <div class="subaction">
+                                    <img src="" alt="" class="govisit">
+                                    <img src="" alt="" class="goshare">
+                                </div>
+                                <img src="" alt="" class="golike">
+                            </div>
+                            <img src="" alt="" class="imgproject">
+                        </div>
+                        <div class="contentproject">
+                            <p class="describeproject"></p>
+                            <div class="tagsproject">
+                                <div class="foreachtag">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="controlslide">
+                <img src="" alt="" class="slideup">
+                <img src="" alt="" class="slidedown">
+            </div>
+        </div>
     </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+    
+<!-- <div class="noheight">
+    <canvas id="canvaspacman" class="canvaspacman"></canvas>
+</div> -->
+<!-- 
 <p class="ml11">
   <span class="text-wrapper">
     <span class="line line1"></span>
     <span class="letters">PROJECTS</span>
   </span>
-</p>
+</p> -->
 
 
 <!-- Photo Grid -->

@@ -3,6 +3,8 @@
 
 <head>
     <!-- Required meta tags -->
+    <meta name="description" content="Welcome to errbint.net, The interactive personal website of R Bintang Bagus Putra Angkasa" />
+    <meta name="robots" content="index, follow" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
