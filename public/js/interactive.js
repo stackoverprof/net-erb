@@ -100,22 +100,45 @@ setInterval(()=>{
 //CARD MOVEMENT
 document.getElementById('cardmove').style.transform = `translateX(-${screenWidth}px)`;
 document.getElementById('cardmove').style.transition = "1s";
+var flipped = false;
 
 setInterval(()=>{
   var scrolled = window.pageYOffset;
   
   if (scrolled > pureScreenHeight + 100 ) {
-    document.getElementById('cardmove').style.transform = `translateX(0px)`
+    document.getElementById('cardmove').style.transform = `translateX(0px)`;
+    
+    if (!flipped && document.getElementById("heytry").style.display != "flex") {
+      setTimeout(() => {
+        document.getElementById('heytry').style.display = `flex`;
+        setTimeout(() => {
+          document.getElementById('heytry').style.transform = `unset`;
+        }, 1000);
+      }, 1000); 
+    }
   } else if(scrolled < 400){
     document.getElementById('cardmove').style.transform = `translateX(-${screenWidth}px)`;
+    document.getElementById('heytry').style.display = `none`;
+    document.getElementById('heytry').style.transform = `translateX(-400px)`;
   }
-},100)
+},10)
+function flippedOnce() {
+  flipped = true;
+  if (document.getElementById("heytry").style.display != "none") {
+    document.getElementById('heytry').style.transform = `translateX(-400px)`;
+    document.getElementById('heytry').style.color = `rgba(0,0,0,0)`;
+    setTimeout(() => {
+      document.getElementById('heytry').style.display = `none`;
+    }, 1000);
+  }
+}
+
 
 //EMPHASIZE BTN PLANE
 var btnplane = document.getElementById("imgtellme");
 setInterval(() => {
   if (btnplane.style.opacity == "1") {
-    console.log("yawes");
+    // console.log("yawes");
     btnplane.style.opacity = "0.2";
   } else {
     btnplane.style.opacity = "1";

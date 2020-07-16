@@ -2,15 +2,20 @@
 
 @section('maincontent')
     <div class="loading" id="loading">
-        <div class="containerspin">
-            <i class="am-spinner"></i>
+        <div class="spinner">
+            <div class="rect1"></div>
+            <div class="rect2"></div>
+            <div class="rect3"></div>
+            <div class="rect4"></div>
+            <div class="rect5"></div>
         </div>
     </div>
     
     <div class="supertitle">
-        <div>
-            <h1><strong>ERRBINT</strong></h1>
-            <h3 class="shadowertitle"><strong>ERRBINT</strong></h3>
+        <div class="divtitle">
+            <!-- <h1><strong>ERRBINT</strong></h1> -->
+            <!-- <h3 class="shadowertitle"><strong>ERRBINT</strong></h3> -->
+            <img src="{{asset('img/errbint.svg')}}" alt="">
         </div>
         <div class="subs">
             <div class="balancer" id="balancer"></div>
@@ -71,7 +76,7 @@
         <div class="jumbo sideclear">
             <div>
                 <h4 class="h4good" id="h4good"></h4>
-                <p class="pintro">Hi, there. Little intro to my self. It's me<span class="weight400 pintro">R Bintang Bagus Putra Angkasa.</span> You can call me erbin or bintang <br> for short. Currently living in Semarang, ID.<br>I do web development and love it from the backend to <br>the design. I learned PHP at first but now JavaScript <br>is my main weapon in the warfare.</p>
+                <p class="pintro">Hi, there. Little intro to my self. It's me<span class="weight400 pintro">R Bintang Bagus Putra Angkasa.</span> You can call me erbin or bintang <br> for short. Currently living in Semarang, ID.<br>I do web development n' love it much from the backend <br>to the design. I learned PHP at first but now JavaScript <br>is my main weapon in the warfare.</p>
             </div>
             <div>
                 <img src="{{asset('img/profpict.png')}}" class="profpict" alt="profile picture">
@@ -96,7 +101,7 @@
     <div class="abilities sideclear">
         <div class="container row">
             <div class="col-8">
-                <div class="cardright" id="cardmove">
+                <div class="cardright" id="cardmove" onmouseover="flippedOnce()">
                     <div class="card">
                         <div class="contentcard">
                             <div class="front">
@@ -194,6 +199,7 @@
                         <p class="pjsfull jsfull"><span class="fontblack">JavaScript <br>FullStack </span><br>Developer </p>
                     </div>
                 </div>
+                <p class="heytry" id="heytry"><i class="fa fa-arrow-left"aria-hidden="true"></i>&ensp; Hey, try flip this card</p>
                 <div class="tellmediv">
                     <div class="imgplane">
                         <img class="imgtellme" id="imgtellme" src="{{asset('img/planebtn.svg')}}" alt="button">
@@ -204,14 +210,45 @@
 
         </div>
     </div>
-    <!-- <div class="noheight">
+    <div class="noheight">
         <canvas id="canvaspacman" class="canvaspacman"></canvas>
-    </div> -->
+    </div>
+
+<p class="ml11">
+  <span class="text-wrapper">
+    <span class="line line1"></span>
+    <span class="letters">PROJECTS</span>
+  </span>
+</p>
 
 
-
-
-
+<!-- Photo Grid -->
+<!-- <div class="rowp"> 
+    <div class="columnp">
+        <img class="imgp" src="https://cdn.dribbble.com/users/4861048/screenshots/11370422/media/e7f08d137c72a2debeb582b172015c62.png">
+        <img class="imgp" src="http://www.tooplate.com/templates/2094_mason/img/gallery-img-11-03.jpg">
+        <img class="imgp" src="https://instagram.fsrg3-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s640x640/100951085_1147486578955803_2182850810246446319_n.jpg?_nc_ht=instagram.fsrg3-1.fna.fbcdn.net&_nc_cat=103&_nc_ohc=lbLyT_AEvRwAX_LAasK&oh=38ca3b235f0afe87562a26d973f2a638&oe=5F0FC350">
+        <img class="imgp" src="http://www.tooplate.com/templates/2094_mason/img/gallery-img-11-06.jpg">
+        <img class="imgp" src="http://www.tooplate.com/templates/2094_mason/img/gallery-img-11-07.jpg">
+    </div>
+    <div class="columnp">
+        <img class="imgp" src="https://cdn.dribbble.com/users/4861048/screenshots/11205467/media/b28466d7aabddc889166689911ef8e60.png">
+        <img class="imgp" src="http://www.tooplate.com/templates/2094_mason/img/gallery-img-12-02.jpg">
+        <img class="imgp" src="http://www.tooplate.com/templates/2094_mason/img/gallery-img-12-03.jpg">
+        <img class="imgp" src="http://www.tooplate.com/templates/2094_mason/img/gallery-img-23-05.jpg">
+    </div>  
+    <div class="columnp">
+        <img class="imgp" src="https://i.imgur.com/zQVcmde.png">
+        <img class="imgp" src="http://www.tooplate.com/templates/2094_mason/img/gallery-img-23-03.jpg">
+        <img class="imgp" src="http://www.tooplate.com/templates/2094_mason/img/gallery-img-12-04.jpg">
+    </div>
+    <div class="columnp">
+        <img class="imgp" src="https://cdn.dribbble.com/users/4861048/screenshots/11390588/media/f21b7a9c3fa8dfb1dd080008046dee96.png">
+        <img class="imgp" src="http://www.tooplate.com/templates/2094_mason/img/gallery-img-23-02.jpg">
+        <img class="imgp" src="http://www.tooplate.com/templates/2094_mason/img/gallery-img-11-05.jpg">
+        <img class="imgp" src="http://www.tooplate.com/templates/2094_mason/img/gallery-img-23-04.jpg">
+    </div>
+</div> -->
 
 
 
@@ -228,9 +265,11 @@
 <script src="{{asset('js/gamescript.js')}}"></script>
 <script src="{{asset('js/pacmanscript.js')}}"></script>
 <script src="{{asset('js/interactive.js')}}"></script>
-    <!-- <script src="{{asset('js/vanta/three.r95.min.js')}}"></script>
-    <script src="{{asset('js/vanta/vanta.waves.min.js')}}"></script>
-    <script>
+<script src="{{asset('js/effect11.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js">PROJECTS</script>
+<!-- <script src="{{asset('js/vanta/three.r95.min.js')}}"></script>
+<script src="{{asset('js/vanta/vanta.waves.min.js')}}"></script>
+<script>
     VANTA.WAVES({
     el: ".vantadiv",
     mouseControls: true,

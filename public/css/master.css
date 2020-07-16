@@ -6,6 +6,10 @@
     font-family: "Bahnschrift";
     src: url("{{asset(fonts/BAHNSCHRIFT.TTF')}}");
 }
+@font-face {
+    font-family: "Poppkorn";
+    src: url("{{asset(fonts/PoppkornRegular-MzKY.ttf')}}");
+}
 /* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap'); */
 
 * {
@@ -33,55 +37,97 @@ a:hover{
     align-items: center;
     padding-bottom: 10%;
 }
-.containerspin {
-    margin: 50px auto;
-    width: 30px;
-  }
-  .am-spinner {
+/* spinner */
+.spinner {
+    margin: 100px auto;
+    width: 60px;
     height: 50px;
-    width: 50px;
-    border-radius: 100%;
-    display: block;
-    position: relative;
-    top: 0px;
-    background-color: transparent;
-    border: 5px solid transparent;
-    border-color: #eee #eee #444 #444;
-    -webkit-animation: rotateLoading 1s linear 0s infinite normal;
-    -webkit-transform-origin: 50% 50%;
-    -moz-animation: rotateLoading 1.5s linear 0s infinite normal;
-    -moz-transform-origin: 50% 50%;
-    animation: rotateLoading 1.5s linear 0s infinite normal;
-    transform-origin: 50% 50%;
-    transition: all 0.1s ease-in;
-  }
-  @keyframes rotateLoading {
-    0% {
-      transform: rotate(0deg);
-      -webkit-transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-      -webkit-transform: rotate(360deg);
-    }
-  }
-  @-webkit-keyframes rotateLoading {
-    0% {
-      -webkit-transform: rotate(0deg);
-    }
-    100% {
-      -webkit-transform: rotate(360deg);
-    }
-  }
-  @-moz-keyframes rotateLoading {
-    0% {
-      -moz-transform: rotate(0deg);
-    }
-    100% {
-      -moz-transform: rotate(360deg);
-    }
+    text-align: center;
+    font-size: 10px;
   }
   
+  .spinner > div {
+    background-color: #333;
+    height: 100%;
+    width: 6px;
+    display: inline-block;
+    margin-right: 1px;
+    margin-left: 1px;
+    
+    -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+    animation: sk-stretchdelay 1.2s infinite ease-in-out;
+  }
+  
+  .spinner .rect2 {
+      background-color: #FF5B14;
+    -webkit-animation-delay: -1.1s;
+    animation-delay: -1.1s;
+  }
+  
+  .spinner .rect3 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+  }
+  
+  .spinner .rect4 {
+    -webkit-animation-delay: -0.9s;
+    animation-delay: -0.9s;
+  }
+  
+  .spinner .rect5 {
+    -webkit-animation-delay: -0.8s;
+    animation-delay: -0.8s;
+  }
+  
+  @-webkit-keyframes sk-stretchdelay {
+    0%, 40%, 100% { -webkit-transform: scaleY(0.4) }  
+    20% { -webkit-transform: scaleY(1.0) }
+  }
+  
+  @keyframes sk-stretchdelay {
+    0%, 40%, 100% { 
+      transform: scaleY(0.4);
+      -webkit-transform: scaleY(0.4);
+    }  20% { 
+      transform: scaleY(1.0);
+      -webkit-transform: scaleY(1.0);
+    }
+  }
+/* spinner */
+/* projects */
+.ml11 {
+    font-weight: 700;
+    font-size: 3.5em;
+  }
+  
+  .ml11 .text-wrapper {
+    position: relative;
+    display: inline-block;
+    padding-top: 0.1em;
+    padding-right: 0.05em;
+    padding-bottom: 0.15em;
+  }
+  
+  .ml11 .line {
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 3px;
+    background-color: #fff;
+    transform-origin: 0 50%;
+  }
+  
+  .ml11 .line1 { 
+    top: 0; 
+    left: 0;
+  }
+  
+  .ml11 .letter {
+    display: inline-block;
+    line-height: 1em;
+  }
+/* projects */
 .canvasrainbox {
     position: relative;
     top: 0;
@@ -104,8 +150,11 @@ a:hover{
     left: 0;
     z-index: 2; 
 }
+.divtitle{
+    margin-bottom: 20px;
+}
 h1 {
-    font-family: 'squarefont', sans-serif;
+    font-family: 'Squarefont';
     font-style: normal;
     font-weight: normal;
     font-size: 154px;
@@ -116,10 +165,9 @@ h1 {
     -webkit-text-fill-color: transparent;
     position: absolute;
     z-index: 1;
-    /*  */
 }
 .shadowertitle{
-    font-family: 'squarefont', sans-serif;
+    font-family: 'Squarefont';
     font-style: normal;
     font-weight: normal;
     font-size: 154px;
@@ -141,7 +189,7 @@ h1 {
 }
 .subtitle{
     position: relative;
-    top:-25px;
+    top:-35px;
     font-family: 'Bahnschrift',sans-serif;
     color: gray;
 }
@@ -165,7 +213,7 @@ h1 {
     width: 120px;
     height: 40px;
     position: relative;
-    top:-32px;
+    top:-40px;
     color: rgba(0,0,0,0);
     font-family: 'Bahnschrift', sans-serif;
     margin-left: 20px;
@@ -770,3 +818,55 @@ align-items: center;
     justify-content: space-between;
     flex-direction: column;
 }
+.heytry{
+    font-family: sans-serif;
+    color: gray;
+    display: none;
+    z-index: -1;
+    transition: 1s;
+    transform: translateX(-400px);
+}
+.imgp {
+    width:100%;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.33);
+  }
+  .header {
+      text-align: center;
+      padding: 32px;
+  }
+  
+  .rowp {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0 4px;
+      max-width:1000px;
+      margin: 0 200px;
+  }
+  
+  /* Create four equal columns that sits next to each other */
+  .columnp {
+      flex: 25%;
+      max-width: 25%;
+      padding: 0 4px;
+  }
+  
+  .columnp img {
+      margin-top: 8px;
+      vertical-align: middle;
+  }
+  
+  /* Responsive layout - makes a two columnp-layout instead of four columnps */
+  @media (max-width: 800px) {
+      .columnp {
+          flex: 50%;
+          max-width: 50%;
+      }
+  }
+  
+  /* Responsive layout - makes the two columnps stack on top of each other instead of next to each other */
+  @media (max-width: 600px) {
+      .columnp {
+          flex: 100%;
+          max-width: 100%;
+      }
+  }
