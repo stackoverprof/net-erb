@@ -1,0 +1,197 @@
+.canvasrainbox {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    background-color: rgba(0,0,0,0); 
+    z-index: -1;
+}
+.vantadiv{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -5;
+    /* display: none; */
+    /* transform: rotate(180deg); */
+}
+#container {
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 2; 
+}
+.divtitle{
+    margin-bottom: 20px;
+}
+.deepbehind{
+    color: white;
+    z-index: -100;
+}
+/* h1 { */
+    /* font-family: 'Squarefont';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 154px;
+    line-height: 177px;
+    background-clip: text;
+    background: -webkit-linear-gradient(#FBA30D, #FF5B14);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: absolute;
+    z-index: 1;
+}
+.shadowertitle{
+    font-family: 'Squarefont';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 154px;
+    line-height: 177px;
+    color: transparent;
+    text-shadow: 0px 0px 22px rgba(0, 0, 0, 0.33);
+    position: relative;
+    top: 4px;
+} */
+.supertitle{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 72%;
+    width: 100%;
+    flex-direction: column;
+    overflow: hidden;
+}
+.subtitle{
+    position: relative;
+    top:-35px;
+    font-family: 'Bahnschrift',sans-serif;
+    color: gray;
+}
+.balancer{
+    background-color:rgba(0,0,0,0);
+    border: none;
+    border-radius: 6px;
+    width: 120px;
+    height: 40px;
+    position: relative;
+    top:-20px;
+    color: rgba(0,0,0,0);
+    font-family: 'Bahnschrift', sans-serif;
+    margin-left: 20px;
+    display: unset;
+}
+.buttonnewgame{
+    background-color: rgba(0,0,0,0);
+    border: none;
+    border-radius: 6px;
+    width: 120px;
+    height: 40px;
+    position: relative;
+    top:-40px;
+    color: rgba(0,0,0,0);
+    font-family: 'Bahnschrift', sans-serif;
+    margin-left: 20px;
+    transition: 2s;
+    z-index: 10;
+}
+.subs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.instruction{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.instructp{
+    color: gray;
+    font-family: 'Bahnschrift',sans-serif;
+    font-weight: 500;
+    font-size: 12pt;
+}
+.scoring{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    z-index: 5;
+}
+.scorp{
+    color: black;
+    font-family: 'Bahnschrift',sans-serif;
+    font-weight: 500;
+    font-size: 16pt;
+    margin-right: 5px;
+    stroke: white 1px;
+}
+.scorlive{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 0 20px;
+}
+.scorplive{
+    color: black;
+    font-family: 'Bahnschrift',sans-serif;
+    font-weight: 500;
+    font-size: 18pt;
+    margin-left: 10px;
+}
+.foodplive{
+    color: orangered;
+    font-family: 'Bahnschrift',sans-serif;
+    font-weight: 500;
+    font-size: 18pt;
+}
+.endfoodplive{
+    color: orangered;
+    font-family: 'Bahnschrift',sans-serif;
+    font-weight: 500;
+    font-size: 16pt;
+    margin-left: 5px;
+}
+.chatbox{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.chatboximg{
+    position: absolute;
+}
+.textchat{
+    position: relative;
+    font-family: 'Bahnschrift',sans-serif;
+    justify-self: center;
+    font-size: 14pt;
+}
+.ohnobox{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ohnoboximg{
+    position: absolute;
+}
+.textnochat{
+    position: relative;
+    font-family: 'Bahnschrift',sans-serif;
+    justify-self: center;
+    font-size: 18pt;
+}
+.buttonnewgame:focus,.buttonnewgame:active {
+    outline: none !important;
+    box-shadow: 0 0 4px 1px orange;
+}
+.rainboxgame{
+    position: relative;
+    overflow: hidden;
+}

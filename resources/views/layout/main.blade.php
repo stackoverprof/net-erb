@@ -14,7 +14,18 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{asset('css/abilities.css')}}">
+    <link rel="stylesheet" href="{{asset('css/effect11.css')}}">
+    <link rel="stylesheet" href="{{asset('css/fontface.css')}}">
+    <link rel="stylesheet" href="{{asset('css/gamehead.css')}}">
+    <link rel="stylesheet" href="{{asset('css/gradientmove.css')}}">
+    <link rel="stylesheet" href="{{asset('css/jumbo.css')}}">
+    <link rel="stylesheet" href="{{asset('css/loadingspin.css')}}">
     <link rel="stylesheet" href="{{asset('css/master.css')}}">
+    <link rel="stylesheet" href="{{asset('css/navbot.css')}}">
+    <link rel="stylesheet" href="{{asset('css/photogrid.css')}}">
+    <link rel="stylesheet" href="{{asset('css/projects.css')}}">
+
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@200;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Biryani:wght@800;900&display=swap" rel="stylesheet">
 
@@ -58,7 +69,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 
     <script src="js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+        //little lib to document.getElementById
+        function xdoc(idname){
+            return document.getElementById(idname);
+        }
 
+    </script>
     <!-- optional js script -->
     @stack('scripts')
 

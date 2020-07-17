@@ -1,0 +1,29 @@
+
+.blackout{
+    position: relative;
+    width: 100%;
+    transition: 1s;
+    z-index: -1;
+    background-color: black;
+}
+.gray{
+    position: relative;
+    width: 100%;
+    transition: 1s;
+}
+.bc55{
+    z-index: -2;
+    background-color: #555555;
+}
+.bc99{
+    z-index: -3;
+    background-color: #999999;
+}
+.bcC7{
+    z-index: -4;
+    background-color: #C7C7C7;
+}
+.bcEB{
+    z-index: -5;
+    background-color: #EBEBEB;
+}

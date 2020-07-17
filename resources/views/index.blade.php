@@ -218,14 +218,17 @@
 
     <div class="projectframe">
         <div class="preproject">
-            <p class="ppreproject">PROJECTS / / DOWN BELOW ARE THE THINGS I AM WORKING ON</p>
+            <p class="ppreproject">PROJECTS&ensp;/&ensp;/&ensp;DOWN BELOW ARE THE THINGS I AM WORKING ON</p>
         </div>
         <div class="theproject">
-            <div class="pacman">
+            <div class="pacmanarea">
 
             </div>
-            <div class="projectarea">
-                <h4 class="projecttitle"></h4>
+            <div class="projectarea" id="projectarea">
+                <h4 class="projecttitle">SALAAM&ensp;|&ensp;<span class="makegray">Daily Prayer Schedule</span></h4>
+                <div class="noheight">
+                    <div class="layeropac"> </div>
+                </div>
                 <div class="sliderproject">
                     <div class="foreachproject">
                         <div class="postproject">
@@ -247,14 +250,78 @@
                             </div>
                         </div>
                     </div>
+                    <div class="foreachproject">
+                        <div class="postproject">
+                            <div class="actionbar">
+                                <div class="subaction">
+                                    <img src="" alt="" class="govisit">
+                                    <img src="" alt="" class="goshare">
+                                </div>
+                                <img src="" alt="" class="golike">
+                            </div>
+                            <img src="" alt="" class="imgproject">
+                        </div>
+                        <div class="contentproject">
+                            <p class="describeproject"></p>
+                            <div class="tagsproject">
+                                <div class="foreachtag">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="foreachproject">
+                        <div class="postproject">
+                            <div class="actionbar">
+                                <div class="subaction">
+                                    <img src="" alt="" class="govisit">
+                                    <img src="" alt="" class="goshare">
+                                </div>
+                                <img src="" alt="" class="golike">
+                            </div>
+                            <img src="" alt="" class="imgproject">
+                        </div>
+                        <div class="contentproject">
+                            <p class="describeproject"></p>
+                            <div class="tagsproject">
+                                <div class="foreachtag">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="foreachproject">
+                        <div class="postproject">
+                            <div class="actionbar">
+                                <div class="subaction">
+                                    <img src="" alt="" class="govisit">
+                                    <img src="" alt="" class="goshare">
+                                </div>
+                                <img src="" alt="" class="golike">
+                            </div>
+                            <img src="" alt="" class="imgproject">
+                        </div>
+                        <div class="contentproject">
+                            <p class="describeproject"></p>
+                            <div class="tagsproject">
+                                <div class="foreachtag">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                
             </div>
             <div class="controlslide">
-                <img src="" alt="" class="slideup">
-                <img src="" alt="" class="slidedown">
+                <img src="{{asset('img/nextbtn.svg')}}" onclick="slidenaik()" alt="" class="slidebtn">
+                <img src="{{asset('img/nextbtn.svg')}}" onclick="slideturun()" style="transform: rotateZ(180deg)" alt="" class="slidebtn">
             </div>
         </div>
     </div>
+
+
+
 
 
 

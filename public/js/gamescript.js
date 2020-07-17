@@ -1,5 +1,5 @@
 // Global Variables
-var canvas = document.getElementById('canvas');
+var canvas = xdoc('canvas');
 var ctx = canvas.getContext('2d');
 var screenHeight = $(window).height()-60;
 var screenWidth = $(window).width();
@@ -18,6 +18,15 @@ var igniteFoodOnce = true;
 var foodscore = 0;
 var igniteClear = true;
 
+//MAIN DOM
+xdoc("instruction").style.top = screenHeight-38 + "px";
+xdoc("scoring").style.top = screenHeight-48 + "px";
+xdoc("scorlive").style.top = 10 + "px";
+xdoc("buttonnewgame").style.transform = `translateX(${screenWidth/2}px)`;
+xdoc("ohnobox").style.visibility="hidden";
+xdoc("ohnobox").style.opacity="0";
+
+// FOOD PLACING CLEARANCE, NO TO HIT BOX
 function clearance(origin){
     if( 
         origin < (screenWidth/2-296)-15 || 
@@ -28,6 +37,8 @@ function clearance(origin){
         return screenWidth*(3/4);
     }
 }
+
+//FOOD RELEASING IFs
 function releaseFood(){
     if (igniteFoodOnce && !isGameOver) {
         vfood = new Food(clearance((Math.random()*(screenWidth-60))+30));
@@ -37,7 +48,6 @@ function releaseFood(){
         igniteFoodOnce = false;
     }
 }
-
 
 
 // Setting Canvas Dimensions
@@ -50,35 +60,30 @@ $(window).resize(function(){
 canvas.width = screenWidth;
 canvas.height = screenHeight;
 
-document.getElementById("instruction").style.top = screenHeight-38 + "px";
-document.getElementById("scoring").style.top = screenHeight-48 + "px";
-document.getElementById("scorlive").style.top = 10 + "px";
-document.getElementById("buttonnewgame").style.transform = `translateX(${screenWidth/2}px)`;
-document.getElementById("ohnobox").style.visibility="hidden";
-document.getElementById("ohnobox").style.opacity="0";
-
+//BUTTON NEW GAME
 function appear(){
-    document.getElementById("buttonnewgame").style.backgroundColor = "#FE8D13";
-    document.getElementById("buttonnewgame").style.color = "white";
+    xdoc("buttonnewgame").style.backgroundColor = "#FE8D13";
+    xdoc("buttonnewgame").style.color = "white";
 }setTimeout(appear,800);
+
+
+//CONTROL AREA
+
     // $(document).mousemove(function(e){
     //   dude.Position.X = e.pageX;
     //   dude.Position.Y = e.pageY;
     // })
-   
-    
 $(document).keydown(function(e){
     // console.log(e.which);
     if (e.which == 37 || e.which == 65){
         if(window.pageYOffset <= $(window).height()){
             dude.Velocity.X = -5;
 
-            document.getElementById("instruction").style.display = "none";
-            document.getElementById("chatbox").style.visibility="hidden";
-            document.getElementById("chatbox").style.opacity="0";
-            document.getElementById("chatbox").style.transition="visibility 0s 3s, opacity 3s linear";
-            // } else if (e.which == 87){
-                // dude.Velocity.Y = -5;
+            xdoc("instruction").style.display = "none";
+            xdoc("chatbox").style.visibility="hidden";
+            xdoc("chatbox").style.opacity="0";
+            xdoc("chatbox").style.transition="visibility 0s 3s, opacity 3s linear";
+            
             releaseShield = true;
             igniteClear = false;
             releaseFood();
@@ -87,12 +92,11 @@ $(document).keydown(function(e){
         if(window.pageYOffset <= $(window).height()){
             dude.Velocity.X = 5;
 
-            document.getElementById("instruction").style.display = "none";
-            document.getElementById("chatbox").style.visibility="hidden";
-            document.getElementById("chatbox").style.opacity="0";
-            document.getElementById("chatbox").style.transition="visibility 0s 3s, opacity 3s linear";
-            //else if (e.which == 83){
-                // dude.Velocity.Y = 5;
+            xdoc("instruction").style.display = "none";
+            xdoc("chatbox").style.visibility="hidden";
+            xdoc("chatbox").style.opacity="0";
+            xdoc("chatbox").style.transition="visibility 0s 3s, opacity 3s linear";
+            
             releaseShield = true;
             igniteClear = false;
             releaseFood();
@@ -112,7 +116,7 @@ $(document).keyup(function(){
 
 
 
-//Generates Snake Head
+//Generates RAINFALL
 function Shape(posX, width, height) {
     this.Width = width;
     this.Height = height;
@@ -143,7 +147,6 @@ function Shape(posX, width, height) {
     shapes[shapeIndex] = this;
     shapeIndex++
     
-    
     this.checkCollisions = function() {
         if(this.Position.Y >= screenHeight+175){
             delete shapes[this.Index];
@@ -153,11 +156,13 @@ function Shape(posX, width, height) {
             }
             
             $(".scorp").html("Score : " + raincounter);
+        }
     }
-    }
+
     this.updatePosition = function() {
         this.Position.Y += this.Velocity;
     }
+
     this.Draw = function(num) {
         if (this.Position.Y < 370) {
             ctx.shadowColor = this.shadow;
@@ -167,7 +172,6 @@ function Shape(posX, width, height) {
             ctx.fillStyle = this.gradient;
             ctx.fill();
         } else if(this.Position.Y >= 370){
-            
             ctx.beginPath();
             ctx.rect(this.Position.X, this.Position.Y-30*num, this.Width, this.Height);
             switch(num) {
@@ -205,6 +209,7 @@ function Shape(posX, width, height) {
             ctx.fill();
         }
     }
+
     this.update = function(){
         this.checkCollisions();
         this.updatePosition();
@@ -216,7 +221,7 @@ function Shape(posX, width, height) {
     }
 }
 
-
+//GENERATE FOOD
 function Food(posX){
     this.Width = 20;
     this.Height = 20;
@@ -242,6 +247,7 @@ function Food(posX){
     
 }
 
+//GENERATE BOX
 function Dude(posX, width, height){
     this.Width = width;
     this.Height = height;
@@ -251,9 +257,11 @@ function Dude(posX, width, height){
     this.shadow = 'orange';
     this.blur = 25;
 
+    xdoc("chatbox").style.top = screenHeight-135 + "px";
+    xdoc("ohnobox").style.top = screenHeight-135 + "px";
+
     xdude = this;
 
-    
     this.checkCollisions = function(){
         function collision(a,b){
             if (
@@ -285,60 +293,50 @@ function Dude(posX, width, height){
                     return true
                 }
             }
-        if(eat(this, food)){
-            if (!isGameOver) {
-                foodscore++;
-            }
-            $(".foodplive").html(foodscore);
-            $(".endfoodplive").html("Food : " + foodscore);
-            vfood = null;
-            if (!isGameOver) {
-                vfood = new Food((Math.random()*(screenWidth-60))+30);
+
+            if(eat(this, food)){
+                if (!isGameOver) {
+                    foodscore++;
+                }
+                $(".foodplive").html(foodscore);
+                $(".endfoodplive").html("Food : " + foodscore);
+                vfood = null;
+                if (!isGameOver) {
+                    vfood = new Food((Math.random()*(screenWidth-60))+30);
+                }
             }
         }
+    }   
+
+    this.updatePosition = function(){
+        if (this.Position.X > 2 && this.Position.X <= screenWidth-55) {   
+            this.Position.X += this.Velocity.X;
+        }else if(this.Position.X < 5){
+            this.Position.X += 2;
+        }else if(this.Position.X > screenWidth-55){
+            this.Position.X -= 1;        
+        }
+        
+        this.Position.Y += this.Velocity.Y;
+        xdoc("chatbox").style.left = this.Position.X+76 + "px";
+        xdoc("ohnobox").style.left = this.Position.X+76 + "px";
     }
-}   
 
-document.getElementById("chatbox").style.top = screenHeight-135 + "px";
-document.getElementById("ohnobox").style.top = screenHeight-135 + "px";
-
-this.updatePosition = function(){
-    if (this.Position.X > 2 && this.Position.X <= screenWidth-55) {   
-        this.Position.X += this.Velocity.X;
-    }else if(this.Position.X < 5){
-        this.Position.X += 2;
-    }else if(this.Position.X > screenWidth-55){
-        this.Position.X -= 1;        
+    this.Draw = function(){
+        ctx.shadowColor = this.shadow;
+        ctx.shadowBlur = this.blur;
+        ctx.beginPath();
+        ctx.rect(this.Position.X, this.Position.Y, this.Width, this.Height);
+        ctx.fillStyle = this.Color;
+        ctx.fill();
     }
-    
-    this.Position.Y += this.Velocity.Y;
-    document.getElementById("chatbox").style.left = this.Position.X+76 + "px";
-    document.getElementById("ohnobox").style.left = this.Position.X+76 + "px";
-}
 
-this.Draw = function(){
-    ctx.shadowColor = this.shadow;
-    ctx.shadowBlur = this.blur;
-    ctx.beginPath();
-    ctx.rect(this.Position.X, this.Position.Y, this.Width, this.Height);
-    ctx.fillStyle = this.Color;
-    ctx.fill();
-}
-// this.Shield = function(){
-//     ctx.shadowColor = 'rgba(0,0,0,0)';
-//     ctx.shadowBlur = '0';
-//     ctx.beginPath();
-//     ctx.rect(this.Position.X-7.5, this.Position.Y-7.5, 65, 65);
-//     ctx.fillStyle = '#FAE481';
-//     ctx.fill();
-// }
-this.update = function(){
-    this.checkCollisions();
-    this.checkEaten();
-    this.updatePosition();
-    // this.Shield();
-    this.Draw();
-}
+    this.update = function(){
+        this.checkCollisions();
+        this.checkEaten();
+        this.updatePosition();
+        this.Draw();
+    }
 }
 
 
@@ -349,73 +347,66 @@ this.update = function(){
 
 
 
+//MAIN FUNCTION RUN GAME
 
-
+//create new BOX
 var dude = new Dude(screenWidth/2-296, 50, 50);
 
+//THE FUNC TO MAKE NEW GAME
 function newGame(){
     $(".scorplive").html("0");
     raincounter = 0;
     setTimeout(awaiter,2000)
-    document.getElementById("scoring").style.display = "none";
+    xdoc("scoring").style.display = "none";
     function awaiter(){
-        document.getElementById("subtitle").innerHTML = "A FULLSTACK DEVELOPER";
-        document.getElementById("subtitle").style.color = "gray";
-        document.getElementById("balancer").style.display = "unset";
+        xdoc("subtitle").innerHTML = "A FULLSTACK DEVELOPER";
+        xdoc("subtitle").style.color = "gray";
+        xdoc("balancer").style.display = "unset";
         dude = new Dude(xdude.Position.X, 50, 50);
         shapes = {};
         $("#container").append("<h2>"+score+"</h2>");
         score = 0;
         fallSpeed = 4;
         accel = 5;
-        document.getElementById("instruction").style.display = "flex";
-        document.getElementById("scorlive").style.display = "unset";
+        xdoc("instruction").style.display = "flex";
+        xdoc("scorlive").style.display = "unset";
         foodscore = 0;
         isGameOver = false;
-        document.getElementById("scorlive").style.display = "flex";
+        xdoc("scorlive").style.display = "flex";
         $(".foodplive").html(foodscore);
     }   
-    document.getElementById("buttonnewgame").style.transform = `translateX(${screenWidth/2}px)`;
+    xdoc("buttonnewgame").style.transform = `translateX(${screenWidth/2}px)`;
     pausescore = false;
 }
+
+//THE FUNC TO OVER THE GAME
 function gameOver(){
-    document.getElementById("subtitle").innerHTML = "GAME OVER";
-    document.getElementById("subtitle").style.color = "black";
-    // document.getElementById("buttonnewgame").style.transition = "2s";
-    document.getElementById("buttonnewgame").style.transform = "translateX(0)";
+    xdoc("subtitle").innerHTML = "GAME OVER";
+    xdoc("subtitle").style.color = "black";
+    xdoc("buttonnewgame").style.transform = "translateX(0)";
+    xdoc("balancer").style.display = "none";
+    xdoc("instruction").style.display = "none";
+    xdoc("chatbox").style.display = "none"; 
+    xdoc("ohnobox").style.visibility="unset";
+    xdoc("ohnobox").style.opacity="1";
+    xdoc("ohnobox").style.transition="unset";
+    xdoc("scoring").style.display = "flex";
+    xdoc("scorlive").style.display = "none";
     
-    document.getElementById("balancer").style.display = "none";
     fallSpeed = 0;
     accel = 0;
-
-    document.getElementById("instruction").style.display = "none";
-    
-    document.getElementById("chatbox").style.display = "none"; 
-    
-    document.getElementById("ohnobox").style.visibility="unset";
-    document.getElementById("ohnobox").style.opacity="1";
-    document.getElementById("ohnobox").style.transition="unset";
-
     pausescore = true;
-
-    document.getElementById("scoring").style.display = "flex";
-
-    document.getElementById("scorlive").style.display = "none";
-
-    
-
     vfood = null;
     food.PosX = null;
     isGameOver = true;
-
     igniteFoodOnce = false;
 
     $(".endfoodplive").html("Food : " + foodscore)
     
     function fadeOutNo(){
-        document.getElementById("ohnobox").style.visibility="hidden";
-        document.getElementById("ohnobox").style.opacity="0";
-        document.getElementById("ohnobox").style.transition="visibility 0s 2s, opacity 2s linear";
+        xdoc("ohnobox").style.visibility="hidden";
+        xdoc("ohnobox").style.opacity="0";
+        xdoc("ohnobox").style.transition="visibility 0s 2s, opacity 2s linear";
     }setTimeout(fadeOutNo,500);
     
     function resetIgniteFoodOnce(){
@@ -423,16 +414,14 @@ function gameOver(){
         console.log(raincounter + " " + foodscore);
 
     }setTimeout(resetIgniteFoodOnce,2000);
-
-
-
 }
+
+//MAKE NEW RAINDROP
 function shapeGenerate(){
     new Shape(clearanceStart(Math.random()*screenWidth),30,30);
 }
 
-
-
+//KIND OF SHIELD BEFORE PLAY
 function clearanceStart(coor){
     
     if (coor > (screenWidth/2-296)-30 && coor < (screenWidth/2-296)+50 && igniteClear) {        
@@ -440,12 +429,10 @@ function clearanceStart(coor){
     }else{
         returned = coor;
     }
-
-    // alert(coor + " " + returned);
-    // console.log(coor + " " + returned);
     return returned;
 }
 
+//SCREEN UPDATER
 function Updater() {
     ctx.clearRect(0, 0, screenWidth, screenHeight);
     for(i in shapes){
@@ -456,6 +443,7 @@ function Updater() {
         vfood.update();
     }
     // requestAnimationFrame(Updater);
-}
-setInterval(Updater, 10);
+}setInterval(Updater, 10);
+
+//MAKE NEW SHAPE EVERY INTERVAL
 setInterval(shapeGenerate, shapeGenerateSpeed);

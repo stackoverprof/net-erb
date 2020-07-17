@@ -1,5 +1,5 @@
 window.addEventListener('load', function () {
-  document.getElementById("loading").style.display = "none";
+  xdoc("loading").style.display = "none";
 })
 
 setInterval(() => {
@@ -12,34 +12,34 @@ setInterval(() => {
   else if (17 <= hours && hours < 22) greeting += " EVENING";  
   else if (22 <= hours && hours < 24)  greeting += " NIGHT";
   
-  document.getElementById("h4good").innerHTML = greeting; 
+  xdoc("h4good").innerHTML = greeting; 
 }, 1000);
 
 
 var pureScreenWidth = $(window).width();
 var pureScreenHeight = $(window).height();
 var height = $(window).height()-400;
-document.getElementById("blackout").style.height = height + "px";
-document.getElementById("gray1").style.height = height + "px";
-document.getElementById("gray2").style.height = height + "px";
-document.getElementById("gray3").style.height = height + "px";
-document.getElementById("gray4").style.height = height + "px";
+xdoc("blackout").style.height = height + "px";
+xdoc("gray1").style.height = height + "px";
+xdoc("gray2").style.height = height + "px";
+xdoc("gray3").style.height = height + "px";
+xdoc("gray4").style.height = height + "px";
 
 setInterval(()=>{
   var scrolled = window.pageYOffset;
 
   if (scrolled >= 300 + height) {
-    document.getElementById('blackout').style.transform = `translateY(${0*28-height}px)`;
-    document.getElementById('gray1').style.transform = `translateY(${1*28-height}px)`;
-    document.getElementById('gray2').style.transform = `translateY(${2*28-height}px)`;
-    document.getElementById('gray3').style.transform = `translateY(${3*28-height}px)`;
-    document.getElementById('gray4').style.transform = `translateY(${4*28-height}px)`;
+    xdoc('blackout').style.transform = `translateY(${0*28-height}px)`;
+    xdoc('gray1').style.transform = `translateY(${1*28-height}px)`;
+    xdoc('gray2').style.transform = `translateY(${2*28-height}px)`;
+    xdoc('gray3').style.transform = `translateY(${3*28-height}px)`;
+    xdoc('gray4').style.transform = `translateY(${4*28-height}px)`;
   }else if(scrolled < 400) {
-    document.getElementById('blackout').style.transform = `unset`;
-    document.getElementById('gray1').style.transform = `unset`;
-    document.getElementById('gray2').style.transform = `unset`;
-    document.getElementById('gray3').style.transform = `unset`;
-    document.getElementById('gray4').style.transform = `unset`;
+    xdoc('blackout').style.transform = `unset`;
+    xdoc('gray1').style.transform = `unset`;
+    xdoc('gray2').style.transform = `unset`;
+    xdoc('gray3').style.transform = `unset`;
+    xdoc('gray4').style.transform = `unset`;
     
   }
 },100);
@@ -56,26 +56,26 @@ setInterval(()=>{
   
   if (scrolled >= pureScreenHeight - 60 ) {
     dontChangeFirst = false;
-    document.getElementById('navbotmain').style.display = "unset";
-    document.getElementById('h2navigationbehind').innerHTML = "&ensp;&nbsp;ERRBINT";
+    xdoc('navbotmain').style.display = "unset";
+    xdoc('h2navigationbehind').innerHTML = "&ensp;&nbsp;ERRBINT";
     toggleERRBINT = true;
-    if(document.getElementById('h2navigation').innerHTML == "NAVIGATION"){
+    if(xdoc('h2navigation').innerHTML == "NAVIGATION"){
       setTimeout(() => {
-        document.getElementById('h2navigation').style.transform = "translateX(200px)";
+        xdoc('h2navigation').style.transform = "translateX(200px)";
         setTimeout(() => {
-          document.getElementById('h2navigation').innerHTML = "&ensp;&nbsp;ERRBINT";
-          document.getElementById('h2navigation').style.transform = "unset";
+          xdoc('h2navigation').innerHTML = "&ensp;&nbsp;ERRBINT";
+          xdoc('h2navigation').style.transform = "unset";
         }, 1000);
       }, 10);
     }
   } else if(scrolled < pureScreenHeight - 60){
-    document.getElementById('navbotmain').style.display = "none";
-    if(document.getElementById('h2navigation').innerHTML == "&ensp;&nbsp;ERRBINT"){
+    xdoc('navbotmain').style.display = "none";
+    if(xdoc('h2navigation').innerHTML == "&ensp;&nbsp;ERRBINT"){
       setTimeout(() => {
-        document.getElementById('h2navigation').style.transform = "translateX(200px)";
+        xdoc('h2navigation').style.transform = "translateX(200px)";
         setTimeout(() => {
-          document.getElementById('h2navigation').innerHTML = "NAVIGATION";
-          document.getElementById('h2navigation').style.transform = "unset";
+          xdoc('h2navigation').innerHTML = "NAVIGATION";
+          xdoc('h2navigation').style.transform = "unset";
         }, 1000);  
       }, 10);
     }
@@ -84,13 +84,13 @@ setInterval(()=>{
 
   if (scrolled < pureScreenHeight - 60 && !dontChangeFirst) {
     if(toggleERRBINT){
-      document.getElementById('h2navigation').innerHTML = "NAVIGATION";
+      xdoc('h2navigation').innerHTML = "NAVIGATION";
       toggleERRBINT = false;
       function changeTextBehind(){
-        document.getElementById('h2navigationbehind').style.transform = "translateX(200px)";
+        xdoc('h2navigationbehind').style.transform = "translateX(200px)";
         function changeTextBehindE(){
-          document.getElementById('h2navigationbehind').innerHTML = "NAVIGATION";
-          document.getElementById('h2navigationbehind').style.transform = "unset";
+          xdoc('h2navigationbehind').innerHTML = "NAVIGATION";
+          xdoc('h2navigationbehind').style.transform = "unset";
         }setTimeout(changeTextBehindE, 1000);
       }setTimeout(changeTextBehind, 10);
     }
@@ -98,44 +98,44 @@ setInterval(()=>{
 },10)
 
 //CARD MOVEMENT
-document.getElementById('cardmove').style.transform = `translateX(-${screenWidth}px)`;
-document.getElementById('cardmove').style.transition = "1s";
+xdoc('cardmove').style.transform = `translateX(-${screenWidth}px)`;
+xdoc('cardmove').style.transition = "1s";
 var flipped = false;
 
 setInterval(()=>{
   var scrolled = window.pageYOffset;
   
   if (scrolled > pureScreenHeight + 100 ) {
-    document.getElementById('cardmove').style.transform = `translateX(0px)`;
+    xdoc('cardmove').style.transform = `translateX(0px)`;
     
-    if (!flipped && document.getElementById("heytry").style.display != "flex") {
+    if (!flipped && xdoc("heytry").style.display != "flex") {
       setTimeout(() => {
-        document.getElementById('heytry').style.display = `flex`;
+        xdoc('heytry').style.display = `flex`;
         setTimeout(() => {
-          document.getElementById('heytry').style.transform = `unset`;
+          xdoc('heytry').style.transform = `unset`;
         }, 1000);
       }, 1000); 
     }
   } else if(scrolled < 400){
-    document.getElementById('cardmove').style.transform = `translateX(-${screenWidth}px)`;
-    document.getElementById('heytry').style.display = `none`;
-    document.getElementById('heytry').style.transform = `translateX(-400px)`;
+    xdoc('cardmove').style.transform = `translateX(-${screenWidth}px)`;
+    xdoc('heytry').style.display = `none`;
+    xdoc('heytry').style.transform = `translateX(-400px)`;
   }
 },10)
 function flippedOnce() {
   flipped = true;
-  if (document.getElementById("heytry").style.display != "none") {
-    document.getElementById('heytry').style.transform = `translateX(-400px)`;
-    document.getElementById('heytry').style.color = `rgba(0,0,0,0)`;
+  if (xdoc("heytry").style.display != "none") {
+    xdoc('heytry').style.transform = `translateX(-400px)`;
+    xdoc('heytry').style.color = `rgba(0,0,0,0)`;
     setTimeout(() => {
-      document.getElementById('heytry').style.display = `none`;
+      xdoc('heytry').style.display = `none`;
     }, 1000);
   }
 }
 
 
 //EMPHASIZE BTN PLANE
-var btnplane = document.getElementById("imgtellme");
+var btnplane = xdoc("imgtellme");
 setInterval(() => {
   if (btnplane.style.opacity == "1") {
     // console.log("yawes");
@@ -144,3 +144,19 @@ setInterval(() => {
     btnplane.style.opacity = "1";
   }
 }, 1000);
+
+
+//THE PROJECT 
+xdoc('projectarea').style.width = pureScreenWidth - 400 + "px";
+var fep = document.getElementsByClassName("foreachproject");
+var a = 0;
+var manyfep = 4;
+function slidenaik() {
+  fep[a].style.backgroundColor = "rgba(0,0,0,0)";
+  setTimeout(() => {
+    for (let i = a+1; i < manyfep; i++) {
+      fep[i].style.transform = `translateY(${-322*(a+1)}px)`;
+    }
+    a++;
+  }, 400);
+}

@@ -1,0 +1,124 @@
+
+
+/* projectframe */
+.preproject{
+    width: 100%;
+    height: 92px;
+    margin: 0;
+    padding-left: 212px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+
+    -webkit-box-shadow: inset 0px 67px 48px -73px rgba(0,0,0,0.45);
+    -moz-box-shadow: inset 0px 67px 48px -73px rgba(0,0,0,0.45);
+    box-shadow: inset 0px 67px 48px -73px rgba(0,0,0,0.45);
+    background: white;
+}
+.ppreproject{
+    margin:0;
+    font-family: sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 23px;
+
+    color: rgba(0,0,0,0.25);
+}
+.theproject{
+    width: 100%;
+    height: 728px;
+    margin: 0;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: black;
+}
+.pacmanarea{
+    width: 200px;
+    height: 100%;
+
+    background-image: url("../img/pacmanarea.svg");
+    /* background-color: black; */
+}
+.projectarea{
+    height: 100%;
+    padding-top: 84px;
+    padding-left: 12px;
+
+    background-color: black;
+}
+.controlslide{
+    width: 200px;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 52px;
+
+    background-color: black;
+}
+.slidebtn{
+    margin: 16px;
+}
+.projecttitle{
+    font-family: 'Bahnschrift', sans-serif;
+    color: white;
+    margin:4px 0 0 0;
+    font-weight: 400;
+    font-size: 34pt;
+    transition: 1s;
+}
+.makegray{
+    color: gray !important;
+}
+.sliderproject{
+    margin-top: 30px;
+}
+.foreachproject{
+    width: 855px;
+    height: 300px;
+    margin-bottom: 22px;
+    border: orange solid 1px;
+/* background-color: rgba(255,255,255,0.25);  */
+}
+.layeropac{
+    width: 855px;
+    height: 258px;
+    position: relative;
+    top: 330px;
+    z-index: 5;
+    background-color: rgba(0,0,0,0.5);
+}
+.foreachproject{
+    transition: 1s;
+    /* transform: translateY(-322px); */
+}
+.postproject{
+    width: 474px;
+    height: 299px;
+
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 27px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+}
+.actionbar{
+    width: 68px;
+    height: 255px;
+
+    margin-left: 20px;
+
+    background: #FFFFFF;
+    box-shadow: 0px 0px 27px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+}
